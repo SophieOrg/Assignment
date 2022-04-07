@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Collections.Generic;
+using FMS.Data.Models;
 
 namespace FMS.Data.Services
 {
@@ -13,12 +14,16 @@ namespace FMS.Data.Services
             svc.Initialise();
 
             //========== Add seed data ==========
+            var datev1 = new DateOnly(2022,05,15);
+            var datev2 = new DateOnly(2022,07,10);
+            var datev3 = new DateOnly(2022,06,13);
+            var datev4 = new DateOnly(2022,08,09);
 
             //add vehicles
-            var v1 = svc.AddVehicle("VW","Golf",2018,"LG67 PUT","Diesel","Hatchback","Manual",1600,3,);
-            var v2 = svc.AddVehicle("Porsche","Cayenne",2018,"PG56 BTQ","Diesel","Coupe","Automatic",2400,5,2021,05,20);
-            var v3 = svc.AddVehicle("Maserati","Quattroporte",2019,"MQ12 YIS","Petrol","Hatchback","Automatic",2000,5,2021,02,11);
-            var v4 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,2020,06,05);
+            var v1 = svc.AddVehicle("VW","Golf",2018,"LG67 PUT","Diesel","Hatchback","Manual",1600,3,datev1);
+            var v2 = svc.AddVehicle("Porsche","Cayenne",2018,"PG56 BTQ","Diesel","Coupe","Automatic",2400,5,datev2);
+            var v3 = svc.AddVehicle("Maserati","Quattroporte",2019,"MQ12 YIS","Petrol","Hatchback","Automatic",2000,5,datev3);
+            var v4 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,datev4);
            
 
             //add mot history for vehicle 1
