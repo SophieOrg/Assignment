@@ -158,67 +158,67 @@ namespace FMS.Web.Controllers
             }
 
 
-            // ============== Student ticket management ==============
+            // ============== Vehicle MOT history management ==============
 
-            // GET /student/createticket/{id}
+            // GET /vehicle/CreateMot/{id}
             public IActionResult TicketCreate(int id)
             {     
-                var s = svc.GetStudent(id);
-                // check the returned student is not null and if so alert
-                if (s == null)
+                var v = svc.GetVehicle(id);
+                // check the returned vehicle is not null and if so alert
+                if (v == null)
                 {
-                    Alert($"Student {id} not found", AlertType.warning);
+                    Alert($"Vehicle {id} not found", AlertType.warning);
                     return RedirectToAction(nameof(Index));
                 }
 
-                // create a ticket view model and set StudentId (foreign key)
-                var ticket = new Ticket { StudentId = id }; 
+                // create a ticket view model and set VehicleId (foreign key)
+                var mot = new Mot { VehicleId = id }; 
 
-                return View( ticket );
+                return View( mot );
             }
 
-            // POST /student/create
+            // POST /vehicle/create
             [HttpPost]
             [ValidateAntiForgeryToken]
-            public IActionResult TicketCreate([Bind("StudentId, Issue")] Ticket t)
+            public IActionResult TicketCreate([Bind("VehicleId, Report")] Mot m)
             {
                 if (ModelState.IsValid)
                 {                
-                    var ticket = svc.CreateTicket(t.StudentId, t.Issue);
-                    Alert($"Ticket created successfully for student {t.StudentId}", AlertType.info);
-                    return RedirectToAction(nameof(Details), new { Id = ticket.StudentId });
+                    var mot = svc.CreateMot(m.VehicleId, m.Report);
+                    Alert($"Ticket created successfully for student {m.VehicleId}", AlertType.info);
+                    return RedirectToAction(nameof(Details), new { Id = m.VehicleId });
                 }
                 // redisplay the form for editing
-                return View(t);
+                return View(m);
             }
 
-            // GET /student/ticketdelete/{id}
+            // GET /vehicle/ticketdelete/{id}
             public IActionResult TicketDelete(int id)
             {
-                // load the ticket using the service
-                var ticket = svc.GetTicket(id);
-                // check the returned Ticket is not null and if so return NotFound()
-                if (ticket == null)
+                // load the MOT ticket using the service
+                var mot = svc.GetMot(id);
+                // check the returned MOT ticket is not null and if so return alert & redirect to index
+                if (mot == null)
                 {
-                    Alert($"Ticket {id} not found", AlertType.warning);
+                    Alert($"MOT {id} not found", AlertType.warning);
                     return RedirectToAction(nameof(Index));
                 }     
                 
                 // pass ticket to view for deletion confirmation
-                return View(ticket);
+                return View(mot);
             }
 
-            // POST /student/ticketdeleteconfirm/{id}
+            // POST /vehicle/ticketdeleteconfirm/{id}
             [HttpPost]
             [ValidateAntiForgeryToken]
-            public IActionResult TicketDeleteConfirm(int id, int studentId)
+            public IActionResult TicketDeleteConfirm(int id, int vehicleId)
             {
-                // delete student via service
-                svc.DeleteTicket(id);
-                Alert($"Ticket deleted successfully for student {studentId}", AlertType.info);
+                // delete MOT ticket via service
+                svc.DeleteMotTicket(id);
+                Alert($"MOT ticket deleted successfully for vehicle {vehicleId}", AlertType.info);
                 
-                // redirect to the ticket index view
-                return RedirectToAction(nameof(Details), new { Id = studentId });
+                // redirect to the MOT ticket index view
+                return RedirectToAction(nameof(Details), new { Id = vehicleId });
             }
 
         }
