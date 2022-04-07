@@ -1,11 +1,18 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using FMS.Data.Services;
 using FMS.Web;
+using FMS.Data.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Add Authentfication service using cookie scheme
+builder.Services.AddCookieAuthentication();
        
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//configure DI system
+builder.Services.AddScoped<IFleetService,FleetServiceDb>();
 
 var app = builder.Build();
 
@@ -25,6 +32,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+//Enable site Authentication/Authorization
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

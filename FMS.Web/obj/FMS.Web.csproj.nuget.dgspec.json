@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\FMS.Web.csproj": {}
+    "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\FMS.Web.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj": {
+    "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj",
         "projectName": "FMS.Data",
-        "projectPath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj",
+        "projectPath": "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj",
         "packagesPath": "C:\\Users\\Sophie Black\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\obj\\",
+        "outputPath": "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Sophie Black\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -70,14 +70,14 @@
         }
       }
     },
-    "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\FMS.Web.csproj": {
+    "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\FMS.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\FMS.Web.csproj",
+        "projectUniqueName": "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\FMS.Web.csproj",
         "projectName": "FMS.Web",
-        "projectPath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\FMS.Web.csproj",
+        "projectPath": "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\FMS.Web.csproj",
         "packagesPath": "C:\\Users\\Sophie Black\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\obj\\",
+        "outputPath": "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Sophie Black\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -92,8 +92,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj": {
-                "projectPath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj"
+              "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj": {
+                "projectPath": "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj"
               }
             }
           }

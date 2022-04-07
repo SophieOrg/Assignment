@@ -10,7 +10,7 @@ using FMS.Web.Models;
 
 namespace FMS.Web.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private readonly IFleetService _svc;
 
@@ -70,6 +70,7 @@ namespace FMS.Web.Controllers
             var user = _svc.Register(m.Name, m.Email, m.Password, m.Role);               
            
             // registration successful now redirect to login page
+            Alert("Registration Successful - Now Login", AlertType.info); 
             return RedirectToAction(nameof(Login));
         }
 
@@ -82,11 +83,13 @@ namespace FMS.Web.Controllers
 
         public IActionResult ErrorNotAuthorised()
         {   
+            Alert("Not Authorized", AlertType.warning);
             return RedirectToAction("Index", "Home");
         }
 
         public IActionResult ErrorNotAuthenticated()
-        {
+        {   
+            Alert("Not Authenticated", AlertType.warning);
             return RedirectToAction("Login", "User"); 
         }        
 

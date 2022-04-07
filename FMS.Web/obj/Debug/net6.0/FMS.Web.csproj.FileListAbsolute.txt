@@ -1,0 +1,8 @@
+C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Web\obj\Debug\net6.0\FMS.Web.csproj.AssemblyReference.cache
+C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Web\obj\Debug\net6.0\FMS.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Web\obj\Debug\net6.0\FMS.Web.AssemblyInfoInputs.cache
+C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Web\obj\Debug\net6.0\FMS.Web.AssemblyInfo.cs
+C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Web\obj\Debug\net6.0\FMS.Web.csproj.CoreCompileInputs.cache
+C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Web\obj\Debug\net6.0\FMS.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Web\obj\Debug\net6.0\FMS.Web.RazorAssemblyInfo.cache
+C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Web\obj\Debug\net6.0\FMS.Web.RazorAssemblyInfo.cs
