@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using SMS.Data.Validators;
 
 namespace FMS.Data.Models
 {
@@ -40,7 +41,7 @@ namespace FMS.Data.Models
 
         [Display(Name = "Photo")]
         [Required]
-        [DataType(DataType.ImageUrl)]
+        [UrlResource]
         public string PhotoUrl { get; set; }
         
         [Display(Name = "Price(£)")]
