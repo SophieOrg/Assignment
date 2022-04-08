@@ -27,9 +27,9 @@ namespace FMS.Test
             // act 
             var datev1 = new DateOnly(2022,05,06);
             
-            var s1 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,datev1);
+            var s1 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,datev1,16500,"");
             // this is a duplicate as the email address is same as previous student
-            var s2 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,datev1);
+            var s2 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,datev1,165000,"");
             
             // assert
             Assert.NotNull(s1); // this student should have been added correctly

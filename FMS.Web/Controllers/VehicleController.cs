@@ -71,7 +71,7 @@ namespace FMS.Web.Controllers
                 if (ModelState.IsValid)
                 {
                     // pass data to service to store 
-                    v = svc.AddVehicle(v.Make, v.Model,v.Year,v.Registration,v.FuelType,v.BodyType,v.TransmissionType,v.CC,v.No0fDoors,v.MotDue);
+                    v = svc.AddVehicle(v.Make, v.Model,v.Year,v.Registration,v.FuelType,v.BodyType,v.TransmissionType,v.CC,v.No0fDoors,v.MotDue,v.Price,v.PhotoUrl);
                     Alert($"New vehicle created successfully", AlertType.success);
 
                     return RedirectToAction(nameof(Details), new { Id = v.Id});

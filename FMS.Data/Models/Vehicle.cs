@@ -38,6 +38,15 @@ namespace FMS.Data.Models
         [Required]
         public DateOnly MotDue{get;set;}
 
+        [Display(Name = "Photo")]
+        [Required]
+        [DataType(DataType.ImageUrl)]
+        public string PhotoUrl { get; set; }
+        
+        [Display(Name = "Price(£)")]
+        [DisplayFormat(DataFormatString = "{0:#,0}")]
+        public double Price{get; set;} 
+
         //Relationship 1-N MOT ticket
         public IList<Mot> Mots {get; set;} = new List<Mot>();
 

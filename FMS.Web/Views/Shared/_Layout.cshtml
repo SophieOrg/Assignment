@@ -21,7 +21,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                    
                     <!-- login partial can go here -->
-                   
+                    <partial name="_Login" />
                     
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
@@ -29,7 +29,20 @@
                         </li>
 
                         <!-- other nav bar items here -->
-                        
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Vehicle" asp-action="Index">Vehicles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="Mot" asp-action="Index">MOT History</a>
+                        </li>
+
+                        <!-- company dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" 
+                               role="button" aria-expanded="false">Company</a>
+                            <ul class="dropdown-menu">
+                                <li> <a class="dropdown-item" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+                                <li> <a class="dropdown-item" asp-controller="Home" asp-action="About">About</a></li>
                                             
                     </ul>
                 </div>
@@ -37,6 +50,9 @@
         </nav>
     </header>
     <div class="container">
+
+        <!-- render the alert partial -->
+        <partial name ="_AlertIcons" />
        
         <main role="main" class="pb-3">
             @RenderBody()
@@ -45,7 +61,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - Fleet - <a asp-controller="Home" asp-action="About">About</a>
+            &copy; 2022 - Fleet - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

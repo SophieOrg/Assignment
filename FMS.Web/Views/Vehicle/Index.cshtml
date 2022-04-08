@@ -5,10 +5,10 @@
     ("","Vehicles")
 }) />
 
-<h3 class="mb-3">Vehicle List</h3>
+<h3 class="mb-3">Car Gallery</h3>
 
 <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) class="btn btn-sm btn-primary my-3" asp-action="Create" >
-    <i class="bi bi-plus"></i> Create
+    <i class="bi bi-plus"></i> Add New Car
 </a>     
 
 <table class="table table-hover">
@@ -28,7 +28,7 @@
         {
             <tr>
                 <td>@v.Id</td>
-                <td>@v.Photo</td>
+                <td>@v.PhotoUrl</td>
                 <td>@v.Make</td>
                 <td>@v.Model</td>
                 <td>@v.Year</td>
