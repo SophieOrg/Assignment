@@ -40,8 +40,8 @@ namespace FMS.Data.Models
         public DateOnly MotDue{get;set;}
 
         [Display(Name = "Photo")]
-        [Required]
         [UrlResource]
+        [Required]
         public string PhotoUrl { get; set; }
         
         [Display(Name = "Price(£)")]
