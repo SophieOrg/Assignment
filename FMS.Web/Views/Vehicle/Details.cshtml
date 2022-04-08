@@ -1,46 +1,62 @@
-@model Student
+@model Vehicle
 <partial name="_BreadCrumbs" model=@(new [] {
     ("/","Home"),
-    ("/student","Students"),
-    ($"/student/details/{Model.Id}",$"{Model.Id}"),
+    ("/vehicle","Vehicles"),
+    ($"/vehicle/details/{Model.Id}",$"{Model.Id}"),
     ("","Details")
 }) />
-<h3 class="mt-4 mb-4">Student Details</h3>
+<h3 class="mt-4 mb-4">Vehicle Details</h3>
 <div class="row">
     <!-- Details -->
     <div class="col-8 card rounded shadow p-3">
         <dl class="row">
-            <dt class="col-5">Name</dt>
-            <dd class="col-7">@Model.Name</dd>
+            <dt class="col-5">Make</dt>
+            <dd class="col-7">@Model.Make</dd>
 
-            <dt class="col-5">Course</dt>
-            <dd class="col-7">@Model.Course</dd>
+            <dt class="col-5">Model</dt>
+            <dd class="col-7">@Model.Model</dd>
+            
+            <dt class="col-5">Year</dt>
+            <dd class="col-7">@Model.Year</dd>
+            
+            <dt class="col-5">Registration</dt>
+            <dd class="col-7">@Model.Registration</dd>
 
-            <dt class="col-5">Age</dt>
-            <dd class="col-7">@Model.Age</dd>
+            <dt class="col-5">Fuel Type</dt>
+            <dd class="col-7">@Model.FuelType</dd>
 
-            <dt class="col-5">Email</dt>
-            <dd class="col-7">@Model.Email</dd>
+            <dt class="col-5">Body Type</dt>
+            <dd class="col-7">@Model.BodyType</dd>
 
-            <dt class="col-5">Classification</dt>
-            <dd class="col-7">@Model.Classification</dd>
+            <dt class="col-5">Transmission Type</dt>
+            <dd class="col-7">@Model.TransmissionType</dd>
+
+            <dt class="col-5">CC</dt>
+            <dd class="col-7">@Model.CC</dd>
+
+            <dt class="col-5">No.Of Doors</dt>
+            <dd class="col-7">@Model.No0fDoors</dd>
+
+            <dt class="col-5">Mot Due</dt>
+            <dd class="col-7">@Model.MotDue</dd>
+         
         </dl>
 
-        <!-- use flex box to separate two divs containing primary actions on left and danger action on right -->
+        <!-- flex box to separate two divs containing primary actions on left and danger action on right -->
         <div class="mt-4 d-flex flex-row justify-content-between">
             <div>
               
                 <!-- navigation link to CreateTicket action, passing correct route parameter -->
                 <a asp-action="TicketCreate" asp-route-id="@Model.Id" class="btn btn-sm btn-primary"><i
-                        class="bi bi-bag-plus"></i> Add Ticket</a>          
+                        class="bi bi-bag-plus"></i> Add MOT History Ticket</a>          
 
                 <!-- navigation link to Details action, passing the correct route id parameter -->
-                <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-controller="Student" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary"><i
+                <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-controller="Vehicle" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary"><i
                         class="bi bi-pen"></i> Edit</a>
 
                 <!-- navigation link to redirect to Index action -->
-                <a asp-controller="Student" asp-action="Index" class="btn btn-sm btn-link"><i class="bi bi-list"></i>
-                    Students</a>
+                <a asp-controller="Vehicle" asp-action="Index" class="btn btn-sm btn-link"><i class="bi bi-list"></i>
+                    Vehicles</a>
 
             </div>
 
@@ -54,9 +70,7 @@
         </div>
     </div>
     <!-- Photo -->
-    <div class="col-4">
-        <img src="@Model.PhotoUrl" class="img-fluid">
-    </div>
+    
 </div>
 
 <!-- Tickets -->
