@@ -2,7 +2,7 @@ using System;
 using System.Net;
 using System.ComponentModel.DataAnnotations;
 
-namespace SMS.Data.Validators
+namespace FMS.Data.Validators
 {
     public class UrlResource : ValidationAttribute {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext) {

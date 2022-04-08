@@ -1,6 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using SMS.Data.Validators;
+using FMS.Data.Validators;
 
 namespace FMS.Data.Models
 {
