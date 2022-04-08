@@ -19,7 +19,7 @@
             <th>Make</th>
             <th>Model</th>
             <th>Year</th>
-            <th>Price</th>
+            <th>Price(£) </th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -28,7 +28,12 @@
         {
             <tr>
                 <td>@v.Id</td>
-                <td>@v.PhotoUrl</td>
+                <td>@if (v.PhotoUrl != null)
+                    {
+                        <img src ="@Url.Content(v.PhotoUrl)" width = "180" height = "150" alt = "Image" />
+                    }
+
+                </td>
                 <td>@v.Make</td>
                 <td>@v.Model</td>
                 <td>@v.Year</td>
