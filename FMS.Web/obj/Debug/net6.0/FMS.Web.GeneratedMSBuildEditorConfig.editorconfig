@@ -103,8 +103,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Vehicle/MotTicketCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxNb3RUaWNrZXRDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Vehicle/MotTicketDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxNb3RUaWNrZXREZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Vehicle/_DeleteModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxfRGVsZXRlTW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Vehicle/_Tickets.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWNsZVxfVGlja2V0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/_ViewImports.cshtml]

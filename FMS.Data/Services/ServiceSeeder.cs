@@ -21,9 +21,9 @@ namespace FMS.Data.Services
 
             //add vehicles
             var v1 = svc.AddVehicle("VW","Golf",2018,"LG67 PUT","Diesel","Hatchback","Manual",1600,3,datev1,60600,"https://m.atcdn.co.uk/a/media/w540/0f4ebd9ffd4b4ed197a96174d60af4f1.jpg");
-            var v2 = svc.AddVehicle("Porsche","Cayenne",2018,"PG56 BTQ","Diesel","Coupe","Automatic",2400,5,datev2,107680,"");
-            var v3 = svc.AddVehicle("Maserati","Quattroporte",2019,"MQ12 YIS","Petrol","Hatchback","Automatic",2000,5,datev3,165000,"");
-            var v4 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,datev4,28995,"");
+            var v2 = svc.AddVehicle("Porsche","Cayenne",2018,"PG56 BTQ","Diesel","Coupe","Automatic",2400,5,datev2,107680,"https://www.kindpng.com/picc/m/162-1629507_porsche-cayenne-gts-car-hire-front-view-car.png");
+            var v3 = svc.AddVehicle("Maserati","Quattroporte",2019,"MQ12 YIS","Petrol","Hatchback","Automatic",2000,5,datev3,165000,"https://imagecdn.leasingoptions.co.uk/fit-in/570x380/image/vehicles/ids/maserati/quattroporte/quattroporte-saloon/v8-trofeo-4dr-auto/94914/front_view/b504a1b0-4f5b-4927-a1bc-08ed145b3d2b.jpg");
+            var v4 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,datev4,28995,"https://www.seekpng.com/png/detail/836-8367072_2018-bentley-bentayga-black-edition-2018-bentley-bentayga.png");
            
 
             //add mot history for vehicle 1
@@ -36,9 +36,6 @@ namespace FMS.Data.Services
 
             //add mot history for vehicle 3
             var mot5 = svc.CreateMot(v3.Id, "Need new timing belt");
-
-            //close vehicle 1's first mot history
-             svc.CloseMot(v1.Id, "Wiper fixed");
 
             //add users
             var u1 = svc.Register("Guest", "guest@sms.com", "guest", Role.guest);

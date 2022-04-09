@@ -14,15 +14,13 @@ namespace FMS.Data.Models
         [Required]
         [StringLength(500, MinimumLength = 5)]
         public string Report {get;set;}
-        
-        [StringLength(500)]
-        public string Resolution {get; set;}
 
-        public DateTime CreatedOn {get; set;}= DateTime.Now;
+        public DateTime On {get; set;}
 
-        public DateTime ResolvedOn {get; set;} = DateTime.MinValue;
+        public string MotTester {get;set;}
 
-        public bool Active {get; set;} = true;
+        public double Mileage {get; set;}
+
 
         //MOT owned by a user
         public int VehicleId {get;set;} //foreign key

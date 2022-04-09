@@ -16369,6 +16369,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Vehicle\\MotTicketDelete.cshtml",
+      "TargetPath": "Views\\Vehicle\\MotTicketDelete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Shared\\_BreadCrumbs.cshtml",
       "TargetPath": "Views\\Shared\\_BreadCrumbs.cshtml",
       "FileKind": "mvc"
@@ -16424,6 +16429,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Vehicle\\_Tickets.cshtml",
+      "TargetPath": "Views\\Vehicle\\_Tickets.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -16436,6 +16446,11 @@
     {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\_CloseModal.cshtml",
       "TargetPath": "Views\\Ticket\\_CloseModal.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Vehicle\\MotTicketCreate.cshtml",
+      "TargetPath": "Views\\Vehicle\\MotTicketCreate.cshtml",
       "FileKind": "mvc"
     },
     {

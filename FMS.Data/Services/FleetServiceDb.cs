@@ -169,24 +169,6 @@ namespace FMS.Data.Services
 
         }
 
-        public Mot CloseMot(int id, string resolution)
-        {   
-            var mot = GetMot(id);
-
-            //if ticket does not exist or is already closed return null
-            if(DeleteMotTicket == null || !mot.Active) return null;
-            
-            //Mot ticket exists and is active so close
-            mot.Active = false;
-
-            mot.Resolution = resolution;
-            mot.ResolvedOn = DateTime.Now;
-            
-            //write to database(save changes)
-            db.SaveChanges();
-            return mot;
-
-        }
 
         public bool DeleteMotTicket(int id)
         {   
@@ -210,39 +192,6 @@ namespace FMS.Data.Services
 
         }
 
-        public IList<Mot> GetOpenMots()
-        {  
-             return db.Mots
-                     .Include(v => v.Vehicle) 
-                     .Where(v => v.Active)
-                     .ToList();
-
-        }
-
-        // perform a search of the tickets based on a query and
-        // an active range 'ALL', 'OPEN', 'CLOSED'
-       // public IList<Ticket> SearchTickets(TicketRange range, string query) 
-        
-        //{
-            // ensure query is not null    
-            //query = query == null ? "" : query.ToLower();
-
-            // search ticket issue, active status and student name
-            //var results = db.Tickets
-                            //.Include(t => t.Student)
-                            //.Where(t => (t.Issue.ToLower().Contains(query) || 
-                                         //t.Student.Name.ToLower().Contains(query)
-                                        //) &&
-                                       // (range == TicketRange.OPEN && t.Active ||
-                                        // range == TicketRange.CLOSED && !t.Active ||
-                                         //range == TicketRange.ALL
-                                        //) 
-                            //).ToList();
-            //return  results;  
-        //}
-
-
-    
 
         // ==================== User Authentication/Registration Management ==================
         public User Authenticate(string email, string password)

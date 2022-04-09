@@ -39,13 +39,10 @@ namespace FMS.Data.Services
 
         Mot GetMot(int id);
 
-        Mot CloseMot(int id,string resolution);
-
         bool DeleteMotTicket(int id);
 
         IList<Mot> GetAllMots();
 
-        IList<Mot> GetOpenMots();
 
         //IList<Mot> SearchMots(MotRange range, string query);
     

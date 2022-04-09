@@ -1,0 +1,36 @@
+@model Vehicle
+
+@if (Model.Mots.Count == 0)
+{
+    <h5>No tickets yet....</h5>
+}
+else
+{
+    <div class="card rounded shadow">
+        <table class="table table-sm">
+            <thead>
+                <tr>           
+                    <th>On</th>
+                    <th>By</th>
+                    <th>Status</th>      
+                    <th>Mileage</th>
+                    <th>Report</th>  
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var m in Model.Mots)
+                {
+                    <tr>              
+                        <td>@m.On</td>
+                        <td>@m.MotTester</td> 
+                        <td>@m.Mileage</td>
+                        <td>@m.Report</td>
+                        <td>
+                            <a asp-action="TicketDelete" asp-route-id="@m.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
+                        </td>             
+                    </tr>   
+                }
+            </tbody>
+        </table>
+    </div>
+}
