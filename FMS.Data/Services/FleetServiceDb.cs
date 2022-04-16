@@ -44,7 +44,7 @@ namespace FMS.Data.Services
         }
         
         //Add a new vehicle checking registration is unique
-        public Vehicle AddVehicle(string make,string model,int year,string registration,string fuelType,string bodyType,string transmissionType,int cc, int no0fDoors, DateOnly motDue,double price, string photoUrl)
+        public Vehicle AddVehicle(string make,string model,int year,string registration,string fuelType,string bodyType,string transmissionType,int cc, int no0fDoors, DateOnly motDue, string photoUrl)
         {
             //check if vehicle with registration exists
             var exists = GetVehicleByRegistration(registration);
@@ -66,7 +66,6 @@ namespace FMS.Data.Services
                 CC = cc,
                 No0fDoors = no0fDoors,
                 MotDue = motDue,
-                Price = price,
                 PhotoUrl =photoUrl
             };
             
@@ -116,7 +115,6 @@ namespace FMS.Data.Services
             vehicle.CC = updated.CC;
             vehicle.No0fDoors = updated.No0fDoors;
             vehicle.MotDue = updated.MotDue;
-            vehicle.Price = updated.Price;
             vehicle.PhotoUrl = updated.PhotoUrl;
 
             db.SaveChanges();

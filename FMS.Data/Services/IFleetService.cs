@@ -19,7 +19,7 @@ namespace FMS.Data.Services
 
         Vehicle GetVehicleByRegistration(string registration);
 
-        Vehicle AddVehicle(string make,string model,int year,string registration,string fuelType,string bodyType,string transmissionType,int cc, int no0fDoors, DateOnly motDue,double price,string photoUrl);
+        Vehicle AddVehicle(string make,string model,int year,string registration,string fuelType,string bodyType,string transmissionType,int cc, int no0fDoors, DateOnly motDue,string photoUrl);
 
         Vehicle UpdateVehicle(Vehicle updated);
 

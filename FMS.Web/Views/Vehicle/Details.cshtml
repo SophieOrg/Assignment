@@ -44,11 +44,7 @@
 
         <!-- flex box to separate two divs containing primary actions on left and danger action on right -->
         <div class="mt-4 d-flex flex-row justify-content-between">
-            <div>
-              
-                <!-- navigation link to CreateTicket action, passing correct route parameter -->
-                <a asp-action="TicketCreate" asp-route-id="@Model.Id" class="btn btn-sm btn-primary"><i
-                        class="bi bi-bag-plus"></i> Add MOT History Ticket</a>          
+            <div>        
 
                 <!-- navigation link to Details action, passing the correct route id parameter -->
                 <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-controller="Vehicle" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary"><i
@@ -62,7 +58,7 @@
 
             <div>
                 <!-- toggle display of Delete Modal -->
-                <button asp-condition=@(User.IsInRole("admin")) type="button" class="btn btn-sm btn-danger" 
+                <button asp-condition=@(User.IsInRole("admin")) || User.IsInRole("manager")) type="button" class="btn btn-sm btn-danger" 
                         data-bs-toggle="modal" data-bs-target="#deleteStudentModal">
                     <i class="bi bi-trash"></i> Delete
                 </button>

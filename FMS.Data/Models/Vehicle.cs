@@ -43,10 +43,6 @@ namespace FMS.Data.Models
         [UrlResource]
         [Required]
         public string PhotoUrl { get; set; }
-        
-        [Display(Name = "Price(£)")]
-        [DisplayFormat(DataFormatString = "{0:#,0}")]
-        public double Price{get; set;} 
 
         //Relationship 1-N MOT ticket
         public IList<Mot> Mots {get; set;} = new List<Mot>();

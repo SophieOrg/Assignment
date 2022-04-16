@@ -1,5 +1,12 @@
 @model Vehicle
 
+<div class="mt-4 d-flex flex-row justify-content-between">
+    <div>
+            <!-- navigation link to CreateTicket action, passing correct route parameter -->
+            <a asp-action="TicketCreate" asp-route-id="@Model.Id" class="btn btn-sm btn-primary mb-3 "><i class="bi bi-bag-plus"></i> Add MOT Ticket</a>  
+    </div>
+
+</div>
 @if (Model.Mots.Count == 0)
 {
     <h5>No tickets yet....</h5>
@@ -7,7 +14,7 @@
 else
 {
     <div class="card rounded shadow">
-        <table class="table table-sm">
+        <table class="table table-sm table-bordered">
             <thead>
                 <tr>           
                     <th>On</th>
