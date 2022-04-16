@@ -2,12 +2,13 @@
     <h1>Fleet Management System</h1> 
 </div>
 
-<div class="callout callout-info">
-     <h1>Home Page</h1>
-    <p>This is the default page displayed when the application loads</p>
+<div class="callout callout-info text-center">
+    <h1>Home Page</h1>
+    <p>Welcome to our Fleet Management service !!</p>
     <p class="text-center"> Today is <b> @DateTime.Now.ToLongDateString() </b> </p>
 </div>
-<div asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) class="callout callout-warning text-center">
-    Only visible when logged in
+<div class="text-center">
+    @ViewBag.Message <b>@ViewBag.LongTime</b>
 </div>
+
 

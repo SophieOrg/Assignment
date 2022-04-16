@@ -1138,11 +1138,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj",
       "projectName": "FMS.Data",
-      "projectPath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj",
+      "projectPath": "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj",
       "packagesPath": "C:\\Users\\Sophie Black\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\obj\\",
+      "outputPath": "C:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Sophie Black\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1197,7 +1197,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }
