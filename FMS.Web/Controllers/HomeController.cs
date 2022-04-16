@@ -19,13 +19,18 @@ public class HomeController : Controller
         ViewBag.Message = "Time Now";
         return View();
     }
-
+    
+     public IActionResult Privacy()
+    {
+        return View();
+    }
 
     public IActionResult About()
     {
-        var about = new AboutViewModel {
-            Title = "About",
-            Message = "Our mission is to develop great solutions for Fleet management",
+        var about = new AboutViewModel 
+        {
+            Title = "About Our Company - Fleet Management",
+            Message = "Our mission is to develop an organised and easy to use service for Fleet management",
             Formed = new DateTime(2000,10,1)
         };
         return View(about);
