@@ -15,7 +15,7 @@ namespace FMS.Web.Models
         [Required]
         public string Password { get; set; }
 
-        [Compare("Password", ErrorMessage = "Confirm password doesn't match, Type again !")]
+        [Compare("Password", ErrorMessage = "Passwords don't match, try again !")]
         [Display(Name = "Confirm Password")]  
         public string PasswordConfirm  { get; set; }
 

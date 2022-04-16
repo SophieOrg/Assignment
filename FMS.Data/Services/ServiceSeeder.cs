@@ -27,7 +27,7 @@ namespace FMS.Data.Services
            
 
             //add mot history for vehicle 1
-            var mot1 = svc.CreateMot(v1.Id, "Minor fault with wiper");
+            var mot1 = svc.CreateMot(v1.Id,15/04/2021,"Simon Cowan","Pass",68000, "Minor fault with wiper");
             var mot2 = svc.CreateMot(v1.Id, "Front right headlight not working");
             var mot3 = svc.CreateMot(v1.Id, "Low tyre pressure"); 
 

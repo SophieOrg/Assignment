@@ -35,7 +35,7 @@ namespace FMS.Data.Services
 
         // ------------- MOT Management -------------------
 
-        Mot CreateMot(int vehicleId, string report);
+        Mot CreateMot(int vehicleId,DateOnly On, string By,string status,int mileage, string report);
 
         Mot GetMot(int id);
 

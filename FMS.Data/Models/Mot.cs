@@ -15,7 +15,7 @@ namespace FMS.Data.Models
         [StringLength(500, MinimumLength = 5)]
         public string Report {get;set;}
 
-        public DateTime On {get; set;}
+        public DateOnly On {get; set;}
 
         public string MotTester {get;set;}
 

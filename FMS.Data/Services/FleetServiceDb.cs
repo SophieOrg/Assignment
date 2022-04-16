@@ -140,7 +140,7 @@ namespace FMS.Data.Services
 
          
         // ==================== Mot History Management ==================
-        public Mot CreateMot(int vehicleId, string report)
+        public Mot CreateMot(int vehicleId,DateOnly on, string by,string status,int mileage, string report)
         {   
             var vehicle = GetVehicle(vehicleId);
             if(vehicle == null) return null;
@@ -148,6 +148,10 @@ namespace FMS.Data.Services
             var mot = new Mot
             {
                 //Id created by database
+                On = on,
+                By = by,
+                Mileage = mileage,
+                Status = status,
                 Report = report,
                 VehicleId = vehicleId,
 
