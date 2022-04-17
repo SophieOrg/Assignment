@@ -16334,16 +16334,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\Details.cshtml",
-      "TargetPath": "Views\\Ticket\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\_Search.cshtml",
-      "TargetPath": "Views\\Ticket\\_Search.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -16359,18 +16349,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\Index.cshtml",
-      "TargetPath": "Views\\Ticket\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Vehicle\\MotTicketDelete.cshtml",
-      "TargetPath": "Views\\Vehicle\\MotTicketDelete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16381,11 +16361,6 @@
     {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Vehicle\\Index.cshtml",
       "TargetPath": "Views\\Vehicle\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\Details-form.cshtml",
-      "TargetPath": "Views\\Ticket\\Details-form.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16404,13 +16379,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Vehicle\\Create.cshtml",
-      "TargetPath": "Views\\Vehicle\\Create.cshtml",
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Vehicle\\TicketDelete.cshtml",
+      "TargetPath": "Views\\Vehicle\\TicketDelete.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Vehicle\\_DeleteModal.cshtml",
-      "TargetPath": "Views\\Vehicle\\_DeleteModal.cshtml",
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Vehicle\\Create.cshtml",
+      "TargetPath": "Views\\Vehicle\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16439,28 +16414,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Vehicle\\TicketCreate.cshtml",
+      "TargetPath": "Views\\Vehicle\\TicketCreate.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\_CloseModal.cshtml",
-      "TargetPath": "Views\\Ticket\\_CloseModal.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Vehicle\\MotTicketCreate.cshtml",
-      "TargetPath": "Views\\Vehicle\\MotTicketCreate.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\User\\Register.cshtml",
       "TargetPath": "Views\\User\\Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\Create.cshtml",
-      "TargetPath": "Views\\Ticket\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

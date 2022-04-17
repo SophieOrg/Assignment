@@ -186,14 +186,6 @@ namespace FMS.Data.Services
 
         }
 
-        public IList<Mot> GetAllMots()
-        {   
-            return db.Mots
-                     .Include(v => v.Vehicle)
-                     .ToList();
-
-        }
-
 
         // ==================== User Authentication/Registration Management ==================
         public User Authenticate(string email, string password)

@@ -36,15 +36,8 @@ namespace FMS.Data.Services
         // ------------- MOT Management -------------------
 
         Mot CreateMot(int vehicleId,DateOnly on, string motTester,string status,int mileage, string report);
-
         Mot GetMot(int id);
-
         bool DeleteMotTicket(int id);
-
-        IList<Mot> GetAllMots();
-
-
-        //IList<Mot> SearchMots(MotRange range, string query);
     
     }
     

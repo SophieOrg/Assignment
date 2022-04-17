@@ -10,7 +10,7 @@ namespace FMS.Data.Models
         
         // suitable mot attributes / relationships
         [Required]
-        [StringLength(500, MinimumLength = 5)]
+        [StringLength(300, MinimumLength = 5)]
         public string Report {get;set;}
 
         public DateOnly On {get; set;}
