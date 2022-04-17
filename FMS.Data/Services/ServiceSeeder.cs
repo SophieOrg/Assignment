@@ -27,15 +27,22 @@ namespace FMS.Data.Services
            
 
             //add mot history for vehicle 1
-            var mot1 = svc.CreateMot(v1.Id,15/04/2021,"Simon Cowan","Pass",68000, "Minor fault with wiper");
-            var mot2 = svc.CreateMot(v1.Id, "Front right headlight not working");
-            var mot3 = svc.CreateMot(v1.Id, "Low tyre pressure"); 
+
+            var motdate1 = new DateOnly(2021,05,15);
+            var motdate2 = new DateOnly(2020,05,15);
+            var motdate3 = new DateOnly(2019,05,15);
+            var motdate4 = new DateOnly(2021,05,15);
+            var motdate5 = new DateOnly(2021,05,15);
+
+            var mot1 = svc.CreateMot(v1.Id,motdate1,"Simon Cowan","Fail",34000, "Minor fault with wiper");
+            var mot2 = svc.CreateMot(v1.Id,motdate2,"Craig Getty","Fail",68000, "Front right headlight not working");
+            var mot3 = svc.CreateMot(v1.Id,motdate3,"Euan Barlow","Pass",90000, "Low tyre pressure"); 
 
             //add mot history for vehicle 2
-            var mot4 = svc.CreateMot(v2.Id, "Headlights out");
+            var mot4 = svc.CreateMot(v2.Id,motdate4,"Andrew Johnston","Pass",40000, "Headlights out");
 
             //add mot history for vehicle 3
-            var mot5 = svc.CreateMot(v3.Id, "Need new timing belt");
+            var mot5 = svc.CreateMot(v3.Id,motdate5,"Adam Trouton","Pass",56000, "Need new timing belt");
 
             //add users
             var u1 = svc.Register("Guest", "guest@sms.com", "guest", Role.guest);

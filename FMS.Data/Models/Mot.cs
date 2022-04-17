@@ -4,8 +4,6 @@ using System.Text.Json.Serialization;
 
 namespace FMS.Data.Models
 {   
-    //used in MOT search feature
-    public enum Status {PASS,FAIL}
     public class Mot
     {
         public int Id { get; set; }
@@ -19,8 +17,9 @@ namespace FMS.Data.Models
 
         public string MotTester {get;set;}
 
-        public double Mileage {get; set;}
-
+        public int Mileage {get; set;}
+        
+        public string Status {get;set;}
 
         //MOT owned by a user
         public int VehicleId {get;set;} //foreign key

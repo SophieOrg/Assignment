@@ -106,7 +106,8 @@ namespace FMS.Web.Controllers
             public IActionResult Edit(int id, [Bind("Make,Model,Year,Registration,FuelType,BodyType,TransmissionType,CC,No0fDoors,MotDue,PhotoUrl")] Vehicle v)
             {
                 // check registration number is unique for this student  
-                if (svc.IsDuplicateVehicleReg(v.Registration,v.Id)) {
+                if (svc.IsDuplicateVehicleReg(v.Registration,v.Id))
+                {
                     // add manual validation error
                     ModelState.AddModelError("Registration","This registration number is already registered on the system");
                 }
