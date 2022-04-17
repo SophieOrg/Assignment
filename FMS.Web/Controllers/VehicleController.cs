@@ -13,16 +13,16 @@ namespace FMS.Web.Controllers
             // provide suitable controller actions
             private IFleetService svc;
 
-            public VehicleController()
+            public VehicleController(IFleetService ss)
             {
-                svc = new FleetServiceDb();
+                svc = ss;
             }
 
             // GET /Vehicle
             public IActionResult Index()
             {
                 // complete this method
-                var vehicles = svc.GetVehicle();
+                var vehicles = svc.GetVehicles();
                 
                 return View(vehicles);
             }
@@ -47,7 +47,7 @@ namespace FMS.Web.Controllers
             }
 
             // GET: /vehicle/create
-            [Authorize(Roles="admin")]
+            [Authorize(Roles="admin,manager")]
             public IActionResult Create()
             {   
                 // display blank form to create a new vehicle
@@ -57,10 +57,10 @@ namespace FMS.Web.Controllers
             // POST /vehicle/create
             [HttpPost]
             [ValidateAntiForgeryToken]
-            [Authorize(Roles="admin")]
-            public IActionResult Create([Bind("Make,Model,Year,Registration,FuelType,BodyType,TransmissionType,CC,No0fDoors,MotDue")]  Vehicle v)
+            [Authorize(Roles="admin,manager")]
+            public IActionResult Create([Bind("Make,Model,Year,Registration,FuelType,BodyType,TransmissionType,CC,No0fDoors,MotDue,PhotoUrl")]  Vehicle v)
             {
-                // check registartion is unique for this vehicle
+                // check registration is unique for this vehicle
                 if (svc.IsDuplicateVehicleReg(v.Registration, v.Id))
                 {
                     // add manual validation error
@@ -74,7 +74,7 @@ namespace FMS.Web.Controllers
                     v = svc.AddVehicle(v.Make, v.Model,v.Year,v.Registration,v.FuelType,v.BodyType,v.TransmissionType,v.CC,v.No0fDoors,v.MotDue,v.PhotoUrl);
                     Alert($"New vehicle created successfully", AlertType.success);
 
-                    return RedirectToAction(nameof(Details), new { Id = v.Id});
+                    return RedirectToAction(nameof(Index), new { Id = v.Id});
                 }
                 
                 // redisplay the form for editing as there are validation errors
@@ -103,12 +103,12 @@ namespace FMS.Web.Controllers
             [HttpPost]
             [ValidateAntiForgeryToken]
             [Authorize(Roles="admin,manager")]
-            public IActionResult Edit(int id, [Bind("Make,Model,Year,Registration,FuelType,BodyType,TransmissionType,CC,No0fDoors,MotDue")] Vehicle v)
+            public IActionResult Edit(int id, [Bind("Make,Model,Year,Registration,FuelType,BodyType,TransmissionType,CC,No0fDoors,MotDue,PhotoUrl")] Vehicle v)
             {
                 // check registration number is unique for this student  
                 if (svc.IsDuplicateVehicleReg(v.Registration,v.Id)) {
                     // add manual validation error
-                    ModelState.AddModelError("Registration", "This registration number is already registered on the system");
+                    ModelState.AddModelError("Registration","This registration number is already registered on the system");
                 }
 
                 // validate and complete POST action to save vehicle changes
@@ -118,7 +118,7 @@ namespace FMS.Web.Controllers
                     svc.UpdateVehicle(v);      
                     Alert("Vehicle updated successfully", AlertType.info);
 
-                    return RedirectToAction(nameof(Details), new { Id = v.Id });
+                    return RedirectToAction(nameof(Index), new { Id = v.Id });
                 }
 
                 // redisplay the form for editing as validation errors
@@ -126,7 +126,7 @@ namespace FMS.Web.Controllers
             }
 
             // GET / vehicle/delete/{id}
-            [Authorize(Roles="admin")]      
+            [Authorize(Roles="admin,manager")]      
             public IActionResult Delete(int id)
             {       
                 // load the vehicle using the service
@@ -145,7 +145,7 @@ namespace FMS.Web.Controllers
 
             // POST /vehicle/delete/{id}
             [HttpPost]
-            [Authorize(Roles="admin")]
+            [Authorize(Roles="admin,manager")]
             [ValidateAntiForgeryToken]              
             public IActionResult DeleteConfirm(int id)
             {
@@ -184,7 +184,7 @@ namespace FMS.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {                
-                    var mot = svc.CreateMot(m.VehicleId, m.Report);
+                    var mot = svc.CreateMot(m.VehicleId,m.On,m.MotTester,m.Status,m.Mileage, m.Report);
                     Alert($"Ticket created successfully for student {m.VehicleId}", AlertType.info);
                     return RedirectToAction(nameof(Details), new { Id = m.VehicleId });
                 }

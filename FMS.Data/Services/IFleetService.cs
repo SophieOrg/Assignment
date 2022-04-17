@@ -13,7 +13,7 @@ namespace FMS.Data.Services
         // add suitable method definitions to implement assignment requirements
 
         // ------------- Vehicle Management -------------------   
-        IList<Vehicle> GetVehicle(); 
+        IList<Vehicle> GetVehicles(); 
 
         Vehicle GetVehicle(int id);
 
@@ -35,7 +35,7 @@ namespace FMS.Data.Services
 
         // ------------- MOT Management -------------------
 
-        Mot CreateMot(int vehicleId,DateOnly On, string By,string status,int mileage, string report);
+        Mot CreateMot(int vehicleId,DateOnly on, string motTester,string status,int mileage, string report);
 
         Mot GetMot(int id);
 

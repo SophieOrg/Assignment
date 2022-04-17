@@ -30,7 +30,7 @@ namespace FMS.Data.Services
         // ==================== Vehicle Related Operations ==================
 
         //retrieve list of students
-        public IList<Vehicle> GetVehicle()
+        public IList<Vehicle> GetVehicles()
         {
             return db.Vehicles.ToList();
         }
@@ -80,7 +80,7 @@ namespace FMS.Data.Services
         }
         
         //Delete the vehicle identified by Id eturning true if deleted
-        //and fale if not found
+        //and false if not found
         public bool DeleteVehicle(int id)
         {
             var v = GetVehicle(id);
@@ -140,7 +140,7 @@ namespace FMS.Data.Services
 
          
         // ==================== Mot History Management ==================
-        public Mot CreateMot(int vehicleId,DateOnly on, string by,string status,int mileage, string report)
+        public Mot CreateMot(int vehicleId,DateOnly on, string motTester,string status,int mileage, string report)
         {   
             var vehicle = GetVehicle(vehicleId);
             if(vehicle == null) return null;
@@ -148,12 +148,12 @@ namespace FMS.Data.Services
             var mot = new Mot
             {
                 //Id created by database
-                On = on,
-                By = by,
-                Mileage = mileage,
-                Status = status,
-                Report = report,
                 VehicleId = vehicleId,
+                On = on,
+                MotTester = motTester,
+                Status = status,
+                Mileage = mileage,
+                Report = report,
 
             };
             db.Mots.Add(mot);
