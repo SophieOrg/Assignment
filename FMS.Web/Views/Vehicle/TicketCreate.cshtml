@@ -9,10 +9,34 @@
     ("","Create Mot")
 }) />
 
-<form asp-action="MotTicketCreate">
+<form asp-action="TicketCreate">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
    
     <input type="hidden" asp-for="VehicleId" class="form-control"/>
+    
+    <div class="mt-3">
+        <label asp-for="On" class="form-label"></label>
+        <input asp-for="On" class="form-control"/>
+        <span asp-validation-for="On" class="text-danger"></span>
+    </div>
+
+    <div class="mt-3">
+        <label asp-for="MotTester" class="form-label"></label>
+        <input asp-for="MotTester" class="form-control"/>
+        <span asp-validation-for="MotTester" class="text-danger"></span>
+    </div>
+    
+    <div class="mt-3">
+        <label asp-for="Mileage" class="form-label"></label>
+        <input asp-for="Mileage" class="form-control"/>
+        <span asp-validation-for="Mileage" class="text-danger"></span>
+    </div>
+
+    <div class="mt-3">
+        <label asp-for="Status" class="form-label"></label>
+        <input asp-for="Status" class="form-control"/>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
 
     <div class="mt-3">
         <label asp-for="Report" class="form-label"></label>      
