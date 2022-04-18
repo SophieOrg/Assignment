@@ -186,7 +186,7 @@ namespace FMS.Web.Controllers
                 if (ModelState.IsValid)
                 {                
                     var mot = svc.CreateMot(m.VehicleId,m.On,m.MotTester,m.Status,m.Mileage, m.Report);
-                    Alert($"Ticket created successfully for student {m.VehicleId}", AlertType.info);
+                    Alert($"Ticket created successfully for vehicle {m.VehicleId}", AlertType.info);
                     return RedirectToAction(nameof(Details), new { Id = m.VehicleId });
                 }
                 // redisplay the form for editing
