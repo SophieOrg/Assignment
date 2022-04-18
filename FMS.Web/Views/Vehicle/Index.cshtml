@@ -37,7 +37,7 @@
                 <td>@v.Make</td>
                 <td>@v.Model</td>
                 <td>@v.Year</td>
-                <td>@v.MotDue</td>
+                <td>@v.MotDue.ToShortDateString()</td>
                 <td>
                     <!-- Add View link -->
                     <a data-bs-toggle="tooltip" data-bs-placement="top" title="view vehicle details" asp-controller="Vehicle" asp-action="Details" asp-route-id=@v.Id><i class="bi bi-display"></i></a>  

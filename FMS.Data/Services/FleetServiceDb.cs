@@ -44,7 +44,7 @@ namespace FMS.Data.Services
         }
         
         //Add a new vehicle checking registration is unique
-        public Vehicle AddVehicle(string make,string model,int year,string registration,string fuelType,string bodyType,string transmissionType,int cc, int no0fDoors, DateOnly motDue, string photoUrl)
+        public Vehicle AddVehicle(string make,string model,int year,string registration,string fuelType,string bodyType,string transmissionType,int cc, int no0fDoors, DateTime motDue, string photoUrl)
         {
             //check if vehicle with registration exists
             var exists = GetVehicleByRegistration(registration);
@@ -140,7 +140,7 @@ namespace FMS.Data.Services
 
          
         // ==================== Mot History Management ==================
-        public Mot CreateMot(int vehicleId,DateOnly on, string motTester,string status,int mileage, string report)
+        public Mot CreateMot(int vehicleId,DateTime on, string motTester,string status,int mileage, string report)
         {   
             var vehicle = GetVehicle(vehicleId);
             if(vehicle == null) return null;

@@ -12,8 +12,10 @@ namespace FMS.Data.Models
         [Required]
         [StringLength(300, MinimumLength = 5)]
         public string Report {get;set;}
-
-        public DateOnly On {get; set;}
+        
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime On {get; set;}
 
         public string MotTester {get;set;}
 
@@ -23,7 +25,7 @@ namespace FMS.Data.Models
 
         //MOT owned by a user
         public int VehicleId {get;set;} //foreign key
-
+        
         public Vehicle Vehicle {get; set;}  //navigation property
 
 

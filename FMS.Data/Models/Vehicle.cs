@@ -37,7 +37,9 @@ namespace FMS.Data.Models
         public int No0fDoors {get;set;}
 
         [Required]
-        public DateOnly MotDue{get;set;}
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime MotDue {get;set;}
 
         [Display(Name = "Photo")]
         [UrlResource]

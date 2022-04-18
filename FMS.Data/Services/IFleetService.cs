@@ -19,7 +19,7 @@ namespace FMS.Data.Services
 
         Vehicle GetVehicleByRegistration(string registration);
 
-        Vehicle AddVehicle(string make,string model,int year,string registration,string fuelType,string bodyType,string transmissionType,int cc, int no0fDoors, DateOnly motDue,string photoUrl);
+        Vehicle AddVehicle(string make,string model,int year,string registration,string fuelType,string bodyType,string transmissionType,int cc, int no0fDoors, DateTime motDue,string photoUrl);
 
         Vehicle UpdateVehicle(Vehicle updated);
 
@@ -35,7 +35,7 @@ namespace FMS.Data.Services
 
         // ------------- MOT Management -------------------
 
-        Mot CreateMot(int vehicleId,DateOnly on, string motTester,string status,int mileage, string report);
+        Mot CreateMot(int vehicleId,DateTime on, string motTester,string status,int mileage, string report);
         Mot GetMot(int id);
         bool DeleteMotTicket(int id);
     
