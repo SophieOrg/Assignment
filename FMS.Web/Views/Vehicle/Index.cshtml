@@ -11,7 +11,7 @@
     <i class="bi bi-plus"></i> Add New Car
 </a>
 
-<table data-toggle="table" class="table table-sm table-bordered table-hover" data-sort-Year="Year" data-sort-Price="Price">
+<table data-toggle="table" class="table table-sm table-bordered table-hover" data-sort-Year="Year">
     <thead>
         <tr>
             <th data-sortable = "false">Id</th>
@@ -19,7 +19,7 @@
             <th data-sortable = "false">Make</th>
             <th data-sortable = "false">Model</th>
             <th data-sortable = "true">Year</th>
-            <th data-sortable = "true">MOT Due Date</th>
+            <th data-sortable ="false">MOT Due Date</th>
             <th data-sortable = "false">Actions</th>
         </tr>
     </thead>
@@ -51,8 +51,11 @@
     </tbody>
 </table>
 
+
 <script>
-function runningFormatter(value, row, index) {
+function runningFormatter(value, row, index)
+{
     return index;
 }
 </script>
+

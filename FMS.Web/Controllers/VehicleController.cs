@@ -26,6 +26,7 @@ namespace FMS.Web.Controllers
                 
                 return View(vehicles);
             }
+            
 
             // GET /vehicle/details/{id}
             public IActionResult Details(int id)
