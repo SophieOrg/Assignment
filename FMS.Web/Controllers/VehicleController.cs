@@ -23,12 +23,11 @@ namespace FMS.Web.Controllers
             public IActionResult Index()
             {   
                 
-                return View(svc.GetVehicles()
-                               .OrderBy(x=>x.MotDue)
-                               .ToList());
+                var vehicle = svc.GetVehicles();
+
+                return View(vehicle);
                 
             }
-            
 
             // GET /vehicle/details/{id}
             public IActionResult Details(int id)
