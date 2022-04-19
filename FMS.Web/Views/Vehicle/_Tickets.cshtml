@@ -29,7 +29,7 @@ else
                 @foreach(var m in Model.Mots)
                 {
                     <tr>              
-                        <td>@m.On</td>
+                        <td>@m.On.ToShortDateString()</td>
                         <td>@m.MotTester</td> 
                         <td>@m.Status</td>
                         <td>@m.Mileage</td>

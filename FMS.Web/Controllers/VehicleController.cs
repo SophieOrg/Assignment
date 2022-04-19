@@ -103,7 +103,7 @@ namespace FMS.Web.Controllers
             [HttpPost]
             [ValidateAntiForgeryToken]
             [Authorize(Roles="admin,manager")]
-            public IActionResult Edit(int id, [Bind("Make,Model,Year,Registration,FuelType,BodyType,TransmissionType,CC,No0fDoors,MotDue,PhotoUrl")] Vehicle v)
+            public IActionResult Edit(int id, Vehicle v)
             {
                 // check registration number is unique for this student  
                 if (svc.IsDuplicateVehicleReg(v.Registration,v.Id))

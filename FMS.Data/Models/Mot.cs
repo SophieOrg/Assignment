@@ -13,6 +13,7 @@ namespace FMS.Data.Models
         [StringLength(300, MinimumLength = 5)]
         public string Report {get;set;}
         
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime On {get; set;}
