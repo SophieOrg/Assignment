@@ -18,13 +18,15 @@ namespace FMS.Web.Controllers
                 svc = ss;
             }
 
+
             // GET /Vehicle
             public IActionResult Index()
-            {
-                // complete this method
-                var vehicles = svc.GetVehicles();
+            {   
                 
-                return View(vehicles);
+                return View(svc.GetVehicles()
+                               .OrderBy(x=>x.MotDue)
+                               .ToList());
+                
             }
             
 
