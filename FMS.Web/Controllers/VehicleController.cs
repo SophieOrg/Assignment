@@ -5,6 +5,7 @@ using FMS.Data.Services;
 using Microsoft.AspNetCore.Authorization;
 using FMS.Web.Models;
 
+
 namespace FMS.Web.Controllers
 {
     [Authorize]
@@ -18,17 +19,17 @@ namespace FMS.Web.Controllers
                 svc = ss;
             }
 
-
+            
             // GET /Vehicle
             public IActionResult Index()
             {   
                 
-                var vehicle = svc.GetVehicles();
-
-                return View(vehicle);
+               var vehicle = svc.GetVehicles()
+                                .ToList();
+               return View(vehicle);
                 
             }
-
+            
             // GET /vehicle/details/{id}
             public IActionResult Details(int id)
             {  
@@ -180,10 +181,10 @@ namespace FMS.Web.Controllers
                 return View( mot );
             }
 
-            // POST /vehicle/create
+            // POST /vehicle/motticketcreate
             [HttpPost]
             [ValidateAntiForgeryToken]
-            public IActionResult TicketCreate(Mot m)
+            public IActionResult TicketCreate(Mot m, Vehicle v)
             {
                 if (ModelState.IsValid)
                 {                
