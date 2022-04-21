@@ -184,7 +184,7 @@ namespace FMS.Web.Controllers
             // POST /vehicle/motticketcreate
             [HttpPost]
             [ValidateAntiForgeryToken]
-            public IActionResult TicketCreate(Mot m, Vehicle v)
+            public IActionResult TicketCreate(Mot m)
             {
                 if (ModelState.IsValid)
                 {                
