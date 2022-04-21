@@ -16,7 +16,7 @@ namespace FMS.Data.Repository
         {
             optionsBuilder
             .UseSqlite("Filename=data.db");
-            //.LogTo(Console.WriteLine, LogLevel.Information);
+            
         }
 
         // custom method used in development to keep database in sync with models

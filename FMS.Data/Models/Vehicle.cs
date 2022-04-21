@@ -1,6 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using FMS.Data.Validators;
+using FMS.Data.Validators; //allows access to URL resource
 
 namespace FMS.Data.Models
 {

@@ -8,9 +8,8 @@ namespace FMS.Data.Services
     // This interface describes the operations that a FleetService class should implement
     public interface IFleetService
     {
+        //Initialise the repository (database)
         void Initialise();
-        
-        // add suitable method definitions to implement assignment requirements
 
         // ------------- Vehicle Management -------------------   
         IList<Vehicle> GetVehicles(); 

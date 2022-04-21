@@ -13,7 +13,8 @@ namespace FMS.Web.Controllers
     {
             // provide suitable controller actions
             private IFleetService svc;
-
+            
+            //dependency injection is used here
             public VehicleController(IFleetService ss)
             {
                 svc = ss;
@@ -108,7 +109,7 @@ namespace FMS.Web.Controllers
             [Authorize(Roles="admin,manager")]
             public IActionResult Edit(int id, Vehicle v)
             {
-                // check registration number is unique for this student  
+                // check registration number is unique for this vehicle 
                 if (svc.IsDuplicateVehicleReg(v.Registration,v.Id))
                 {
                     // add manual validation error
@@ -135,7 +136,7 @@ namespace FMS.Web.Controllers
             {       
                 // load the vehicle using the service
                 var v = svc.GetVehicle(id);
-                // check the returned vehicle is not null and if so return alert nd redirect to index page
+                // check the returned vehicle is not null and if so return alert and redirect to index page
                 if (v == null)
                 {
                     //suitable warning alert and redirection to index page
@@ -196,7 +197,7 @@ namespace FMS.Web.Controllers
                 return View(m);
             }
 
-            // GET /vehicle/ticketdelete/{id}
+            // GET /vehicle/motticketdelete/{id}
             public IActionResult TicketDelete(int id)
             {
                 // load the MOT ticket using the service

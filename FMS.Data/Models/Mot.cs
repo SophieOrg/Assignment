@@ -8,7 +8,7 @@ namespace FMS.Data.Models
     {
         public int Id { get; set; }
         
-        // suitable mot attributes / relationships
+        // suitable mot attributes / relationships are detailed here
         [Required]
         [StringLength(300, MinimumLength = 5)]
         public string Report {get;set;}

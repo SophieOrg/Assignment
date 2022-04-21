@@ -25,17 +25,17 @@ namespace FMS.Data.Services
 
         // ==================== Fleet Management ==================
        
-        // implement IFleetService methods here
+        // Implementing IFleetService methods here
         
         // ==================== Vehicle Related Operations ==================
 
-        //retrieve list of students
+        //retrieve list of vehicles
         public IList<Vehicle> GetVehicles()
         {
             return db.Vehicles.ToList();
         }
         
-        //Retrieve vehicle by Id and related Mot history
+        //Retrieve vehicle by Id and related Mot tickets
         public Vehicle GetVehicle(int id)
         {
             return db.Vehicles
@@ -79,7 +79,7 @@ namespace FMS.Data.Services
             return v;
         }
         
-        //Delete the vehicle identified by Id eturning true if deleted
+        //Delete the vehicle identified by Id returning true if deleted
         //and false if not found
         public bool DeleteVehicle(int id)
         {
@@ -134,12 +134,12 @@ namespace FMS.Data.Services
             var existing = GetVehicleByRegistration(registration);
 
             //if a vehicle with a registration exists and the Id does not match the 
-            //vehicleId (if provided), tehn they can't use that registration
+            //vehicleId (if provided), then they can't use that registration
             return existing != null && vehicleId != existing.Id;
         }    
 
          
-        // ==================== Mot History Management ==================
+        // ==================== Mot Ticket Management ==================
         public Mot CreateMot(int vehicleId,DateTime on, string motTester,string status,int mileage, string report)
         {   
             var vehicle = GetVehicle(vehicleId);
@@ -164,7 +164,7 @@ namespace FMS.Data.Services
 
         public Mot GetMot(int id)
         {   
-            //return ticket and related student or null if not found
+            //return ticket and related vehicle or null if not found
             return db.Mots
                     .Include(v => v.Vehicle)
                     .FirstOrDefault(v => v.Id == id);
@@ -174,7 +174,7 @@ namespace FMS.Data.Services
 
         public bool DeleteMotTicket(int id)
         {   
-            //find Mot history
+            //find Mot ticket
             var mot = GetMot(id);
             if(DeleteMotTicket == null) return false;
 

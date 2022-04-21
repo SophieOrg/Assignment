@@ -20,16 +20,14 @@ namespace FMS.Test
             svc.Initialise();
         }
 
-        // ========================== Fleet Tests =========================
+        // ========================== Vehicle Fleet Tests =========================
         [Fact] 
         public void Vehicle_AddVehicle_WhenDuplicateReg_ShouldReturnNull()
         {
-            // act 
-            var datev1 = new DateTime(2022,05,06);
-            
-            var v1 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,datev1,"");
+            // act  
+            var v1 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,DateTime.Parse("2022-05-06"),"");
             // this is a duplicate as the registration is same as previous vehicle
-            var v2 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,datev1,"");
+            var v2 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,DateTime.Parse("2022-05-06"),"");
             
             // assert
             Assert.NotNull(v1); // this vehicle should have been added correctly(if test returns notnull, vehicle added because car not found with that reg)
@@ -85,7 +83,8 @@ namespace FMS.Test
 
         [Fact] 
         public void Vehicle_GetAllVehicles_WhenNone_ShouldReturn0()
-        {
+        {   
+            //There is no arrange step here as we are not adding any vehicles to the database
             // act 
             var vehicles = svc.GetVehicles();
             var count = vehicles.Count;
@@ -97,7 +96,7 @@ namespace FMS.Test
         [Fact]
         public void Vehicle_GetVehicles_When3Exist_ShouldReturn2()
         {
-            // arrange
+            // arrange - add 3 different vehicles to database
             var v1 = svc.AddVehicle("Volkswagon", "Golf",2017,"AFZ4440","Petrol","Hatchback","Manual",2000,5,DateTime.Parse("2022-05-08"),"");
             var v2 = svc.AddVehicle("Ford", "Fiesta",2013,"BJZ4340","Diesel","Hatchback","Automatic",2000,5,DateTime.Parse("2022-05-08"),"");
             var v3 = svc.AddVehicle("Renault", "Megane",2017,"GHX3340","Petrol","Hatchback","Automatic",1800,3,DateTime.Parse("2022-05-08"),"");
@@ -112,7 +111,7 @@ namespace FMS.Test
          [Fact]
         public void Vehicle_DeleteVehicle_ThatExists_ShouldReturnTrue()
         {
-            // act 
+            // act - add the vehicle to the database then delete the vehicle from the database
             var v1 = svc.AddVehicle("Volkswagon", "Golf",2017,"AFZ4440","Petrol","Hatchback","Manual",2000,5,DateTime.Parse("2022-05-08"),"");
             var deleted = svc.DeleteVehicle(v1.Id);
 
@@ -179,7 +178,7 @@ namespace FMS.Test
             var t = svc.CreateMot(v1.Id, DateTime.Parse("2022-06-15"),"Margaret Crozier","Pass",38000,"Top up oil");
            
             // assert
-            Assert.NotNull(t);
+            Assert.NotNull(t); //t should return "not null" because an MOT ticket has been successfully created
             Assert.Equal(v1.Id, t.VehicleId); 
         }
        
