@@ -1,15 +1,15 @@
-@model Mot
+@model MedicalHistory
 
 <partial name="_BreadCrumbs" model=@(new [] {
     ("/","Home"),
-    ("/vehicle","Vehicles"),
-    ($"/vehicle/details/{Model.Id}",$"{Model.Id}"),
-    ("","Delete Mot")
+    ("/dog","Dogs"),
+    ($"/dog/details/{Model.Id}",$"{Model.Id}"),
+    ("","Delete MedicalHistory")
 }) /> 
 
-<h3 class="mt-4 mb-4">Delete MOT</h3>
+<h3 class="mt-4 mb-4">Delete Medical History Note</h3>
 
-<h4 class="mb-4">Are you sure you want to delete this MOT?</h4>
+<h4 class="mb-4">Are you sure you want to delete this Medcial History Note?</h4>
 
 <div>
     <div class="col card rounded shadow p-3">
@@ -17,11 +17,8 @@
             <dt class="col-5">On</dt>
             <dd class="col-7">@Model.On</dd>
             
-            <dt class="col-5">By</dt>
-            <dd class="col-7">@Model.MotTester</dd>
-
-            <dt class="col-5">Mileage</dt>
-            <dd class="col-7">@Model.Mileage</dd>
+            <dt class="col-5">Vet</dt>
+            <dd class="col-7">@Model.Vet</dd>
 
             <dt class="col-5">Status</dt>
             <dd class="col-7">@Model.Status</dd>
@@ -35,10 +32,10 @@
     <div class="mt-4">
         <form asp-action="TicketDeleteConfirm" type="post">
             <input type="hidden" asp-for="Id"/>
-            <input type="hidden" asp-for="VehicleId"/>
+            <input type="hidden" asp-for="DogId"/>
             
             <input type="submit" value="Confirm" class="btn btn-danger" />
-            <a class="btn btn-secondary" asp-controller="Vehicle" asp-action="Details" asp-route-id="@Model.Vehicle.Id" >Cancel</a>
+            <a class="btn btn-secondary" asp-controller="Dog" asp-action="Details" asp-route-id="@Model.Dog.Id" >Cancel</a>
         </form>
     </div>
     

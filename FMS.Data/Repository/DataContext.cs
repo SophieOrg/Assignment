@@ -8,8 +8,8 @@ namespace FMS.Data.Repository
 
     public class DataContext : DbContext
     {  
-        public DbSet<Vehicle> Vehicles { get; set; }
-        public DbSet<Mot> Mots { get; set; }
+        public DbSet<Dog> Dogs { get; set; }
+        public DbSet<MedicalHistory> MedicalHistorys { get; set; }
         public DbSet<User> Users { get; set; }
                
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

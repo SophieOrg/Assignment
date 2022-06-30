@@ -12,7 +12,7 @@ builder.Services.AddCookieAuthentication();
 builder.Services.AddControllersWithViews();
 
 //configure DI system
-builder.Services.AddScoped<IFleetService,FleetServiceDb>();
+builder.Services.AddScoped<IRehomingService,RehomingServiceDb>();
 
 var app = builder.Build();
 
@@ -24,7 +24,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 } else {
     // in  development mode seed the database each time the application starts
-    FleetServiceSeeder.Seed(new FleetServiceDb());
+    RehomingServiceSeeder.Seed(new RehomingServiceDb());
 }
 
 //app.UseHttpsRedirection();

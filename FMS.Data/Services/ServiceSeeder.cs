@@ -5,33 +5,37 @@ using FMS.Data.Models;
 
 namespace FMS.Data.Services
 {
-    public static class FleetServiceSeeder
+    public static class RehomingServiceSeeder
     {
         // use this class to seed the database with dummy test data using an IFleetService
-        public static void Seed(IFleetService svc)
+        public static void Seed(IRehomingService svc)
         {
             //wipe and recreate the database
             svc.Initialise();
 
             //========== Add seed data ==========
 
-            //add vehicles
-            var v1 = svc.AddVehicle("VW","Golf",2018,"LG67 PUT","Diesel","Hatchback","Manual",1600,3,DateTime.Parse("2022-05-02"),"https://m.atcdn.co.uk/a/media/w540/0f4ebd9ffd4b4ed197a96174d60af4f1.jpg");
-            var v2 = svc.AddVehicle("Porsche","Cayenne",2018,"PG56 BTQ","Diesel","Coupe","Automatic",2400,5,DateTime.Parse("2022-07-10"),"https://www.kindpng.com/picc/m/162-1629507_porsche-cayenne-gts-car-hire-front-view-car.png");
-            var v3 = svc.AddVehicle("Maserati","Quattroporte",2019,"MQ12 YIS","Petrol","Hatchback","Automatic",2000,5,DateTime.Parse("2022-06-13"),"https://imagecdn.leasingoptions.co.uk/fit-in/570x380/image/vehicles/ids/maserati/quattroporte/quattroporte-saloon/v8-trofeo-4dr-auto/94914/front_view/b504a1b0-4f5b-4927-a1bc-08ed145b3d2b.jpg");
-            var v4 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,DateTime.Parse("2022-08-09"),"https://www.seekpng.com/png/detail/836-8367072_2018-bentley-bentayga-black-edition-2018-bentley-bentayga.png");
+            //add dogs
+            var d1 = svc.AddDog("Cocker Spaniel","Freddie","LG67 PUT",DateTime.Parse("2022-05-02"),
+                                     "https://www.pdsa.org.uk/media/8264/cocker-spaniel-outdoors-gallery-1-min.jpg?anchor=center&mode=crop&quality=100&height=500&bgcolor=fff&rnd=132204646460000000");
+            var d2 = svc.AddDog("Sprocker Spaniel","Margo","PG56 BTQ",DateTime.Parse("2021-11-25"),
+                                     "https://i.pinimg.com/originals/f1/c3/53/f1c353c73e44e1b5087dd56298438089.jpg");
+            var d3 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",DateTime.Parse("2020-06-13"),
+                                    "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
+            var d4 = svc.AddDog("Beagle","Georgie","LM41 GTL",DateTime.Parse("2018-08-09"),
+                                    "https://th.bing.com/th/id/R.53abca2d5c19b770a28205de25977876?rik=95Gcy31wNrWN4Q&riu=http%3a%2f%2fwww.petguide.com%2fwp-content%2fuploads%2f2013%2f02%2fbeagle-1.jpg&ehk=O5TbIG8SdlQUhyXhQaWVMkuQG4NXzpzBd6tcvIcj8xw%3d&risl=&pid=ImgRaw&r=0");
            
 
-            //add mot history for vehicle 1
-            var mot1 = svc.CreateMot(v1.Id,DateTime.Parse("2021-05-15"),"Simon Cowan","Fail",34000, "Minor fault with wiper");
-            var mot2 = svc.CreateMot(v1.Id,DateTime.Parse("2020-05-15"),"Craig Getty","Fail",68000, "Front right headlight not working");
-            var mot3 = svc.CreateMot(v1.Id,DateTime.Parse("2019-05-15"),"Euan Barlow","Pass",90000, "Low tyre pressure"); 
+            //add medical history for dog 1
+            var medicalHistory1 = svc.CreateMedicalHistory(d1.Id,DateTime.Parse("2021-05-15"),"Euan Barlow","Cured","Broken leg");
+            var medicalHistory2 = svc.CreateMedicalHistory(d1.Id,DateTime.Parse("2020-05-15"),"Euan Barlow","Ongoing","Arthritis");
+            var medicalHistory3 = svc.CreateMedicalHistory(d1.Id,DateTime.Parse("2019-05-15"),"Euan Barlow","Cured","Surgery on heart"); 
 
-            //add mot history for vehicle 2
-            var mot4 = svc.CreateMot(v2.Id,DateTime.Parse("2021-05-15"),"Andrew Johnston","Pass",40000, "Headlights out");
+            //add medical history for dog 2
+            var mot4 = svc.CreateMedicalHistory(d2.Id,DateTime.Parse("2021-05-15"),"Euan Barlow","Cured","Got neutered, required stitches");
 
-            //add mot history for vehicle 3
-            var mot5 = svc.CreateMot(v3.Id,DateTime.Parse("2021-05-15"),"Adam Trouton","Pass",56000, "Need new timing belt");
+            //add medical history for dog 3
+            var mot5 = svc.CreateMedicalHistory(d3.Id,DateTime.Parse("2021-05-15"),"Adam Crozier","Cured","Broken leg");
 
             //add users
             var u1 = svc.Register("Guest", "guest@sms.com", "guest", Role.guest);

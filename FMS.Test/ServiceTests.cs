@@ -8,193 +8,185 @@ namespace FMS.Test
 
     public class ServiceTests
     {
-        private readonly IFleetService svc;
+        private readonly IRehomingService svc;
 
 
         public ServiceTests()
         {
             // general arrangement
-            svc = new FleetServiceDb();
+            svc = new RehomingServiceDb();
           
             // ensure data source is empty before each test
             svc.Initialise();
         }
 
-        // ========================== Vehicle Fleet Tests =========================
+        // ========================== Dog Management System Tests =========================
         [Fact] 
-        public void Vehicle_AddVehicle_WhenDuplicateReg_ShouldReturnNull()
+        public void Dog_AddDog_WhenDuplicateChip_ShouldReturnNull()
         {
             // act  
-            var v1 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,DateTime.Parse("2022-05-06"),"");
-            // this is a duplicate as the registration is same as previous vehicle
-            var v2 = svc.AddVehicle("Bentley","Bentayga",2018,"LM41 GTL","Diesel","Hatchback","Automatic",1800,5,DateTime.Parse("2022-05-06"),"");
+            var v1 = svc.AddDog("Sprocker Spaniel","Margo","PG56 BTQ",DateTime.Parse("2021-11-25"),
+                                     "https://i.pinimg.com/originals/f1/c3/53/f1c353c73e44e1b5087dd56298438089.jpg");
+            // this is a duplicate as the chip number is same as previous dog
+            var v2 = svc.AddDog("Sprocker Spaniel","Margo","PG56 BTQ",DateTime.Parse("2021-11-25"),
+                                     "https://i.pinimg.com/originals/f1/c3/53/f1c353c73e44e1b5087dd56298438089.jpg");
             
             // assert
-            Assert.NotNull(v1); // this vehicle should have been added correctly(if test returns notnull, vehicle added because car not found with that reg)
-            Assert.Null(v2); // this vehicle should NOT have been added        
+            Assert.NotNull(v1); // this dog should have been added correctly(if test returns notnull,
+                                // dog added because dog not found with that chip number).
+            Assert.Null(v2); // This dog should NOT have been added        
         }
 
         [Fact]
-        public void Vehicle_UpdateVehicle_ThatExists_ShouldSetAllProperties()
+        public void Dog_UpdateDog_ThatExists_ShouldSetAllProperties()
         {
-            // arrange - create test vehicle
-            var v = svc.AddVehicle("Volkswagon", "Golf",2017,"AFZ4440","Petrol","Hatchback","Fumes",2000,5,DateTime.Parse("2010-05-08"),"");
+            // arrange - create test dog
+            var v = svc.AddDog("Sprocker Spaniel","Margo","PG56 BTQ",DateTime.Parse("2021-11-25"),
+                                     "https://i.pinimg.com/originals/f1/c3/53/f1c353c73e44e1b5087dd56298438089.jpg");
                         
-            // act - create a copy and update any vehicle properties (except Id) 
-            var u = new Vehicle
+            // act - create a copy and update any dog properties (except Id) 
+            var u = new Dog
             {
                 Id = v.Id,
-                Make = "Volkswagon",
-                Model = "Golf",
-                Year = 2017,
-                Registration = "AFZ4440",
-                FuelType = "Petrol",
-                BodyType = "Hatchback",
-                TransmissionType = "Automatic",
-                CC = 2000,
-                No0fDoors = 5,
-                MotDue = DateTime.Parse("2010-05-08"),
+                Name = "Margo",
+                Breed = "Sprocker Spaniel",
+                ChipNumber = "PG56 BRS",
+                DOB = DateTime.Parse("2010-05-08"),
                 PhotoUrl = ""
             };
-            // save updated vehicle
-            svc.UpdateVehicle(u); 
+            // save updated dog
+            svc.UpdateDog(u); 
 
-            // reload updated vehicle from database into vu
-            var vu = svc.GetVehicle(v.Id);
+            // reload updated dog from database into vu
+            var vu = svc.GetDog(v.Id);
 
             // assert
             Assert.NotNull(u);           
 
             // now assert that the properties were set properly           
-            Assert.Equal(u.Make, vu.Make);
-            Assert.Equal(u.Model, vu.Model);
-            Assert.Equal(u.Year, vu.Year);
-            Assert.Equal(u.Registration, vu.Registration);
-            Assert.Equal(u.FuelType, vu.FuelType);
-            Assert.Equal(u.BodyType, vu.BodyType);
-            Assert.Equal(u.TransmissionType, vu.TransmissionType);
-            Assert.Equal(u.FuelType, vu.FuelType);
-            Assert.Equal(u.CC, vu.CC);
-            Assert.Equal(u.No0fDoors, vu.No0fDoors);
-            Assert.Equal(u.MotDue, vu.MotDue);
+            Assert.Equal(u.Name, vu.Name);
+            Assert.Equal(u.Breed, vu.Breed);
+            Assert.Equal(u.ChipNumber, vu.ChipNumber);
+            Assert.Equal(u.DOB, vu.DOB);
             Assert.Equal(u.PhotoUrl, vu.PhotoUrl);
             
         }
 
         [Fact] 
-        public void Vehicle_GetAllVehicles_WhenNone_ShouldReturn0()
+        public void Dog_GetAllDogs_WhenNone_ShouldReturn0()
         {   
-            //There is no arrange step here as we are not adding any vehicles to the database
+            //There is no arrange step here as we are not adding any dogs to the database
             // act 
-            var vehicles = svc.GetVehicles();
-            var count = vehicles.Count;
+            var dogs = svc.GetDogs();
+            var count = dogs.Count;
 
             // assert
             Assert.Equal(0, count);
         }
 
         [Fact]
-        public void Vehicle_GetVehicles_When3Exist_ShouldReturn2()
+        public void Dog_GetDogs_When3Exist_ShouldReturn2()
         {
-            // arrange - add 3 different vehicles to database
-            var v1 = svc.AddVehicle("Volkswagon", "Golf",2017,"AFZ4440","Petrol","Hatchback","Manual",2000,5,DateTime.Parse("2022-05-08"),"");
-            var v2 = svc.AddVehicle("Ford", "Fiesta",2013,"BJZ4340","Diesel","Hatchback","Automatic",2000,5,DateTime.Parse("2022-05-08"),"");
-            var v3 = svc.AddVehicle("Renault", "Megane",2017,"GHX3340","Petrol","Hatchback","Automatic",1800,3,DateTime.Parse("2022-05-08"),"");
+            // arrange - add 3 different dogs to database
+            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",DateTime.Parse("2020-06-13"),
+                                    "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
+            var v2 = svc.AddDog("Cocker Spaniel","Freddie","LG67 PUT",DateTime.Parse("2022-05-02"),
+                                     "https://www.pdsa.org.uk/media/8264/cocker-spaniel-outdoors-gallery-1-min.jpg?anchor=center&mode=crop&quality=100&height=500&bgcolor=fff&rnd=132204646460000000");
+            var v3 = svc.AddDog("Sprocker Spaniel","Margo","PG56 BTQ",DateTime.Parse("2021-11-25"),
+                                     "https://i.pinimg.com/originals/f1/c3/53/f1c353c73e44e1b5087dd56298438089.jpg");
             // act
-            var vehicles = svc.GetVehicles();
-            var count = vehicles.Count;
+            var dogs = svc.GetDogs();
+            var count = dogs.Count;
 
             // assert
             Assert.Equal(3, count);
         }
 
          [Fact]
-        public void Vehicle_DeleteVehicle_ThatExists_ShouldReturnTrue()
+        public void Dog_DeleteDog_ThatExists_ShouldReturnTrue()
         {
             // act - add the vehicle to the database then delete the vehicle from the database
-            var v1 = svc.AddVehicle("Volkswagon", "Golf",2017,"AFZ4440","Petrol","Hatchback","Manual",2000,5,DateTime.Parse("2022-05-08"),"");
-            var deleted = svc.DeleteVehicle(v1.Id);
+            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",DateTime.Parse("2020-06-13"),
+                                    "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
+            var deleted = svc.DeleteDog(v1.Id);
 
-            // try to retrieve deleted vehicle
-            var v = svc.GetVehicle(v1.Id);
+            // try to retrieve deleted dog
+            var v = svc.GetDog(v1.Id);
 
             // assert
-            Assert.True(deleted); // delete vehicle should return true
-            Assert.Null(v);      // v should be null as the vehicle cannot be retrieved
+            Assert.True(deleted); // delete dog should return true
+            Assert.Null(v);      // v should be null as the dog cannot be retrieved
         }
 
          [Fact]
-        public void Vehicle_DeleteVehicle_ThatDoesntExist_ShouldReturnFalse()
+        public void Dog_DeleteDog_ThatDoesntExist_ShouldReturnFalse()
         {
             // act 	
-            var deleted = svc.DeleteVehicle(0);
+            var deleted = svc.DeleteDog(0);
 
             // assert
             Assert.False(deleted);
         }  
 
          [Fact]
-        public void Vehicle_UpdateVehicle_ThatExistsWithNewTransmissionType_ShouldWork()
+        public void Dog_UpdateDog_ThatExistsWithNewChipNumber_ShouldWork()
         {
             // arrange
-            var v1 = svc.AddVehicle("Volkswagon", "Golf",2017,"AFZ4440","Petrol","Hatchback","Manual",2000,3,DateTime.Parse("2022-05-08"),"");
+            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",DateTime.Parse("2020-06-13"),
+                                    "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
 
             // act
-            // create a copy of added vehicle and change trasnmission type to automatic
-            var v = new Vehicle 
+            // create a copy of added dog and change chip number
+            var v = new Dog
             {   
                 Id = v1.Id,
-                Make = v1.Make,
-                Model = v1.Model,
-                Year = v1.Year,
-                Registration = v1.Registration,
-                FuelType = v1.FuelType,
-                BodyType = v1.BodyType,
-                TransmissionType = v1.TransmissionType = "Automatic", 
-                CC = v1.CC,
-                No0fDoors = v1.No0fDoors,
-                MotDue = v1.MotDue,
+                Breed = v1.Breed,
+                Name = v1.Name,
+                ChipNumber = v1.ChipNumber,
+                DOB = v1.DOB,
                 PhotoUrl = v1.PhotoUrl              
             };
-            // update this vehicle
-            svc.UpdateVehicle(v);
+            // update this dog
+            svc.UpdateDog(v);
 
-            // now load the vehicle and verify tarsnmission type was updated
-            var su = svc.GetVehicle(v.Id);
+            // now load the dog and verify chip number was updated
+            var su = svc.GetDog(v.Id);
 
             // assert
-            Assert.Equal(v.TransmissionType, su.TransmissionType);
+            Assert.Equal(v.ChipNumber, su.ChipNumber);
         }
 
-        // =============== MOT Ticket Tests ================
+        // =============== Medical History Note Tests ================
         
         [Fact] 
-        public void Ticket_CreateMotTicket_ForExistingVehicle_ShouldBeCreated()
+        public void Notes_CreateMedicalHistoryNote_ForExistingDog_ShouldBeCreated()
         {
             // arrange
-            var v1 = svc.AddVehicle("Volkswagon", "Golf",2017,"AFZ4440","Petrol","Hatchback","Manual",2000,3,DateTime.Parse("2022-05-08"),"");
+            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",DateTime.Parse("2020-06-13"),
+                                    "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
          
             // act
-            var t = svc.CreateMot(v1.Id, DateTime.Parse("2022-06-15"),"Margaret Crozier","Pass",38000,"Top up oil");
+            var t = svc.CreateMedicalHistory(v1.Id,DateTime.Parse("2021-05-15"),"Euan Barlow","Cured","Broken leg");
            
             // assert
-            Assert.NotNull(t); //t should return "not null" because an MOT ticket has been successfully created
-            Assert.Equal(v1.Id, t.VehicleId); 
+            Assert.NotNull(t); //t should return "not null" because an Medical History Note has been successfully created
+            Assert.Equal(v1.Id, t.DogId); 
         }
        
        
         [Fact] 
-        public void Ticket_DeleteMotTicket_WhenExists_ShouldReturnTrue()
+        public void Notes_DeleteMedicalHistoryNote_WhenExists_ShouldReturnTrue()
         {
             // arrange
-            var v1 = svc.AddVehicle("Volkswagon", "Golf",2017,"AFZ4440","Petrol","Hatchback","Manual",2000,3,DateTime.Parse("2022-05-08"),"");
-            var t = svc.CreateMot(v1.Id, DateTime.Parse("2022-06-15"),"Margaret Crozier","Pass",38000,"Top up oil");
+            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",DateTime.Parse("2020-06-13"),
+                                    "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
+            var t = svc.CreateMedicalHistory(v1.Id,DateTime.Parse("2021-05-15"),"Euan Barlow","Cured","Broken leg");
 
             // act
-            var deleted = svc.DeleteMotTicket(t.Id);     // delete ticket    
+            var deleted = svc.DeleteMedicalHistoryNote(t.Id);     // delete medical history note   
             
             // assert
-            Assert.True(deleted);                    // ticket should be deleted
+            Assert.True(deleted);                    // medical history note should be deleted
         }    
 
         

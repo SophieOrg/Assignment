@@ -13,11 +13,11 @@ namespace FMS.Web.Controllers
 {   
     public class UserController : BaseController
     {
-        private readonly IFleetService _svc;
+        private readonly IRehomingService _svc;
 
         public UserController()
         {
-            _svc = new FleetServiceDb();
+            _svc = new RehomingServiceDb();
         }
 
         public IActionResult Login()

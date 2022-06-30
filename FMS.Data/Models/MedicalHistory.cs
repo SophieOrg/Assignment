@@ -4,11 +4,11 @@ using System.Text.Json.Serialization;
 
 namespace FMS.Data.Models
 {   
-    public class Mot
+    public class MedicalHistory
     {
         public int Id { get; set; }
         
-        // suitable mot attributes / relationships are detailed here
+        // suitable medical history attributes / relationships are detailed here
         [Required]
         [StringLength(300, MinimumLength = 5)]
         public string Report {get;set;}
@@ -18,16 +18,14 @@ namespace FMS.Data.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime On {get; set;}
 
-        public string MotTester {get;set;}
-
-        public int Mileage {get; set;}
+        public string Vet {get;set;}
         
         public string Status {get;set;}
 
         //MOT owned by a user
-        public int VehicleId {get;set;} //foreign key
+        public int DogId {get;set;} //foreign key
         
-        public Vehicle Vehicle {get; set;}  //navigation property
+        public Dog Dog {get; set;}  //navigation property
 
 
     }
