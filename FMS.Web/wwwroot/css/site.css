@@ -128,3 +128,16 @@ button:hover {
   border: 2px solid #fd7250;
   background: #fd7250;
 }
+
+.default {
+  border-color: #1a023f;
+  color: black;
+}
+
+.default:hover {
+  background: #aadfde;
+}
+
+table {
+  margin-left: 25px;
+}
