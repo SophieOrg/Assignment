@@ -1,14 +1,56 @@
-﻿<div class="text-center">
-    <h1>PAWFECT HOMES</h1> 
-</div>
+﻿<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image slider using HTML and CSS</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body onload="slider()">
+    <div class="banner">
+        <div class="slider">
+            <img src="https://www.dogingtonpost.com/wp-content/uploads/2018/03/Jones-Select_p.4-5-nutritional-blends.jpg" id="slideImg">
+        </div>
+        <div class="overlay">
 
-<div class="callout callout-info text-center">
-    <h1>Home Page</h1>
-    <p>Welcome to our Rehoming Centre Management Service !!</p>
-    <p class="text-center"> Today is <b> @DateTime.Now.ToLongDateString() </b> </p>
-</div>
-<div class="text-center">
-    @ViewBag.Message <b>@ViewBag.LongTime</b>
-</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>WELCOME</h1>
+        <h3>fhhfdrhdhfvdfhbvd</h3>
+    </div>
+
+    <div>
+        <button type ="button">WATCH MORE</button>
+        <button type ="button" class="btn-2">SUBSCRIBE</button>
+    </div>
+    
+    <script>
+        var slideImg = document.getElementById("slideImg");
+        var images = new Array(
+            "https://dogtime.com/assets/uploads/2019/06/dog-games-1-1.jpg",
+            "https://www.petbasics.com/sites/g/files/adhwdz411/files/2020-11/golden-retriever-playing-with-ball-in-grass.jpg",
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/happy-and-cheerful-dog-playing-fetch-with-toy-bone-royalty-free-image-1590068781.jpg?crop=1.00xw:0.748xh;0,0.115xh&resize=1200:*"
+        );
+
+        var len = images.length;
+        var i = 0;
+
+        function slider(){
+            if(i > len-1){
+                i = 0;
+            }
+            slideImg.src = images[i];
+            i++;
+            setTimeout('slider()',3000);
+        }
+    </script>
+
+
+
+</body>
+</html> 
+
+
+
 
 
