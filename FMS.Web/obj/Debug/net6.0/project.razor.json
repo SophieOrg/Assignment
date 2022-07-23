@@ -16409,6 +16409,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Subscription\\Index.cshtml",
+      "TargetPath": "Views\\Subscription\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Dog\\_Tickets.cshtml",
       "TargetPath": "Views\\Dog\\_Tickets.cshtml",
       "FileKind": "mvc"
