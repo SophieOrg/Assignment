@@ -1,33 +1,54 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Image slider using HTML and CSS</title>
+<title>Contact Us Form</title>
 <link rel="stylesheet" href="site.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
 <body>
     <section id="contact">
         <div class="container">
-            <h1>Get In Touch</h1>
+            <h1 class="contact-us">Get In Touch</h1>
             <div class="row">
             <div class="col-md-6">
                 <form class="contact-form">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Your Name">
+                        <input type="text" class="form-control mt-2" placeholder="Your Name">
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control" placeholder="Phone Number">
+                        <input type="number" class="form-control mt-2" placeholder="Phone Number">
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email Id">
+                        <input type="email" class="form-control mt-2" placeholder="Email Address">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                        <textarea class="form-control mt-2" rows="4" placeholder="Your Message"></textarea>
                     </div>
+                        <button type="submit" class="btn btn-primary mt-2">Send Message</button>
                 </form>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 contact-form">
+                <div class="follow"><b>Address: </b><i class='fas fa-map-marker-alt'></i> 123 Sunnyville Lane, Northern Ireland</div>
+                <div class="follow"><b>Phone: </b><i class="fa fa-phone"></i> 02894735779</div>
+                <div class="follow"><b>Email: </b>pawfecthomes22@gmail.com</div>
+                <div class="follow"><b>Socials: </b>
+                    <a href="https://twitter.com">
+                        <ion-icon name ="logo-twitter"></ion-icon>
+                    </a>
 
+                    <a href="https://instagram.com/accounts/login/">
+                        <ion-icon name ="logo-instagram"></ion-icon>
+                    </a>
+
+                    <a href="https://facebook.com">
+                        <ion-icon name ="logo-facebook"></ion-icon>
+                    </a>
+                    
+                    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+                </div>
             </div>
         </div>
 </body>

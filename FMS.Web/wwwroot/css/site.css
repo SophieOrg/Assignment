@@ -260,3 +260,92 @@ pricing.plan__actions{
   justify-content:center;
   padding: 10px;
 }
+
+/*----------Contact Us-------------*/
+#contact{
+  background: #efefef;
+  padding-top:40px;
+  padding-bottom: 40px;
+  color: #777;
+}
+
+.contact-us{
+  text-align: center;
+}
+
+.contact-form{
+  padding: 15px;
+}
+
+.form-control{
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+::placeholder{
+  color: #999 !important;
+}
+
+.follow{
+  background: #fff;
+  padding: 10px;
+  margin: 15px;
+}
+
+/*-------Success Stories--------*/
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat",sans-serif;
+}
+
+.success-stories{
+  padding: 40px 0;
+  background: #f1f1f1;
+  color: #434343;
+  text-align: center;
+}
+
+.inner{
+  max-width:1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.border{
+  width:160px;
+  height: 5px;
+  background: #6ab04c;
+  margin: 26px auto;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col{
+  flex: 33.33%;
+  max-width: 33.33%;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.success-stories{
+  background: #fff;
+  padding: 30px;
+}
+
+.success-stories img{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.name{
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
