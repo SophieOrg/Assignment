@@ -238,8 +238,8 @@ pricing.plan__actions{
 
 .pricing-plan__button{
   display: inline-block;
-  margin:15px auto;
-  padding: 8px 20 px;
+  margin:15px 75px;
+  padding: 8px 20px;
   text-decoration: none;
   color: #009578;
   background: #ffff;
