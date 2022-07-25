@@ -9,19 +9,19 @@ using FMS.Web.Models;
 namespace FMS.Web.Controllers
 {
     [Authorize]
-    public class SubscriptionController : BaseController
+    public class SponsorshipsController : BaseController
     {
             // provide suitable controller actions
             private IRehomingService svc;
             
             //dependency injection is used here
-            public SubscriptionController(IRehomingService ss)
+            public SponsorshipsController(IRehomingService ss)
             {
                 svc = ss;
             }
 
             
-            // GET /Subscription options
+            // GET /Sponsorship options
             public IActionResult Index()
             {   
                 
