@@ -49,6 +49,13 @@ body {
   border-left-color: silver;
 }
 
+.truncate {
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 *{
     margin: 0;
     padding: 0;

@@ -16339,6 +16339,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\Create.cshtml",
+      "TargetPath": "Views\\Ticket\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Dog\\Edit.cshtml",
       "TargetPath": "Views\\Dog\\Edit.cshtml",
       "FileKind": "mvc"
@@ -16349,8 +16354,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\Index.cshtml",
+      "TargetPath": "Views\\Ticket\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\Details.cshtml",
+      "TargetPath": "Views\\Ticket\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16414,13 +16429,33 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Home\\Quote copy.cshtml",
+      "TargetPath": "Views\\Home\\Quote copy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\User\\Login.cshtml",
       "TargetPath": "Views\\User\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\_CloseModal.cshtml",
+      "TargetPath": "Views\\Ticket\\_CloseModal.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\Details-form.cshtml",
+      "TargetPath": "Views\\Ticket\\Details-form.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Dog\\_Tickets.cshtml",
       "TargetPath": "Views\\Dog\\_Tickets.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Home\\Quote.cshtml",
+      "TargetPath": "Views\\Home\\Quote.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16436,6 +16471,11 @@
     {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Shared\\_BreadCrumbs.cshtml",
       "TargetPath": "Views\\Shared\\_BreadCrumbs.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Ticket\\_Search.cshtml",
+      "TargetPath": "Views\\Ticket\\_Search.cshtml",
       "FileKind": "mvc"
     },
     {

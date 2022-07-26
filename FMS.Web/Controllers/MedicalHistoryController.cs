@@ -20,7 +20,7 @@ namespace FMS.Web.Controllers
         } 
 
         // GET /ticket/index
-        public IActionResult Index(MedicalHistorySearchViewModel m)
+        public IActionResult Index(TicketSearchViewModel m)
         {                  
             // set the viewmodel Tickets property by calling service method 
             // using the range and query values from the viewmodel 
@@ -32,7 +32,7 @@ namespace FMS.Web.Controllers
         // GET/ticket/{id}
         public IActionResult Details(int id)
         {
-            var ticket = svc.GetTicket(id);
+            var ticket = svc.GetMedicalHistory(id);
             if (ticket == null)
             {
                 Alert("Ticket Not Found", AlertType.warning);  
@@ -45,7 +45,7 @@ namespace FMS.Web.Controllers
         // POST /ticket/close/{id}
         [HttpPost]
         [Authorize(Roles="admin,manager")]
-        public IActionResult Close([Bind("Id, Resolution")] Ticket t)
+        public IActionResult Close([Bind("Id, Resolution")] MedicalHistory t)
         {
             // close ticket via service
             var ticket = svc.CloseTicket(t.Id, t.Resolution);
@@ -66,10 +66,10 @@ namespace FMS.Web.Controllers
         [Authorize(Roles="admin,manager")]
         public IActionResult Create()
         {
-            var students = svc.GetStudents();
+            var students = svc.GetDogs();
             // populate viewmodel select list property
             var tvm = new TicketCreateViewModel {
-                Students = new SelectList(students,"Id","Name") 
+                Dogs = new SelectList(students,"Id","Name") 
             };
             
             // render blank form
@@ -83,7 +83,7 @@ namespace FMS.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                svc.CreateTicket(tvm.StudentId, tvm.Issue);
+                svc.CreateMedicalHistory(tvm.DogId,tvm.On,tvm.Vet,tvm.Status,tvm.Report);
      
                 Alert($"Ticket Created", AlertType.info);  
                 return RedirectToAction(nameof(Index));

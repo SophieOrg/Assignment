@@ -1,6 +1,6 @@
 using FMS.Data.Models;
 
-namespace SMS.Web.Models
+namespace FMS.Web.Models
 {   
     public class TicketSearchViewModel
     {
