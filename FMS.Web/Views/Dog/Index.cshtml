@@ -7,44 +7,12 @@
 
 <h3 class="mb-3">I need a home...</h3>
 
-<input type="text" id="myInput" onkeyup="searchTable()" placeholder="Search By Any Field..">
-
 <a asp-condition=@User.HasOneOfRoles("manager,admin") class="btn btn-sm btn-primary my-3" asp-action="Create" >
     <i class="bi bi-plus"></i> Add New Dog
 </a>
 
 <table id="myTable" data-toggle="table" class="table table-sm table-bordered table-hover">
     <thead>
-        <script>
-            function searchTable()
-            {
-                var input, filter, found, table, tr, td, i, j;
-                input = document.getElementById("myInput");
-                filter = input.value.toUpperCase();
-                table = document.getElementById("myTable");
-                tr = table.getElementsByTagName("tr");
-                for (i = 0; i < tr.length; i++)
-                {
-                    td = tr[i].getElementsByTagName("td");
-                    for (j = 0; j < td.length; j++)
-                    {
-                        if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1)
-                        {
-                            found = true;
-                        }
-                    }
-                    if (found)
-                    {
-                        tr[i].style.display = "";
-                        found = false;
-                    } else
-                    {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        </script>
-
         <tr>
             <th>Breed</th>
             <th>Photo</th>

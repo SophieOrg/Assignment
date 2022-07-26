@@ -11,7 +11,7 @@ namespace FMS.Data.Services
         //Initialise the repository (database)
         void Initialise();
 
-        // ------------- Vehicle Management -------------------   
+        // ------------- Dog Management -------------------   
         IList<Dog> GetDogs(); 
 
         Dog GetDog(int id);
@@ -32,11 +32,16 @@ namespace FMS.Data.Services
         User Register(string name, string email, string password, Role role);
         User GetUserByEmail(string email);
 
-        // ------------- MOT Management -------------------
+        // ------------- Medical History Management -------------------
 
         MedicalHistory CreateMedicalHistory(int vehicleId,DateTime on, string vet,string status,string report);
         MedicalHistory GetMedicalHistory(int id);
         bool DeleteMedicalHistoryNote(int id);
+        MedicalHistory CloseTicket(int id, string resolution);
+
+        IList<MedicalHistory> GetAllTickets();
+        IList<MedicalHistory> GetOpenTickets();        
+        IList<MedicalHistory> SearchTickets(TicketRange range, string query);
     
     }
     

@@ -36,6 +36,12 @@ namespace FMS.Data.Services
 
             //add medical history for dog 3
             var mot5 = svc.CreateMedicalHistory(d3.Id,DateTime.Parse("2021-05-15"),"Adam Crozier","Cured","Broken leg");
+            
+             // close homers first ticket 
+            svc.CloseTicket(d1.Id, "Password has been reset to your NI number. Please change on login.");
+
+             // close barts last ticket 
+            svc.CloseTicket(d2.Id, "Please reset your router. That should solve the issue");
 
             //add users
             var u1 = svc.Register("Guest", "guest@sms.com", "guest", Role.guest);

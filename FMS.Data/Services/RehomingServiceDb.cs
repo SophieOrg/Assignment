@@ -173,6 +173,60 @@ namespace FMS.Data.Services
 
         }
 
+         // Retrieve all tickets and the student associated with the ticket
+        public IList<MedicalHistory> GetAllTickets()
+        {
+            return db.MedicalHistorys
+                     .Include(t => t.Dog)
+                     .ToList();
+        }
+
+        // Retrieve all open tickets (Active)
+        public IList<MedicalHistory> GetOpenTickets()
+        {
+            // return open tickets with associated students
+            return db.MedicalHistorys
+                     .Include(t => t.Dog) 
+                     .Where(t => t.Active)
+                     .ToList();
+        } 
+
+        // perform a search of the tickets based on a query and
+        // an active range 'ALL', 'OPEN', 'CLOSED'
+        public IList<MedicalHistory> SearchTickets(TicketRange range, string query) 
+        {
+            // ensure query is not null    
+            query = query == null ? "" : query.ToLower();
+
+            // search ticket issue, active status and student name
+            var results = db.MedicalHistorys
+                            .Include(t => t.Dog)
+                            .Where(t => (t.Report.ToLower().Contains(query) || 
+                                         t.Dog.Name.ToLower().Contains(query)
+                                        ) &&
+                                        (range == TicketRange.OPEN && t.Active ||
+                                         range == TicketRange.CLOSED && !t.Active ||
+                                         range == TicketRange.ALL
+                                        ) 
+                            ).ToList();
+            return  results;  
+        }
+
+         public MedicalHistory CloseTicket(int id, string resolution)
+        {
+            var ticket = GetMedicalHistory(id);
+            // if ticket does not exist or is already closed return null
+            if (ticket == null || !ticket.Active) return null;
+            
+            // ticket exists and is active so close
+            ticket.Active = false;
+            ticket.Resolution = resolution;
+            ticket.ResolvedOn = DateTime.Now;
+           
+            db.SaveChanges(); // write to database
+            return ticket;
+        }
+
 
         // ==================== User Authentication/Registration Management ==================
         public User Authenticate(string email, string password)
