@@ -12,9 +12,9 @@
     <thead>
       <tr>
          <th>Id</th>
-         <th>Student</th>        
+         <th>Dog</th>        
          <th>Created</th> 
-         <th>Issue</th> 
+         <th>Report</th> 
          <th>Active</th>   
          <th>Actions</th>
       </tr>
@@ -23,9 +23,9 @@
       @foreach(var t in Model.Tickets) {
           <tr>
             <td>@t.Id</td>
-            <td>@t.Student.Name</td>
+            <td>@t.Dog.Name</td>
             <td>@t.CreatedOn.ToShortDateString()</td>
-            <td>@t.Issue.Substring(0, t.Issue.Length < 20 ? t.Issue.Length : 20) ...</td>
+            <td>@t.Report.Substring(0, t.Report.Length < 20 ? t.Report.Length : 20) ...</td>
             <td>
                <i asp-condition="@t.Active"    class="bi bi-toggle-on"></i>
                <i asp-condition="@(!t.Active)" class="bi bi-toggle-off"></i>  

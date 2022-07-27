@@ -75,6 +75,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdW90ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/MedicalHistory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/MedicalHistory/Details-form.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcRGV0YWlscy1mb3JtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/MedicalHistory/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/MedicalHistory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/MedicalHistory/_CloseModal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcX0Nsb3NlTW9kYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/MedicalHistory/_Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcX1NlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -101,30 +125,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Sponsorships/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BvbnNvcnNoaXBzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Ticket/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Ticket/Details-form.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XERldGFpbHMtZm9ybS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Ticket/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Ticket/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Ticket/_CloseModal.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XF9DbG9zZU1vZGFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Ticket/_Search.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XF9TZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/User/Login.cshtml]
