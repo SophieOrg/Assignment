@@ -27,21 +27,21 @@ namespace FMS.Data.Services
            
 
             //add medical history for dog 1
-            var medicalHistory1 = svc.CreateMedicalHistory(d1.Id,DateTime.Parse("2021-05-15"),"Euan Barlow","Cured","Broken leg");
-            var medicalHistory2 = svc.CreateMedicalHistory(d1.Id,DateTime.Parse("2020-05-15"),"Euan Barlow","Ongoing","Arthritis");
-            var medicalHistory3 = svc.CreateMedicalHistory(d1.Id,DateTime.Parse("2019-05-15"),"Euan Barlow","Cured","Surgery on heart"); 
+            var medicalHistory1 = svc.CreateMedicalHistory(d1.Id,"Broken leg");
+            var medicalHistory2 = svc.CreateMedicalHistory(d1.Id,"Arthritis");
+            var medicalHistory3 = svc.CreateMedicalHistory(d1.Id,"Surgery on heart"); 
 
             //add medical history for dog 2
-            var mot4 = svc.CreateMedicalHistory(d2.Id,DateTime.Parse("2021-05-15"),"Euan Barlow","Cured","Got neutered, required stitches");
+            var mot4 = svc.CreateMedicalHistory(d2.Id,"Got neutered, required stitches");
 
             //add medical history for dog 3
-            var mot5 = svc.CreateMedicalHistory(d3.Id,DateTime.Parse("2021-05-15"),"Adam Crozier","Cured","Broken leg");
+            var mot5 = svc.CreateMedicalHistory(d3.Id,"Broken leg");
             
              // close homers first ticket 
-            svc.CloseTicket(d1.Id, "Password has been reset to your NI number. Please change on login.");
+            svc.CloseMedicalHistoryNote(d1.Id, "Password has been reset to your NI number. Please change on login.");
 
              // close barts last ticket 
-            svc.CloseTicket(d2.Id, "Please reset your router. That should solve the issue");
+            svc.CloseMedicalHistoryNote(d2.Id, "Please reset your router. That should solve the issue");
 
             //add users
             var u1 = svc.Register("Guest", "guest@sms.com", "guest", Role.guest);

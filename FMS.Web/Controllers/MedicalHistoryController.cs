@@ -24,7 +24,7 @@ namespace FMS.Web.Controllers
         {                  
             // set the viewmodel Tickets property by calling service method 
             // using the range and query values from the viewmodel 
-            m.Tickets = svc.SearchTickets(m.Range, m.Query);
+            m.Tickets = svc.SearchMedicalHistoryNotes(m.Range, m.Query);
 
             return View(m);
         }       
@@ -48,7 +48,7 @@ namespace FMS.Web.Controllers
         public IActionResult Close([Bind("Id, Resolution")] MedicalHistory t)
         {
             // close ticket via service
-            var ticket = svc.CloseTicket(t.Id, t.Resolution);
+            var ticket = svc.CloseMedicalHistoryNote(t.Id, t.Resolution);
             if (ticket == null)
             {
                 Alert("Ticket Not Found", AlertType.warning);                               
@@ -66,10 +66,10 @@ namespace FMS.Web.Controllers
         [Authorize(Roles="admin,manager")]
         public IActionResult Create()
         {
-            var students = svc.GetDogs();
+            var dogs = svc.GetDogs();
             // populate viewmodel select list property
             var tvm = new TicketCreateViewModel {
-                Dogs = new SelectList(students,"Id","Name") 
+                Dogs = new SelectList(dogs,"Id","Name") 
             };
             
             // render blank form
@@ -83,7 +83,7 @@ namespace FMS.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                svc.CreateMedicalHistory(tvm.DogId,tvm.On,tvm.Vet,tvm.Status,tvm.Report);
+                svc.CreateMedicalHistory(tvm.DogId,tvm.Report);
      
                 Alert($"Ticket Created", AlertType.info);  
                 return RedirectToAction(nameof(Index));

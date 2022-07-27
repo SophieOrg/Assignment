@@ -128,7 +128,7 @@ namespace FMS.Data.Services
 
          
         // ==================== Medical History Note Management ==================
-        public MedicalHistory CreateMedicalHistory(int dogId,DateTime on, string vet,string status, string report)
+        public MedicalHistory CreateMedicalHistory(int dogId, string report)
         {   
             var dog = GetDog(dogId);
             if(dog == null) return null;
@@ -137,9 +137,8 @@ namespace FMS.Data.Services
             {
                 //Id created by database
                 DogId = dogId,
-                On = on,
-                Vet = vet,
-                Status = status,
+                CreatedOn = DateTime.Now,
+                Active = true,
                 Report = report,
 
             };
@@ -162,11 +161,11 @@ namespace FMS.Data.Services
         public bool DeleteMedicalHistoryNote(int id)
         {   
             //find Medical History Note
-            var mot = GetMedicalHistory(id);
+            var medNote = GetMedicalHistory(id);
             if(DeleteMedicalHistoryNote == null) return false;
 
             //remove Medical History Note
-            var result = db.MedicalHistorys.Remove(mot);
+            var result = db.MedicalHistorys.Remove(medNote);
 
             db.SaveChanges();
             return true;
@@ -174,7 +173,7 @@ namespace FMS.Data.Services
         }
 
          // Retrieve all tickets and the student associated with the ticket
-        public IList<MedicalHistory> GetAllTickets()
+        public IList<MedicalHistory> GetAllMedicalHistoryNotes()
         {
             return db.MedicalHistorys
                      .Include(t => t.Dog)
@@ -182,7 +181,7 @@ namespace FMS.Data.Services
         }
 
         // Retrieve all open tickets (Active)
-        public IList<MedicalHistory> GetOpenTickets()
+        public IList<MedicalHistory> GetOpenMedicalHistoryNotes()
         {
             // return open tickets with associated students
             return db.MedicalHistorys
@@ -193,7 +192,7 @@ namespace FMS.Data.Services
 
         // perform a search of the tickets based on a query and
         // an active range 'ALL', 'OPEN', 'CLOSED'
-        public IList<MedicalHistory> SearchTickets(TicketRange range, string query) 
+        public IList<MedicalHistory> SearchMedicalHistoryNotes(TicketRange range, string query) 
         {
             // ensure query is not null    
             query = query == null ? "" : query.ToLower();
@@ -212,7 +211,7 @@ namespace FMS.Data.Services
             return  results;  
         }
 
-         public MedicalHistory CloseTicket(int id, string resolution)
+         public MedicalHistory CloseMedicalHistoryNote(int id, string resolution)
         {
             var ticket = GetMedicalHistory(id);
             // if ticket does not exist or is already closed return null

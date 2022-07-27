@@ -34,14 +34,14 @@ namespace FMS.Data.Services
 
         // ------------- Medical History Management -------------------
 
-        MedicalHistory CreateMedicalHistory(int dogId,DateTime on, string vet,string status,string report);
+        MedicalHistory CreateMedicalHistory(int dogId,string report);
         MedicalHistory GetMedicalHistory(int id);
         bool DeleteMedicalHistoryNote(int id);
-        MedicalHistory CloseTicket(int id, string resolution);
+        MedicalHistory CloseMedicalHistoryNote(int id, string resolution);
 
-        IList<MedicalHistory> GetAllTickets();
-        IList<MedicalHistory> GetOpenTickets();        
-        IList<MedicalHistory> SearchTickets(TicketRange range, string query);
+        IList<MedicalHistory> GetAllMedicalHistoryNotes();
+        IList<MedicalHistory> GetOpenMedicalHistoryNotes();        
+        IList<MedicalHistory> SearchMedicalHistoryNotes(TicketRange range, string query);
     
     }
     
