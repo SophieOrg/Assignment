@@ -388,4 +388,5 @@ pricing.plan__actions{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 25px;
 }
