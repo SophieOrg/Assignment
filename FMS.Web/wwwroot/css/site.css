@@ -144,11 +144,11 @@ button:hover {
 .standard{
   border-color: #1a023f;
   color: black;
-  background: #aadfde;
+  background: #92eadd;
 }
 
 .default:hover {
-  background: #aadfde;
+  background: #92eadd;
 }
 
 table {
@@ -373,7 +373,7 @@ pricing.plan__actions{
 
 .dogs .box-container .box{
   padding: .5rem;
-  background: #fff;
+  background: rgba(195, 237, 230, 0.495);
   border-radius: .5rem;
   border: .1rem solid rgba(0,0,0,0.2);
   box-shadow: var(--box-shadow);
