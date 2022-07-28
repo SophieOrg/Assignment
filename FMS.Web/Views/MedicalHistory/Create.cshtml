@@ -1,8 +1,8 @@
 @model TicketCreateViewModel
 
-<partial name="_Breadcrumbs" model=@(new [] { ("/", "Home"), ("/ticket", "Tickets"), ("","Create") })>
+<partial name="_Breadcrumbs" model=@(new [] { ("/", "Home"), ("/Ticket", "Tickets"), ("","Create") })>
 
-<h3 class="mt-4 mb-4">Create Ticket</h3>
+<h3 class="mt-4 mb-4">Create Medical History Note</h3>
 
 <form asp-action="Create">
 
@@ -12,7 +12,7 @@
         <label asp-for="DogId" class="form-label"></label>      
         <select asp-for="DogId" class="form-control" 
                 asp-items="@Model.Dogs"))">
-            <option>Select Student</option>
+            <option>Select Dog</option>
         </select>
         <span asp-validation-for="DogId" class="text-danger"></span>
     </div>

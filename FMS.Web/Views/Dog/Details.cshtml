@@ -30,10 +30,10 @@
 
                 <!-- navigation link to CreateTicket action, passing correct route parameter -->
                 <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-action="TicketCreate"
-                 asp-route-id="@Model.Id" class="btn btn-sm btn-primary"><i class="bi bi-bag-plus"></i> Add Medical History Note</a>          
+                 asp-route-id="@Model.Id" class="btn standard btn-sm"><i class="bi bi-bag-plus"></i> Add Medical History Note</a>          
 
                 <!-- navigation link to Details action, passing the correct route id parameter -->
-                <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-controller="Vehicle"
+                <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-controller="Dog"
                  asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary"><i
                  class="bi bi-pen"></i> Edit</a>
 

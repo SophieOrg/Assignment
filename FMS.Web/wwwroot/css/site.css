@@ -141,6 +141,12 @@ button:hover {
   color: black;
 }
 
+.standard{
+  border-color: #1a023f;
+  color: black;
+  background: #aadfde;
+}
+
 .default:hover {
   background: #aadfde;
 }
@@ -286,7 +292,6 @@ pricing.plan__actions{
 
 .form-control{
   border-radius: 0 !important;
-  border: none !important;
 }
 
 ::placeholder{
@@ -355,4 +360,32 @@ pricing.plan__actions{
   font-size: 20px;
   text-transform: uppercase;
   margin: 20px 0;
+}
+
+
+/*------Gallery of dogs------*/
+
+.dogs .box-container{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1.5rem;
+}
+
+.dogs .box-container .box{
+  padding: .5rem;
+  background: #fff;
+  border-radius: .5rem;
+  border: .1rem solid rgba(0,0,0,0.2);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  height: 250px;
+}
+
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

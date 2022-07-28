@@ -1,44 +1,37 @@
 @model IList<Dog>
 
+<style>
+        body {font-family: "Times New Roman", Georgia, Serif;}
+        h1, h2, h3, h4, h5, h6 {
+        font-family: "Playfair Display";
+        letter-spacing: 5px;
+        }
+</style>    
+
 <partial name="_BreadCrumbs" model=@(new [] {
     ("/","Home"),
     ("","Dogs")
 }) />
 
-<h3 class="mb-3">I need a home...</h3>
-
-<a asp-condition=@User.HasOneOfRoles("manager,admin") class="btn btn-sm btn-primary my-3" asp-action="Create" >
+<a asp-condition=@User.HasOneOfRoles("manager,admin") class="btn btn-sm standard my-3" asp-action="Create" >
     <i class="bi bi-plus"></i> Add New Dog
 </a>
 
-<table id="myTable" data-toggle="table" class="table table-sm table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>Breed</th>
-            <th>Photo</th>
-            <th>Name</th>
-            <th>Chip Number</th>
-            <th>Date Of Birth</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
+<section class="dogs" id="dogs" >
+    <div class="box-container">
         @foreach(var v in Model)
-        {
-            <tr>
-                <td>@v.Id</td>
-                <td>@if (v.PhotoUrl != null)
+        {  
+           <div class="box">
+                <h3>@v.Name</h3>
+                <div>
+                    @if (v.PhotoUrl != null)
                     {
-                        <img src ="@Url.Content(v.PhotoUrl)" width = "190" height = "150" alt = "Image" />
+                        <img src="@Url.Content(v.PhotoUrl)" class="center" width = "190" height = "150" alt = "Image"/>
                     }
-
-                </td>
-                <td>@v.Name</td>
-                <td>@v.ChipNumber</td>
-                <td>@v.DOB.ToShortDateString()</td>
-                
-                <td>
-                    <!-- Add View link -->
+            
+                </div>
+                <div>
+                  <!-- Add View link -->
                     <a data-bs-toggle="tooltip" data-bs-placement="top" title="view dog details" asp-controller="Dog"
                      asp-action="Details" asp-route-id=@v.Id><i class="bi bi-display"></i></a>  
                     <!-- Add edit link  -->
@@ -47,10 +40,17 @@
                     <!-- Add delete link -->
                     <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-action="Delete" 
                      asp-route-id=@v.Id><i class="bi bi-trash"></i></a>
-                </td>
-            </tr>
-        }        
-    </tbody>
-</table>
+
+                </div>
+           </div>  
+                    
+        }
+        
+    </div>
+</section>
+
+
+           
+                
 
 
