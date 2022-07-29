@@ -128,7 +128,7 @@ namespace FMS.Data.Services
 
          
         // ==================== Medical History Note Management ==================
-        public MedicalHistory CreateMedicalHistory(int dogId, string report)
+        public MedicalHistory CreateMedicalHistory(int dogId,string vet, string report)
         {   
             var dog = GetDog(dogId);
             if(dog == null) return null;

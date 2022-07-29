@@ -83,7 +83,7 @@ namespace FMS.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                svc.CreateMedicalHistory(tvm.DogId,tvm.Report);
+                svc.CreateMedicalHistory(tvm.DogId,tvm.Vet,tvm.Report);
      
                 Alert($"Ticket Created", AlertType.info);  
                 return RedirectToAction(nameof(Index));

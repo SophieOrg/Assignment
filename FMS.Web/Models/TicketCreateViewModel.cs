@@ -11,11 +11,13 @@ namespace FMS.Web.Models
         // Collecting StudentId and Issue in Form
         [Required(ErrorMessage = "Please select a Dog")]
         [Display(Name = "Select Dog")]
-        public int DogId { get; set; }
+        public int DogId { get; set;}
+
+        public string Vet {get;set;}
 
         [Required]
         [StringLength(100, MinimumLength = 5)]
-        public string Report { get; set; }
+        public string Report { get; set;}
     }
 
 }

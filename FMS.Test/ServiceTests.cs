@@ -166,7 +166,7 @@ namespace FMS.Test
                                     "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
          
             // act
-            var t = svc.CreateMedicalHistory(v1.Id,"Broken leg");
+            var t = svc.CreateMedicalHistory(v1.Id,"Ellen Barlow","Broken leg");
            
             // assert
             Assert.NotNull(t); //t should return "not null" because an Medical History Note has been successfully created
@@ -180,7 +180,7 @@ namespace FMS.Test
             // arrange
             var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",DateTime.Parse("2020-06-13"),
                                     "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
-            var t = svc.CreateMedicalHistory(v1.Id,"Broken leg");
+            var t = svc.CreateMedicalHistory(v1.Id,"Ellen Barlow","Broken leg");
 
             // act
             var deleted = svc.DeleteMedicalHistoryNote(t.Id);     // delete medical history note   

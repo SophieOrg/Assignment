@@ -70,7 +70,7 @@ namespace FMS.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var ticket = svc.CreateMedicalHistory(tvm.DogId, tvm.Report);
+                var ticket = svc.CreateMedicalHistory(tvm.DogId,tvm.Vet,tvm.Report);
                 return Ok(ticket);
             }
             

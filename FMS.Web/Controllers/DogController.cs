@@ -190,7 +190,7 @@ namespace FMS.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {                
-                    var mot = svc.CreateMedicalHistory(m.DogId,m.Report);
+                    var mot = svc.CreateMedicalHistory(m.DogId,m.Vet,m.Report);
                     Alert($"Ticket created successfully for vehicle {m.DogId}", AlertType.info);
                     return RedirectToAction(nameof(Details), new { Id = m.DogId });
                 }
