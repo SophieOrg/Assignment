@@ -44,7 +44,7 @@ namespace FMS.Data.Services
         }
         
         //Add a new dog checking chip number is unique
-        public Dog AddDog(string breed,string name,string chipNumber,DateTime dob, string photoUrl)
+        public Dog AddDog(string breed,string name,string chipNumber,DateTime dob, string information, string photoUrl)
         {
             //check if dog with chip number exists
             var exists = GetDogByChipNumber(chipNumber);
@@ -60,6 +60,7 @@ namespace FMS.Data.Services
                 Name = name,
                 ChipNumber = chipNumber,
                 DOB = dob,
+                Information = information,
                 PhotoUrl =photoUrl
             };
             
@@ -103,6 +104,7 @@ namespace FMS.Data.Services
             dog.Name = updated.Name;
             dog.ChipNumber = updated.ChipNumber;
             dog.DOB = updated.DOB;
+            dog.Information = updated.Information;
             dog.PhotoUrl = updated.PhotoUrl;
 
             db.SaveChanges();

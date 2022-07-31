@@ -28,6 +28,8 @@ namespace FMS.Data.Models
         [Required]
         public string PhotoUrl { get; set; }
 
+        public string Information {get; set;}
+
         //Relationship 1-N Medical History note
         public IList<MedicalHistory> MedicalHistorys {get; set;} = new List<MedicalHistory>();
 

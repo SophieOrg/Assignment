@@ -18,7 +18,7 @@ namespace FMS.Data.Services
 
         Dog GetDogByChipNumber(string chipNumber);
 
-        Dog AddDog(string breed,string name,string chipNumber,DateTime dob, string photoUrl);
+        Dog AddDog(string breed,string name,string chipNumber,DateTime dob,string Information, string photoUrl);
 
         Dog UpdateDog(Dog updated);
 

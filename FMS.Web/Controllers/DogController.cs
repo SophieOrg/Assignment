@@ -76,7 +76,7 @@ namespace FMS.Web.Controllers
                 if (ModelState.IsValid)
                 {
                     // pass data to service to store 
-                    v = svc.AddDog(v.Breed,v.Name,v.ChipNumber,v.DOB,v.PhotoUrl);
+                    v = svc.AddDog(v.Breed,v.Name,v.ChipNumber,v.DOB,v.Information,v.PhotoUrl);
                     Alert($"New dog created successfully.", AlertType.success);
 
                     return RedirectToAction(nameof(Index), new { Id = v.Id});
