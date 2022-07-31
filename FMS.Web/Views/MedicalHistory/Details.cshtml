@@ -29,7 +29,7 @@
                 Unresolved
             </span>
             <span asp-condition=@(!Model.Active)> 
-                @Model.ResolvedOn
+                @Model.ResolvedOn.ToShortDateString()
             </span>
         </dd>
          

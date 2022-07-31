@@ -20,17 +20,13 @@ namespace FMS.Data.Models
         [StringLength(500)]
         public string Resolution {get; set;}
         
-        [Required]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime CreatedOn {get; set;}
-
+        public DateTime CreatedOn {get; set;} = DateTime.Now;
         public DateTime ResolvedOn {get; set;} = DateTime.MinValue;
 
         public bool Active {get; set;} = true;         
         
 
-        //MOT owned by a user
+        //Medical history note owned by a dog
         public int DogId {get;set;} //foreign key
         
         [JsonIgnore]
