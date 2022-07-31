@@ -10,10 +10,10 @@ else
         <table style="width:75%" class="table table-sm table-bordered">
             <thead>
                 <tr>           
-                    <th>Created On</th>
-                    <th>Vet</th>     
+                    <th>Created On</th>    
                     <th>Status</th>
                     <th>Report</th> 
+                    <th>Medication</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -22,7 +22,6 @@ else
                 {
                     <tr>              
                         <td>@m.CreatedOn.ToShortDateString()</td>
-                        <td>@m.Vet</td> 
                         <td>
                             @if (@m.Active) 
                             {
@@ -34,6 +33,7 @@ else
                             }
                         </td>
                         <td>@m.Report</td>
+                        <td>@m.Medication</td>
                         <td>
                             <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-action="TicketDelete" asp-route-id="@m.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
                         </td>             

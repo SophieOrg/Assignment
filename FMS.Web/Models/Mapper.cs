@@ -8,7 +8,8 @@ namespace FMS.Web.Models
         {
              return new {   
                 Id = t.Id,
-                Report = t.Report, 
+                Report = t.Report,
+                Medication = t.Medication, 
                 CreatedOn = t.CreatedOn,
                 Active = t.Active,
                 Resolution = t.Resolution,

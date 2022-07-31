@@ -38,15 +38,15 @@ namespace FMS.Data.Services
                                     "https://images.thestar.com/zmNaIUH4viBNAAfaInyOcD1cumw=/1280x1024/smart/filters:cb(1609510078418)/https://www.thestar.com/content/dam/thestar/life/together/pets/2020/12/27/dean-a-toronto-basset-hound-is-a-laziness-guru-what-can-he-teach-us/online27.jpg");                                                                                                
            
             //add medical history for dog 1
-            var medicalHistory1 = svc.CreateMedicalHistory(d1.Id,"Ellen Barlow","Broken leg");
-            var medicalHistory2 = svc.CreateMedicalHistory(d1.Id,"Roger McCann","Arthritis");
-            var medicalHistory3 = svc.CreateMedicalHistory(d1.Id,"Roger McCann","Surgery on heart"); 
+            var medicalHistory1 = svc.CreateMedicalHistory(d1.Id,"Painkillers given","Broken leg");
+            var medicalHistory2 = svc.CreateMedicalHistory(d1.Id,"Anti-inflammation tablets to take once a week","Arthritis");
+            var medicalHistory3 = svc.CreateMedicalHistory(d1.Id,"Blood thinners given, to take once daily","Surgery on heart"); 
 
             //add medical history for dog 2
-            var medicalHistory4 = svc.CreateMedicalHistory(d2.Id,"Ellen Barlow","Got neutered, required stitches");
+            var medicalHistory4 = svc.CreateMedicalHistory(d2.Id,"N/A", "Got neutered and required stitches");
 
             //add medical history for dog 3
-            var medicalHistory5 = svc.CreateMedicalHistory(d3.Id,"Ellen Barlow","Broken leg");
+            var medicalHistory5 = svc.CreateMedicalHistory(d3.Id,"Painkillers given","Broken leg");
             
              // close dog 1's first ticket 
             svc.CloseMedicalHistoryNote(medicalHistory1.Id, "Broken leg healed after 6 weeks in a cast.");

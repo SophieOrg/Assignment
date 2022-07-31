@@ -9,16 +9,13 @@
 
 <h3 class="mt-4 mb-4">Delete Medical History Note</h3>
 
-<h4 class="mb-4">Are you sure you want to delete this Medcial History Note?</h4>
+<h4 class="mb-4">Are you sure you want to delete this Medical History Note?</h4>
 
 <div>
     <div class="col card rounded shadow p-3">
         <dl class="row">       
             <dt class="col-5">Created On</dt>
-            <dd class="col-7">@Model.CreatedOn</dd>
-            
-            <dt class="col-5">Vet</dt>
-            <dd class="col-7">@Model.Vet</dd>
+            <dd class="col-7">@Model.CreatedOn.ToShortDateString()</dd>
 
             <dt class="col-5">Report</dt>
             <dd class="col-7">@Model.Report</dd>

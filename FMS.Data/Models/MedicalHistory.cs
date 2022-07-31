@@ -13,6 +13,9 @@ namespace FMS.Data.Models
         [Required]
         [StringLength(300, MinimumLength = 5)]
         public string Report {get;set;}
+        
+        [Required]
+        public string Medication {get;set;}
 
         [StringLength(500)]
         public string Resolution {get; set;}
@@ -25,8 +28,6 @@ namespace FMS.Data.Models
         public DateTime ResolvedOn {get; set;} = DateTime.MinValue;
 
         public bool Active {get; set;} = true;         
-
-        public string Vet {get;set;}
         
 
         //MOT owned by a user

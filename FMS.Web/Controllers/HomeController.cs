@@ -32,13 +32,7 @@ public class HomeController : Controller
 
     public IActionResult About()
     {
-        var about = new AboutViewModel 
-        {
-            Title = "About Our Company - Fleet Management",
-            Message = "Our mission is to develop an organised and easy to use service for Fleet management",
-            Formed = new DateTime(2000,10,1)
-        };
-        return View(about);
+        return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

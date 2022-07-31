@@ -70,7 +70,7 @@ namespace FMS.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var ticket = svc.CreateMedicalHistory(tvm.DogId,tvm.Vet,tvm.Report);
+                var ticket = svc.CreateMedicalHistory(tvm.DogId,tvm.Medication,tvm.Report);
                 return Ok(ticket);
             }
             
@@ -84,6 +84,7 @@ namespace FMS.Web.Controllers
             return new {   
                 Id = t.Id,
                 Report = t.Report, 
+                Medication = t.Medication,
                 CreatedOn = t.CreatedOn.ToShortDateString(),
                 Active = t.Active,
                 Resolution = t.Resolution,

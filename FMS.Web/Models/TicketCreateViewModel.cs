@@ -13,11 +13,12 @@ namespace FMS.Web.Models
         [Display(Name = "Select Dog")]
         public int DogId { get; set;}
 
-        public string Vet {get;set;}
-
         [Required]
         [StringLength(100, MinimumLength = 5)]
         public string Report { get; set;}
+        
+        [Required]
+        public string Medication {get; set;}
     }
 
 }

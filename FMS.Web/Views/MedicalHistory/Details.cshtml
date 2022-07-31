@@ -8,20 +8,23 @@
     <h3 class="mb-4">Medical History Note</h3>
 
     <dl class="row">       
-        <dt class="col-4">Id</dt>
-        <dd class="col-8">@Model.Id</dd>
+        <dt class="col-6">Id: </dt>
+        <dd class="col-6">@Model.Id</dd>
 
-        <dt class="col-4">Created On</dt>
-        <dd class="col-8">@Model.CreatedOn</dd>
+        <dt class="col-6">Name of Dog: </dt>
+        <dd class="col-6">@Model.Dog.Name</dd>
+
+        <dt class="col-6">Created On: </dt>
+        <dd class="col-6">@Model.CreatedOn.ToShortDateString()</dd>
      
-        <dt class="col-4">Report</dt>
-        <dd class="col-8">@Model.Report</dd>
-         
-        <dt class="col-4">Created By</dt>
-        <dd class="col-8">@Model.Dog.Name</dd>
+        <dt class="col-6">Report: </dt>
+        <dd class="col-6">@Model.Report</dd>
+
+        <dt class="col-6">Medication: </dt>
+        <dd class="col-6">@Model.Medication</dd>
    
-        <dt class="col-4">Resolved On</dt>
-        <dd class="col-8">
+        <dt class="col-6">Resolved On: </dt>
+        <dd class="col-6">
             <span asp-condition=@(Model.Active)> 
                 Unresolved
             </span>
@@ -29,9 +32,11 @@
                 @Model.ResolvedOn
             </span>
         </dd>
-     
-        <dt class="col-4">Resolution</dt>
-        <dd class="col-8">@Model.Resolution</dd>
+         
+        <div>
+            <dt class="col-4">Resolution: </dt>
+            <dd class="col-8">@Model.Resolution</dd>
+        </div>
       
     </dl>
 

@@ -15,6 +15,7 @@
          <th>Dog</th>        
          <th>Created</th> 
          <th>Report</th> 
+         <th>Medication</th>
          <th>Active</th>   
          <th>Actions</th>
       </tr>
@@ -26,6 +27,7 @@
             <td>@t.Dog.Name</td>
             <td>@t.CreatedOn.ToShortDateString()</td>
             <td>@t.Report.Substring(0, t.Report.Length < 20 ? t.Report.Length : 20) ...</td>
+            <td>@t.Medication.Substring(0, t.Medication.Length < 20 ? t.Medication.Length : 20) ...</td>
             <td>
                <i asp-condition="@t.Active"    class="bi bi-toggle-on"></i>
                <i asp-condition="@(!t.Active)" class="bi bi-toggle-off"></i>  

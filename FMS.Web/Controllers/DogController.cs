@@ -42,7 +42,7 @@ namespace FMS.Web.Controllers
                 if (v == null)
                 {
                     //suitable warning alert and redirect
-                    Alert($"Vehicle {id} not found", AlertType.warning);
+                    Alert($"Dog {id} not found.", AlertType.warning);
                     return RedirectToAction(nameof(Index));
                 }
 
@@ -69,7 +69,7 @@ namespace FMS.Web.Controllers
                 if (svc.IsDuplicateDogChipped(v.ChipNumber, v.Id))
                 {
                     // add manual validation error
-                    ModelState.AddModelError(nameof(v.ChipNumber),"The chip number is already in use");
+                    ModelState.AddModelError(nameof(v.ChipNumber),"This chip number is already in use.");
                 }
 
                 // complete POST action to add dog
@@ -77,7 +77,7 @@ namespace FMS.Web.Controllers
                 {
                     // pass data to service to store 
                     v = svc.AddDog(v.Breed,v.Name,v.ChipNumber,v.DOB,v.PhotoUrl);
-                    Alert($"New dog created successfully", AlertType.success);
+                    Alert($"New dog created successfully.", AlertType.success);
 
                     return RedirectToAction(nameof(Index), new { Id = v.Id});
                 }
@@ -96,7 +96,7 @@ namespace FMS.Web.Controllers
                 // check if v is null and if so alert
                 if (v == null)
                 {
-                    Alert($"Dog {id} not found", AlertType.warning);
+                    Alert($"Dog {id} not found.", AlertType.warning);
                     return RedirectToAction(nameof(Index));
                 }   
 
@@ -114,7 +114,7 @@ namespace FMS.Web.Controllers
                 if (svc.IsDuplicateDogChipped(v.ChipNumber,v.Id))
                 {
                     // add manual validation error
-                    ModelState.AddModelError("Chip Number","This Chip Number is already registered on the system");
+                    ModelState.AddModelError("Chip Number","This Chip Number is already registered on the system.");
                 }
 
                 // validate and complete POST action to save dog changes
@@ -122,7 +122,7 @@ namespace FMS.Web.Controllers
                 {
                     // pass data to service to update
                     svc.UpdateDog(v);      
-                    Alert("Dog updated successfully", AlertType.info);
+                    Alert("Dog updated successfully.", AlertType.info);
 
                     return RedirectToAction(nameof(Index), new { Id = v.Id });
                 }
@@ -141,7 +141,7 @@ namespace FMS.Web.Controllers
                 if (v == null)
                 {
                     //suitable warning alert and redirection to index page
-                    Alert($"Dog {id} not found", AlertType.warning);
+                    Alert($"Dog {id} not found.", AlertType.warning);
                     return RedirectToAction(nameof(Index));
                 }     
                 
@@ -158,7 +158,7 @@ namespace FMS.Web.Controllers
                 // delete dog via service
                 svc.DeleteDog(id);
 
-                Alert("Dog deleted successfully", AlertType.info);
+                Alert("Dog deleted successfully.", AlertType.info);
                 // redirect to the index view
                 return RedirectToAction(nameof(Index));
             }
@@ -173,7 +173,7 @@ namespace FMS.Web.Controllers
                 // check the returned dog is not null and if so alert
                 if (v == null)
                 {
-                    Alert($"Dog {id} not found", AlertType.warning);
+                    Alert($"Dog {id} not found.", AlertType.warning);
                     return RedirectToAction(nameof(Index));
                 }
 
@@ -190,8 +190,8 @@ namespace FMS.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {                
-                    var mot = svc.CreateMedicalHistory(m.DogId,m.Vet,m.Report);
-                    Alert($"Ticket created successfully for vehicle {m.DogId}", AlertType.info);
+                    var mot = svc.CreateMedicalHistory(m.DogId,m.Medication,m.Report);
+                    Alert($"Medical history note created successfully for dog {m.DogId}.", AlertType.info);
                     return RedirectToAction(nameof(Details), new { Id = m.DogId });
                 }
                 // redisplay the form for editing
@@ -206,7 +206,7 @@ namespace FMS.Web.Controllers
                 // check the returned Medical History Note is not null and if so return alert & redirect to index
                 if (medhistorynote == null)
                 {
-                    Alert($"Medical history note {id} not found", AlertType.warning);
+                    Alert($"Medical history note {id} not found.", AlertType.warning);
                     return RedirectToAction(nameof(Index));
                 }     
                 
@@ -221,7 +221,7 @@ namespace FMS.Web.Controllers
             {
                 // delete Medical History note via service
                 svc.DeleteMedicalHistoryNote(id);
-                Alert($"Medical history note deleted successfully for dog {dogId}", AlertType.info);
+                Alert($"Medical history note deleted successfully for dog {dogId}.", AlertType.info);
                 
                 // redirect to the MOT ticket index view
                 return RedirectToAction(nameof(Details), new { Id = dogId });

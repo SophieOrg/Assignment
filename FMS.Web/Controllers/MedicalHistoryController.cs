@@ -35,7 +35,7 @@ namespace FMS.Web.Controllers
             var ticket = svc.GetMedicalHistory(id);
             if (ticket == null)
             {
-                Alert("Ticket Not Found", AlertType.warning);  
+                Alert("Medical history note not found.", AlertType.warning);  
                 return RedirectToAction(nameof(Index));             
             }
 
@@ -51,11 +51,11 @@ namespace FMS.Web.Controllers
             var ticket = svc.CloseMedicalHistoryNote(t.Id, t.Resolution);
             if (ticket == null)
             {
-                Alert("Ticket Not Found", AlertType.warning);                               
+                Alert("Medical history note not found.", AlertType.warning);                               
             }
             else
             {
-                Alert($"Ticket {t.Id } closed", AlertType.info);  
+                Alert($"Medical history note {t.Id } closed.", AlertType.info);  
             }
 
             // redirect to the index view
@@ -83,9 +83,9 @@ namespace FMS.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                svc.CreateMedicalHistory(tvm.DogId,tvm.Vet,tvm.Report);
+                svc.CreateMedicalHistory(tvm.DogId,tvm.Medication,tvm.Report);
      
-                Alert($"Ticket Created", AlertType.info);  
+                Alert($"Medical history note created.", AlertType.info);  
                 return RedirectToAction(nameof(Index));
             }
             
