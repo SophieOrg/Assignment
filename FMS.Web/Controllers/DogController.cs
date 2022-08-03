@@ -30,6 +30,7 @@ namespace FMS.Web.Controllers
                return View(dog);
                 
             }
+
             
             // GET /dog/details/{id}
             public IActionResult Details(int id)
