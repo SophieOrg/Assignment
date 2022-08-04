@@ -4,7 +4,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FMS.Data.Validators
 {
-    public class UrlResource : ValidationAttribute {
+    public class UrlResource : ValidationAttribute
+    {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext) {
             string _url = (string)value; // url property being validated should be a string;           
 

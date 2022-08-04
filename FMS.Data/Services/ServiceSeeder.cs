@@ -7,7 +7,7 @@ namespace FMS.Data.Services
 {
     public static class RehomingServiceSeeder
     {
-        // use this class to seed the database with dummy test data using an IFleetService
+        // use this class to seed the database with dummy test data using an IRehomingService
         public static void Seed(IRehomingService svc)
         {
             //wipe and recreate the database
@@ -53,15 +53,6 @@ namespace FMS.Data.Services
 
              // close dog 2's ticket 
             svc.CloseMedicalHistoryNote(medicalHistory4.Id, "Stitches have healed over and been removed.");
-
-            //add sponsor dogs
-            var s1 = svc.AddSponsorDog("Cocker Spaniel","Freddie","JS73",2,"Freddie is a handsome Cocker Spaniel looking for a home that can provide him with lots of physical and mental enrichment. He is a very intelligent boy who loves playing with his toys and going out exploring new places.",
-                                "https://www.pdsa.org.uk/media/8264/cocker-spaniel-outdoors-gallery-1-min.jpg?anchor=center&mode=crop&quality=100&height=500&bgcolor=fff&rnd=132204646460000000");
-            var s2 = svc.AddSponsorDog("Sprocker Spaniel","Margo","FG15",1,"Margo is a loving and affectionate girl on the lookout for a special home to call her own. She absolutely adores people and is hoping for a home that will shower her with all the cuddles and fuss she desires (in addition to toys and tasty treats, of course!).",
-                                "https://sprockerlovers.com/wp-content/uploads/2020/10/9450861e-19e3-43f3-b784-71a368cd8b57-1024x1024.jpeg");
-
-            //add sponsorship type
-            var sponsorshipType1 = svc.CreateSponsorship(s1.Id,"Basic - Food & grooming");
 
             //add users
             var u1 = svc.Register("Guest", "guest@sms.com", "guest", Role.guest);

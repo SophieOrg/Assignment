@@ -9,9 +9,7 @@ namespace FMS.Data.Repository
     public class DataContext : DbContext
     {  
         public DbSet<Dog> Dogs { get; set; }
-        public DbSet<SponsorDog>SponsorDogs {get; set;}
         public DbSet<MedicalHistory> MedicalHistorys { get; set; }
-        public DbSet<Sponsorship> Sponsorships { get; set; }
         public DbSet<User> Users { get; set; }
                
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

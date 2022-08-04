@@ -43,22 +43,6 @@ namespace FMS.Data.Services
         IList<MedicalHistory> GetOpenMedicalHistoryNotes();        
         IList<MedicalHistory> SearchMedicalHistoryNotes(TicketRange range, string query);
 
-        // ------------- Sponsorship Management -------------------
-
-        Sponsorship CreateSponsorship(int dogId,string typeOfSponsorship);
-        Sponsorship GetSponsorship(int id);
-        bool DeleteSponsorship(int id);
-        Sponsorship UpdateSponsorship (Sponsorship updated);
-
-        //----------Sponsor Dog management-------------
-        IList<SponsorDog> GetSponsorDogs(); 
-        SponsorDog GetSponsorDog(int id);
-        SponsorDog AddSponsorDog(string breed,string name,string chipNumber,int age,string reasonForSponsor, string photoUrl);
-
-        SponsorDog UpdateSponsorDog(SponsorDog updated);
-
-        bool DeleteSponsorDog(int id);
-    
     }
     
 }
