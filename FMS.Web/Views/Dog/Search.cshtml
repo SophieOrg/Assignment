@@ -1,29 +1,15 @@
-@model IList<Dog>
+ <style>
+                body {font-family: "Times New Roman", Georgia, Serif;}
+                h1, h2, h3, h4, h5, h6 {
+                font-family: "Playfair Display";
+                letter-spacing: 5px;
+                }
+ </style>
 
-<style>
-        body {font-family: "Times New Roman", Georgia, Serif;}
-        h1, h2, h3, h4, h5, h6 {
-        font-family: "Playfair Display";
-        letter-spacing: 5px;
-        }
-</style>    
+<h1>Search Results..</h1>
 
-<partial name="_BreadCrumbs" model=@(new [] {
-    ("/","Home"),
-    ("","Dogs")
-}) />
-
-<a asp-condition=@User.HasOneOfRoles("manager,admin") class="btn btn-sm standard my-3" asp-action="Create" >
-    <i class="bi bi-plus"></i> Add New Dog
-</a>
-
-<form asp-action="Search" method="get">
-    <div class="form-group">
-        <label for="SearchBreed">Search by Breed:</label>
-        <input type="text" class="form-control mb-2" name="SearchBreed" value="" />
-        <input type="submit" value="Search" class="btn btn-sm standard my-3" />
-    </div>
-</form>
+<!-- navigation link to redirect to Index action -->
+<a asp-controller="Dog" asp-action="Index" class="btn btn-sm btn-link"><i class="bi bi-list"></i>Back to list of Dogs</a>
 
 <section class="dogs" id="dogs" >
     <div class="box-container">
@@ -56,10 +42,4 @@
         
     </div>
 </section>
-
-
-
-           
-                
-
 

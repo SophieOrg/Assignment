@@ -38,11 +38,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-controller="MedicalHistory" asp-action="Index"><button class = "btn default">Medical History</button></a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-condition=@(User.IsInRole("guest")) asp-controller="SponsorshipsController" asp-action="Index"><button class = "btn default">Sponsorship</button></a>
+                        </li>
                     
 
                         <!-- company dropdown -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" 
+                            <a class="nav-link dropdown-toggle" asp-condition=@(User.IsInRole("guest")) data-bs-toggle="dropdown" href="#" 
                                role="button" aria-expanded="false"><button class = "btn default">Our Organisation</button></a>
                             <ul class="dropdown-menu">
                                 <li> <a class="dropdown-item" asp-controller="Home" asp-action="Privacy">Privacy</a></li>

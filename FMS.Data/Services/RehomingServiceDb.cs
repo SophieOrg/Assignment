@@ -44,7 +44,7 @@ namespace FMS.Data.Services
         }
         
         //Add a new dog checking chip number is unique
-        public Dog AddDog(string breed,string name,string chipNumber,DateTime dob, string information, string photoUrl)
+        public Dog AddDog(string breed,string name,string chipNumber,int age, string information, string photoUrl)
         {
             //check if dog with chip number exists
             var exists = GetDogByChipNumber(chipNumber);
@@ -59,7 +59,7 @@ namespace FMS.Data.Services
                 Breed = breed,
                 Name = name,
                 ChipNumber = chipNumber,
-                DOB = dob,
+                Age = age,
                 Information = information,
                 PhotoUrl =photoUrl
             };
@@ -103,7 +103,7 @@ namespace FMS.Data.Services
             dog.Breed = updated.Breed;
             dog.Name = updated.Name;
             dog.ChipNumber = updated.ChipNumber;
-            dog.DOB = updated.DOB;
+            dog.Age = updated.Age;
             dog.Information = updated.Information;
             dog.PhotoUrl = updated.PhotoUrl;
 
@@ -229,6 +229,140 @@ namespace FMS.Data.Services
             return ticket;
         }
 
+        //==============Sponsorship operations============
+
+        public Sponsorship CreateSponsorship(int dogId,string typeOfSponsorship)
+        {   
+            var dog = GetDog(dogId);
+            if(dog == null) return null;
+
+            var sponsorship = new Sponsorship
+            {
+                //Id created by database
+                DogId = dogId,
+
+            };
+            db.Sponsorships.Add(sponsorship);
+            db.SaveChanges();
+            return sponsorship;
+
+        }
+        public Sponsorship GetSponsorship(int id)
+        {   
+            //return sponsorship and related dog or null if not found
+            return db.Sponsorships
+                    .Include(v => v.Dog)
+                    .FirstOrDefault(v => v.Id == id);
+
+
+        }
+        public bool DeleteSponsorship(int id)
+        {   
+            //find Medical History Note
+            var sponsorship = GetSponsorship(id);
+            if(DeleteSponsorship == null) return false;
+
+            //remove sponsorship
+            var result = db.Sponsorships.Remove(sponsorship);
+
+            db.SaveChanges();
+            return true;
+
+
+        }
+        public Sponsorship UpdateSponsorship (Sponsorship updated)
+        {   
+            //verify the sponsorship exists
+            var sponsorship = GetSponsorship(updated.Id);
+            if (sponsorship == null)
+            {
+                return null;
+            }
+
+            //update the details of the sponsorship retrieved and save
+            sponsorship.TypeOfSponsorship = updated.TypeOfSponsorship;
+
+            db.SaveChanges();
+            return sponsorship;
+
+        }
+
+        // ==================== Sponsor Dog operations ==================
+
+        //retrieve list of dogs
+        public IList<SponsorDog> GetSponsorDogs()
+        {
+            return db.SponsorDogs.ToList();
+        }
+
+        public SponsorDog GetSponsorDog(int id)
+        {
+            return db.SponsorDogs
+                     .FirstOrDefault(v => v.Id == id);
+        }
+
+        public SponsorDog AddSponsorDog(string breed,string name,string chipNumber,int age,string reasonForSponsor, string photoUrl)
+        {   
+
+            //create a new dog
+            var v = new SponsorDog
+            {
+                Breed = breed,
+                Name = name,
+                Age = age,
+                ReasonForSponsor = reasonForSponsor,
+                PhotoUrl = photoUrl
+            };
+            
+            //Add Dog to the list
+            db.SponsorDogs.Add(v);
+
+            //Save the changes
+            db.SaveChanges();
+
+            //return newly added dog
+            return v;
+
+        }
+
+
+        public SponsorDog UpdateSponsorDog(SponsorDog updated)
+        {    
+            //verify the dog exists
+            var sponsorDog = GetSponsorDog(updated.Id);
+            if (sponsorDog == null)
+            {
+                return null;
+            }
+            sponsorDog.Age = updated.Age;
+            sponsorDog.Breed = updated.Breed;
+            sponsorDog.Name = updated.Name;
+            sponsorDog.PhotoUrl = updated.PhotoUrl;
+            sponsorDog.ReasonForSponsor = updated.ReasonForSponsor;
+
+            //update the details of the dog retrieved and save
+
+            db.SaveChanges();
+            return sponsorDog;
+
+        }
+
+        public bool DeleteSponsorDog(int id)
+        {   
+            var v = GetSponsorDog(id);
+            if (v == null)
+            {
+                return false;
+            }
+
+            db.SponsorDogs.Remove(v);
+            db.SaveChanges();
+            return true;
+
+        }
+        
+
+        
 
         // ==================== User Authentication/Registration Management ==================
         public User Authenticate(string email, string password)

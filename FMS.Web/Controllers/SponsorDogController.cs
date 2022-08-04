@@ -9,13 +9,13 @@ using FMS.Web.Models;
 namespace FMS.Web.Controllers
 {
     [Authorize]
-    public class DogController : BaseController
+    public class SponsorDogController : BaseController
     {
             // provide suitable controller actions
             private IRehomingService svc;
             
             //dependency injection is used here
-            public DogController(IRehomingService ss)
+            public SponsorDogController(IRehomingService ss)
             {
                 svc = ss;
             }
@@ -25,7 +25,7 @@ namespace FMS.Web.Controllers
             public IActionResult Index()
             {   
                 
-               var dog = svc.GetDogs()
+               var dog = svc.GetSponsorDogs()
                             .ToList();
                return View(dog);
                 
@@ -34,7 +34,7 @@ namespace FMS.Web.Controllers
             //GET /Dog/ Search fucntion
             public IActionResult Search(string searchBreed)
             {
-                var dog = svc.GetDogs()
+                var dog = svc.GetSponsorDogs()
                              .Where(v => v.Breed == searchBreed)
                              .ToList();
                 
@@ -54,7 +54,7 @@ namespace FMS.Web.Controllers
             public IActionResult Details(int id)
             {  
                 // retrieve the dog with specifed id from the service
-                var v = svc.GetDog(id);
+                var v = svc.GetSponsorDog(id);
 
                 // if dog not found(i.e. GetDog() returns null), display an alert & redirect to index
                 //else display the dog with that id in dog details view
@@ -82,7 +82,7 @@ namespace FMS.Web.Controllers
             [ValidateAntiForgeryToken]
             [Authorize(Roles="admin,manager")]
             public IActionResult Create([Bind("Breed,Name,ChipNumber,Age,PhotoUrl")]
-                                         Dog v)
+                                         SponsorDog v)
             {
                 // check chip number is unique for this dog
                 if (svc.IsDuplicateDogChipped(v.ChipNumber, v.Id))
@@ -95,7 +95,7 @@ namespace FMS.Web.Controllers
                 if (ModelState.IsValid)
                 {
                     // pass data to service to store 
-                    v = svc.AddDog(v.Breed,v.Name,v.ChipNumber,v.Age,v.Information,v.PhotoUrl);
+                    v = svc.AddSponsorDog(v.Breed,v.Name,v.ChipNumber,v.Age,v.ReasonForSponsor,v.PhotoUrl);
                     Alert($"New dog created successfully.", AlertType.success);
 
                     return RedirectToAction(nameof(Index), new { Id = v.Id});
@@ -110,7 +110,7 @@ namespace FMS.Web.Controllers
             public IActionResult Edit(int id)
             {        
                 // load the dog using the service
-                var v = svc.GetDog(id);
+                var v = svc.GetSponsorDog(id);
 
                 // check if v is null and if so alert
                 if (v == null)
@@ -127,7 +127,7 @@ namespace FMS.Web.Controllers
             [HttpPost]
             [ValidateAntiForgeryToken]
             [Authorize(Roles="admin,manager")]
-            public IActionResult Edit(int id, Dog v)
+            public IActionResult Edit(int id, SponsorDog v)
             {
                 // check chip number is unique for this dog
                 if (svc.IsDuplicateDogChipped(v.ChipNumber,v.Id))
@@ -140,7 +140,7 @@ namespace FMS.Web.Controllers
                 if (ModelState.IsValid)
                 {
                     // pass data to service to update
-                    svc.UpdateDog(v);      
+                    svc.UpdateSponsorDog(v);      
                     Alert("Dog updated successfully.", AlertType.info);
 
                     return RedirectToAction(nameof(Index), new { Id = v.Id });
@@ -155,7 +155,7 @@ namespace FMS.Web.Controllers
             public IActionResult Delete(int id)
             {       
                 // load the dog using the service
-                var v = svc.GetDog(id);
+                var v = svc.GetSponsorDog(id);
                 // check the returned dog is not null and if so return alert and redirect to index page
                 if (v == null)
                 {
@@ -175,75 +175,11 @@ namespace FMS.Web.Controllers
             public IActionResult DeleteConfirm(int id)
             {
                 // delete dog via service
-                svc.DeleteDog(id);
+                svc.DeleteSponsorDog(id);
 
                 Alert("Dog deleted successfully.", AlertType.info);
                 // redirect to the index view
                 return RedirectToAction(nameof(Index));
-            }
-
-
-            // ============== Dog Medical History Management ==============
-
-            // GET /dog/Create Medcial History Note/{id}
-            public IActionResult TicketCreate(int id)
-            {     
-                var v = svc.GetDog(id);
-                // check the returned dog is not null and if so alert
-                if (v == null)
-                {
-                    Alert($"Dog {id} not found.", AlertType.warning);
-                    return RedirectToAction(nameof(Index));
-                }
-
-                // create a medical history note view model and set DogId (foreign key)
-                var medhistorynote = new MedicalHistory { DogId = id }; 
-
-                return View( medhistorynote );
-            }
-
-            // POST /dog/medicalhistorynotecreate
-            [HttpPost]
-            [ValidateAntiForgeryToken]
-            public IActionResult TicketCreate(MedicalHistory m)
-            {
-                if (ModelState.IsValid)
-                {                
-                    var mot = svc.CreateMedicalHistory(m.DogId,m.Medication,m.Report);
-                    Alert($"Medical history note created successfully for dog {m.DogId}.", AlertType.info);
-                    return RedirectToAction(nameof(Details), new { Id = m.DogId });
-                }
-                // redisplay the form for editing
-                return View(m);
-            }
-
-            // GET /dog/MedicalHistoryNoteDelete/{id}
-            public IActionResult TicketDelete(int id)
-            {
-                // load the Medical History Note using the service
-                var medhistorynote = svc.GetMedicalHistory(id);
-                // check the returned Medical History Note is not null and if so return alert & redirect to index
-                if (medhistorynote == null)
-                {
-                    Alert($"Medical history note {id} not found.", AlertType.warning);
-                    return RedirectToAction(nameof(Index));
-                }     
-                
-                // pass medicalhistorynote to view for deletion confirmation
-                return View(medhistorynote);
-            }
-
-            // POST /dog/ticketdeleteconfirm/{id}
-            [HttpPost]
-            [ValidateAntiForgeryToken]
-            public IActionResult TicketDeleteConfirm(int id, int dogId)
-            {
-                // delete Medical History note via service
-                svc.DeleteMedicalHistoryNote(id);
-                Alert($"Medical history note deleted successfully for dog {dogId}.", AlertType.info);
-                
-                // redirect to the MOT ticket index view
-                return RedirectToAction(nameof(Details), new { Id = dogId });
             }
 
         }

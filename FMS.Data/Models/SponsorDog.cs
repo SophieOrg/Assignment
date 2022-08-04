@@ -4,11 +4,11 @@ using FMS.Data.Validators; //allows access to URL resource
 
 namespace FMS.Data.Models
 {
-    public class Dog
-    {
+    public class SponsorDog
+    {   
         public int Id { get; set; }
-        
-        // suitable dog properties/relationships
+       
+        // suitable sponsor dog properties/relationships
         [Required]
         public string Breed {get;set;}
 
@@ -16,21 +16,20 @@ namespace FMS.Data.Models
         public string Name{get;set;}
 
         [Required]
-        public string ChipNumber{get;set;}
+        public int Age {get;set;}
 
         [Required]
-        public int Age {get;set;}
+        public string ChipNumber {get; set;}
 
         [Display(Name = "Photo")]
         [UrlResource]
         [Required]
         public string PhotoUrl { get; set; }
 
-        public string Information {get; set;}
+        public string ReasonForSponsor {get; set;} 
 
-        //Relationship 1-N Medical History note
-        public IList<MedicalHistory> MedicalHistorys {get; set;} = new List<MedicalHistory>();
+         //Relationship 1-N Sponsorship note
+        public IList<Sponsorship> Sponsorships {get; set;} = new List<Sponsorship>(); 
 
     }
-
 }

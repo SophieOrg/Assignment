@@ -25,10 +25,10 @@ namespace FMS.Test
         public void Dog_AddDog_WhenDuplicateChip_ShouldReturnNull()
         {
             // act  
-            var v1 = svc.AddDog("Sprocker Spaniel","Margo","PG56 BTQ",DateTime.Parse("2021-11-25"),"Margo is a loving and affectionate girl on the lookout for a special home to call her own. She absolutely adores people and is hoping for a home that will shower her with all the cuddles and fuss she desires (in addition to toys and tasty treats, of course!).",
+            var v1 = svc.AddDog("Sprocker Spaniel","Margo","PG56 BTQ",1,"Margo is a loving and affectionate girl on the lookout for a special home to call her own. She absolutely adores people and is hoping for a home that will shower her with all the cuddles and fuss she desires (in addition to toys and tasty treats, of course!).",
                                      "https://i.pinimg.com/originals/f1/c3/53/f1c353c73e44e1b5087dd56298438089.jpg");
             // this is a duplicate as the chip number is same as previous dog
-            var v2 = svc.AddDog("Sprocker Spaniel","Margo","PG56 BTQ",DateTime.Parse("2021-11-25"),"Margo is a loving and affectionate girl on the lookout for a special home to call her own. She absolutely adores people and is hoping for a home that will shower her with all the cuddles and fuss she desires (in addition to toys and tasty treats, of course!).",
+            var v2 = svc.AddDog("Sprocker Spaniel","Margo","PG56 BTQ",1,"Margo is a loving and affectionate girl on the lookout for a special home to call her own. She absolutely adores people and is hoping for a home that will shower her with all the cuddles and fuss she desires (in addition to toys and tasty treats, of course!).",
                                      "https://i.pinimg.com/originals/f1/c3/53/f1c353c73e44e1b5087dd56298438089.jpg");
             
             // assert
@@ -41,7 +41,7 @@ namespace FMS.Test
         public void Dog_UpdateDog_ThatExists_ShouldSetAllProperties()
         {
             // arrange - create test dog
-            var v = svc.AddDog("Sprocker Spaniel","Margo","PG56 BTQ",DateTime.Parse("2021-11-25"),"Margo is a loving and affectionate girl on the lookout for a special home to call her own. She absolutely adores people and is hoping for a home that will shower her with all the cuddles and fuss she desires (in addition to toys and tasty treats, of course!).",
+            var v = svc.AddDog("Sprocker Spaniel","Margo","PG56 BTQ",1,"Margo is a loving and affectionate girl on the lookout for a special home to call her own. She absolutely adores people and is hoping for a home that will shower her with all the cuddles and fuss she desires (in addition to toys and tasty treats, of course!).",
                                      "https://i.pinimg.com/originals/f1/c3/53/f1c353c73e44e1b5087dd56298438089.jpg");
                         
             // act - create a copy and update any dog properties (except Id) 
@@ -51,7 +51,7 @@ namespace FMS.Test
                 Name = "Margo",
                 Breed = "Sprocker Spaniel",
                 ChipNumber = "PG56 BRS",
-                DOB = DateTime.Parse("2010-05-08"),
+                Age = 2,
                 PhotoUrl = ""
             };
             // save updated dog
@@ -67,7 +67,7 @@ namespace FMS.Test
             Assert.Equal(u.Name, vu.Name);
             Assert.Equal(u.Breed, vu.Breed);
             Assert.Equal(u.ChipNumber, vu.ChipNumber);
-            Assert.Equal(u.DOB, vu.DOB);
+            Assert.Equal(u.Age, vu.Age);
             Assert.Equal(u.PhotoUrl, vu.PhotoUrl);
             
         }
@@ -88,11 +88,11 @@ namespace FMS.Test
         public void Dog_GetDogs_When3Exist_ShouldReturn2()
         {
             // arrange - add 3 different dogs to database
-            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",DateTime.Parse("2020-06-13"),"Poppie is a beautiful Shih Tzu looking for a calm and patient home to settle her paws. She is a very foodie girl who loves a tasty treat and loves using her nose and learning new things. She is an active girl who likes being on the go, exploring and sniffing in quieter areas and enjoys sitting by her human companions and having gentle fusses once she has gotten to know you.",
+            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12",4,"Poppie is a beautiful Shih Tzu looking for a calm and patient home to settle her paws. She is a very foodie girl who loves a tasty treat and loves using her nose and learning new things. She is an active girl who likes being on the go, exploring and sniffing in quieter areas and enjoys sitting by her human companions and having gentle fusses once she has gotten to know you.",
                                     "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
-            var v2 = svc.AddDog("Cocker Spaniel","Freddie","LG67 PUT",DateTime.Parse("2022-05-02"),"Freddie is a handsome Cocker Spaniel looking for a home that can provide him with lots of physical and mental enrichment. He is a very intelligent boy who loves playing with his toys and going out exploring new places.",
+            var v2 = svc.AddDog("Cocker Spaniel","Freddie","LG67",2,"Freddie is a handsome Cocker Spaniel looking for a home that can provide him with lots of physical and mental enrichment. He is a very intelligent boy who loves playing with his toys and going out exploring new places.",
                                      "https://www.pdsa.org.uk/media/8264/cocker-spaniel-outdoors-gallery-1-min.jpg?anchor=center&mode=crop&quality=100&height=500&bgcolor=fff&rnd=132204646460000000");
-            var v3 = svc.AddDog("Sprocker Spaniel","Margo","PG56 BTQ",DateTime.Parse("2021-11-25"),"Margo is a loving and affectionate girl on the lookout for a special home to call her own. She absolutely adores people and is hoping for a home that will shower her with all the cuddles and fuss she desires (in addition to toys and tasty treats, of course!).",
+            var v3 = svc.AddDog("Sprocker Spaniel","Margo","PG56",1,"Margo is a loving and affectionate girl on the lookout for a special home to call her own. She absolutely adores people and is hoping for a home that will shower her with all the cuddles and fuss she desires (in addition to toys and tasty treats, of course!).",
                                      "https://i.pinimg.com/originals/f1/c3/53/f1c353c73e44e1b5087dd56298438089.jpg");
             // act
             var dogs = svc.GetDogs();
@@ -105,8 +105,8 @@ namespace FMS.Test
          [Fact]
         public void Dog_DeleteDog_ThatExists_ShouldReturnTrue()
         {
-            // act - add the vehicle to the database then delete the vehicle from the database
-            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",DateTime.Parse("2020-06-13"),"Poppie is a beautiful Shih Tzu looking for a calm and patient home to settle her paws. She is a very foodie girl who loves a tasty treat and loves using her nose and learning new things. She is an active girl who likes being on the go, exploring and sniffing in quieter areas and enjoys sitting by her human companions and having gentle fusses once she has gotten to know you.",
+            // act - add the dog to the database then delete the dog from the database
+            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",3,"Poppie is a beautiful Shih Tzu looking for a calm and patient home to settle her paws. She is a very foodie girl who loves a tasty treat and loves using her nose and learning new things. She is an active girl who likes being on the go, exploring and sniffing in quieter areas and enjoys sitting by her human companions and having gentle fusses once she has gotten to know you.",
                                     "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
             var deleted = svc.DeleteDog(v1.Id);
 
@@ -132,7 +132,7 @@ namespace FMS.Test
         public void Dog_UpdateDog_ThatExistsWithNewChipNumber_ShouldWork()
         {
             // arrange
-            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",DateTime.Parse("2020-06-13"),"Poppie is a beautiful Shih Tzu looking for a calm and patient home to settle her paws. She is a very foodie girl who loves a tasty treat and loves using her nose and learning new things. She is an active girl who likes being on the go, exploring and sniffing in quieter areas and enjoys sitting by her human companions and having gentle fusses once she has gotten to know you.",
+            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12",3,"Poppie is a beautiful Shih Tzu looking for a calm and patient home to settle her paws. She is a very foodie girl who loves a tasty treat and loves using her nose and learning new things. She is an active girl who likes being on the go, exploring and sniffing in quieter areas and enjoys sitting by her human companions and having gentle fusses once she has gotten to know you.",
                                     "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
 
             // act
@@ -143,7 +143,7 @@ namespace FMS.Test
                 Breed = v1.Breed,
                 Name = v1.Name,
                 ChipNumber = v1.ChipNumber,
-                DOB = v1.DOB,
+                Age = v1.Age,
                 PhotoUrl = v1.PhotoUrl              
             };
             // update this dog
@@ -162,7 +162,7 @@ namespace FMS.Test
         public void Notes_CreateMedicalHistoryNote_ForExistingDog_ShouldBeCreated()
         {
             // arrange
-            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",DateTime.Parse("2020-06-13"),"Poppie is a beautiful Shih Tzu looking for a calm and patient home to settle her paws. She is a very foodie girl who loves a tasty treat and loves using her nose and learning new things. She is an active girl who likes being on the go, exploring and sniffing in quieter areas and enjoys sitting by her human companions and having gentle fusses once she has gotten to know you.",
+            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12",5,"Poppie is a beautiful Shih Tzu looking for a calm and patient home to settle her paws. She is a very foodie girl who loves a tasty treat and loves using her nose and learning new things. She is an active girl who likes being on the go, exploring and sniffing in quieter areas and enjoys sitting by her human companions and having gentle fusses once she has gotten to know you.",
                                     "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
          
             // act
@@ -178,7 +178,7 @@ namespace FMS.Test
         public void Notes_DeleteMedicalHistoryNote_WhenExists_ShouldReturnTrue()
         {
             // arrange
-            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",DateTime.Parse("2020-06-13"),"Poppie is a beautiful Shih Tzu looking for a calm and patient home to settle her paws. She is a very foodie girl who loves a tasty treat and loves using her nose and learning new things. She is an active girl who likes being on the go, exploring and sniffing in quieter areas and enjoys sitting by her human companions and having gentle fusses once she has gotten to know you.",
+            var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",6,"Poppie is a beautiful Shih Tzu looking for a calm and patient home to settle her paws. She is a very foodie girl who loves a tasty treat and loves using her nose and learning new things. She is an active girl who likes being on the go, exploring and sniffing in quieter areas and enjoys sitting by her human companions and having gentle fusses once she has gotten to know you.",
                                     "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
             var t = svc.CreateMedicalHistory(v1.Id,"Ellen Barlow","Broken leg");
 
