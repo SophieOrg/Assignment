@@ -14,7 +14,7 @@ namespace FMS.Web.Controllers
             // provide suitable controller actions
             private IRehomingService svc;
             
-            //dependency injection is used here
+            //dependency injection used here
             public SponsorshipsController(IRehomingService ss)
             {
                 svc = ss;
