@@ -1,0 +1,32 @@
+@model AdoptionApplicationSearchViewModel
+
+<partial name="_Breadcrumbs" model=@(new [] { ("/", "Home"), ("/MedicalHistory", "MedicalHistory"), ("","Search") })>
+<h3>Search Adoption Applications</h3>
+
+<table class="table">
+    <thead>
+      <tr>
+         <th>Id</th>
+         <th>Name</th>        
+         <th>Email</th> 
+         <th>Phone Number</th> 
+         <th>Details of living situation</th>   
+         <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach(var t in Model.AdoptionApplications)
+      {
+          <tr>
+            <td>@t.Id</td>
+            <td>@t.Name</td>
+            <td>@t.Email</td>
+            <td>@t.PhoneNumber</td>
+            <td>@t.Information.Substring(0, t.Information.Length < 20 ? t.Information.Length : 20) ...</td>
+            <td>
+               <a asp-action="Details" asp-route-id="@t.Id"><i class="bi bi-lightbulb"></i> Details</a>                                          
+            </td>
+         </tr>
+      }
+    </tbody>
+</table>

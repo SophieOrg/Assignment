@@ -15,6 +15,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/AdoptionApplication.cshtml/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvbi5jc2h0bWxcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/AdoptionApplication.cshtml/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvbi5jc2h0bWxcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/AdoptionApplication.cshtml/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvbi5jc2h0bWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Dog/AdoptionApplicationCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXEFkb3B0aW9uQXBwbGljYXRpb25DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/Dog/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

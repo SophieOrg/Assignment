@@ -228,7 +228,101 @@ namespace FMS.Data.Services
             db.SaveChanges(); // write to database
             return ticket;
         }
+
+        // ===============Adoption application management ========================
+        public AdoptionApplication CreateAdoptionApplication(int dogId,string name, string email, string phoneNumber, string information)
+        {   
+            var dog = GetDog(dogId);
+            if(dog == null) return null;
+
+            var adoptionApplication = new AdoptionApplication
+            {
+                //Id created by database
+                DogId = dogId,
+                Name = name,
+                Email = email,
+                PhoneNumber = phoneNumber,
+                Information = information,
+            };
+
+            db.AdoptionApplications.Add(adoptionApplication);
+            db.SaveChanges();
+            return adoptionApplication;
+
+        }
+
+        public AdoptionApplication GetAdoptionApplication(int id)
+        {
+            return db.AdoptionApplications
+                     .Include(v => v.Dog)
+                     .FirstOrDefault(v => v.Id == id);
+        }
+
+        public bool DeleteAdoptionApplication(int id)
+        {
+            var adoptionApplication = GetAdoptionApplication(id);
+            if(DeleteAdoptionApplication == null) return false;
+
+            var result = db.AdoptionApplications.Remove(adoptionApplication);
+
+            db.SaveChanges();
+            return true;
+        }
+
+        public IList <AdoptionApplication> GetAllAdoptionApplications()
+        {
+            return db.AdoptionApplications
+                     .Include(t => t.Dog)
+                     .ToList();
+        }
         
+                
+        // Retrieve all open tickets (Active)
+        public IList<AdoptionApplication> GetValidAdoptionApplications()
+        {
+            // return valid applications with associated dogs
+            return db.AdoptionApplications
+                     .Include(t => t.Dog) 
+                     .Where(t => t.Active)
+                     .ToList();
+        } 
+
+        // perform a search of the tickets based on a query and
+        // an active range 'ALL', 'VALID', 'INVALID'
+        public IList<AdoptionApplication> SearchAdoptionApplications(AdoptionApplicationRange range, string query) 
+        {
+            // ensure query is not null    
+            query = query == null ? "" : query.ToLower();
+
+            // search active status and student name
+            var results = db.AdoptionApplications
+                            .Include(t => t.Dog)
+                            .Where(t => (
+                                         t.Dog.Name.ToLower().Contains(query)
+                                        ) &&
+                                        (range == AdoptionApplicationRange.VALID && t.Active ||
+                                         range == AdoptionApplicationRange.INVALID && !t.Active ||
+                                         range == AdoptionApplicationRange.ALL
+                                        ) 
+                            ).ToList();
+            return  results;  
+        }
+
+         public AdoptionApplication CloseAdoptionApplication(int id, string resolution)
+        {
+            var adoptionapplication = GetAdoptionApplication(id);
+            // if ticket does not exist or is already closed return null
+            if (adoptionapplication == null || !adoptionapplication.Active) return null;
+            
+            // ticket exists and is active so close
+            adoptionapplication.Active = false;
+            adoptionapplication.Resolution = resolution;
+           
+            db.SaveChanges(); // write to database
+            
+            return adoptionapplication;
+        }
+
 
         // ==================== User Authentication/Registration Management ==================
         public User Authenticate(string email, string password)

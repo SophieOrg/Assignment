@@ -16384,8 +16384,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\SponsorDog\\Index.cshtml",
-      "TargetPath": "Views\\SponsorDog\\Index.cshtml",
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\AdoptionApplication.cshtml\\Create.cshtml",
+      "TargetPath": "Views\\AdoptionApplication.cshtml\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16401,6 +16401,11 @@
     {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Dog\\Create.cshtml",
       "TargetPath": "Views\\Dog\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Dog\\AdoptionApplicationCreate.cshtml",
+      "TargetPath": "Views\\Dog\\AdoptionApplicationCreate.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16459,6 +16464,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\AdoptionApplication.cshtml\\Details.cshtml",
+      "TargetPath": "Views\\AdoptionApplication.cshtml\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Sponsorships\\Index.cshtml",
       "TargetPath": "Views\\Sponsorships\\Index.cshtml",
       "FileKind": "mvc"
@@ -16496,6 +16506,11 @@
     {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\AdoptionApplication.cshtml\\Index.cshtml",
+      "TargetPath": "Views\\AdoptionApplication.cshtml\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -43,6 +43,19 @@ namespace FMS.Data.Services
         IList<MedicalHistory> GetOpenMedicalHistoryNotes();        
         IList<MedicalHistory> SearchMedicalHistoryNotes(TicketRange range, string query);
 
+        // ------------- Adoption Application Management -------------------
+
+        AdoptionApplication CreateAdoptionApplication(int dogId,string name, string email, string phoneNumber, string information);
+        AdoptionApplication GetAdoptionApplication(int id);
+        bool DeleteAdoptionApplication(int id);
+
+        IList<AdoptionApplication> GetAllAdoptionApplications();
+        IList<AdoptionApplication> SearchAdoptionApplications(AdoptionApplicationRange range, string query);
+
+        IList<AdoptionApplication> GetValidAdoptionApplications();
+
+        AdoptionApplication CloseAdoptionApplication(int id, string resolution);
+
     }
     
 }

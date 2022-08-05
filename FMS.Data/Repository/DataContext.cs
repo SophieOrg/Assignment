@@ -10,6 +10,8 @@ namespace FMS.Data.Repository
     {  
         public DbSet<Dog> Dogs { get; set; }
         public DbSet<MedicalHistory> MedicalHistorys { get; set; }
+
+        public DbSet<AdoptionApplication> AdoptionApplications { get; set; }
         public DbSet<User> Users { get; set; }
                
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

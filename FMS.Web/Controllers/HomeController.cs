@@ -30,12 +30,7 @@ public class HomeController : Controller
         return View();
     }
     
-    //GET: /Home/Contact
-     public IActionResult Contact()
-    {   
-        //display a blank form to allow users to contact the rehoming centre
-        return View();
-    }
+   
 
     public IActionResult About()
     {
