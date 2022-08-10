@@ -1,5 +1,13 @@
 @model AdoptionApplicationSearchViewModel
 
+<style>
+                body {font-family: "Times New Roman", Georgia, Serif;}
+                h1, h2, h3, h4, h5, h6 {
+                font-family: "Playfair Display";
+                letter-spacing: 5px;
+                }
+</style>
+
 <partial name="_Breadcrumbs" model=@(new [] { ("/", "Home"), ("/AdoptionApplication", "AdoptionApplication"), ("","Search") })>
 <h3>Search Adoption Applications</h3>
 
@@ -35,7 +43,7 @@
                <i asp-condition="@(!t.Active)" class="bi bi-check"></i>  
             </td>
             <td>
-               <a asp-action="Details" asp-route-id="@t.Id"><i class="bi bi-lightbulb"></i> Details</a>   
+               <a asp-action="Details" asp-route-id="@t.Id"><i class="bi bi-lightbulb ion-icon-style"></i></a>   
                <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-action="AdoptionApplicationDelete" asp-route-id="@t.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>                                      
             </td>
          </tr>
