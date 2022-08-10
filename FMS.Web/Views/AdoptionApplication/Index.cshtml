@@ -1,0 +1,46 @@
+@model AdoptionApplicationSearchViewModel
+
+<partial name="_Breadcrumbs" model=@(new [] { ("/", "Home"), ("/AdoptionApplication", "AdoptionApplication"), ("","Search") })>
+<h3>Search Adoption Applications</h3>
+
+<div class="my-4 d-flex flex-row justify-content-between align-items-center">
+   <partial name="_SearchApplications" /> <!-- add form to search ticket issues -->
+</div>
+
+<table class = "table table-hover">
+    <thead class = "table-header">
+      <tr>
+         <th>Id</th>
+         <th>Name of Dog</th>
+         <th>Name</th>        
+         <th>Email</th> 
+         <th>Phone Number</th> 
+         <th>Details of living situation</th>
+         <th>Status</th>    
+         <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach(var t in Model.AdoptionApplications)
+      {
+          <tr>
+            <td>@t.Id</td>
+            <td>@t.Dog.Name</td>
+            <td>@t.Name</td>
+            <td>@t.Email</td>
+            <td>@t.PhoneNumber</td>
+            <td>@t.Information.Substring(0, t.Information.Length < 20 ? t.Information.Length : 20) ...</td>
+            <td>
+               <i asp-condition="@t.Active"    class="bi bi-clock-history"></i>
+               <i asp-condition="@(!t.Active)" class="bi bi-check"></i>  
+            </td>
+            <td>
+               <a asp-action="Details" asp-route-id="@t.Id"><i class="bi bi-lightbulb"></i> Details</a>   
+               <a asp-action="Delete" asp-route-id="@t.Id"><i class="bi bi-trash"></i> Delete</a>                                        
+            </td>
+         </tr>
+      }
+    </tbody>
+</table>
+
+

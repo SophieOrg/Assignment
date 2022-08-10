@@ -42,20 +42,20 @@ namespace FMS.Web.Controllers
             return View(adoptionapplication);
         }
 
-        // POST /ticket/close/{id}
+        // POST /ticket/approve/{id}
         [HttpPost]
         [Authorize(Roles="admin,manager")]
-        public IActionResult Close([Bind("Id, Resolution")] AdoptionApplication t)
+        public IActionResult Approve([Bind("Id, Resolution")] AdoptionApplication t)
         {
             // close ticket via service
-            var adoptionapplication = svc.CloseAdoptionApplication(t.Id, t.Resolution);
+            var adoptionapplication = svc.ApproveAdoptionApplication(t.Id, t.Resolution);
             if (adoptionapplication == null)
             {
                 Alert("Adoption Application not found.", AlertType.warning);                               
             }
             else
             {
-                Alert($"Adoption Application {t.Id } closed.", AlertType.info);  
+                Alert($"Adoption Application {t.Id } approved.", AlertType.info);  
             }
 
             // redirect to the index view

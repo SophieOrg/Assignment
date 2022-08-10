@@ -42,6 +42,15 @@ namespace FMS.Data.Services
                      .Include(v => v.MedicalHistorys)
                      .FirstOrDefault(v => v.Id == id);
         }
+
+        //Retrieve Dog by Id and related adoption applications
+        public Dog GetDogAndApplications(int id)
+        {   
+            return db.Dogs
+                     .Include(v => v.AdoptionApplications)
+                     .FirstOrDefault(v => v.Id == id);
+
+        }
         
         //Add a new dog checking chip number is unique
         public Dog AddDog(string breed,string name,string chipNumber,int age, string information, string photoUrl)
@@ -232,7 +241,7 @@ namespace FMS.Data.Services
         // ===============Adoption application management ========================
         public AdoptionApplication CreateAdoptionApplication(int dogId,string name, string email, string phoneNumber, string information)
         {   
-            var dog = GetDog(dogId);
+            var dog = GetDogAndApplications(dogId);
             if(dog == null) return null;
 
             var adoptionApplication = new AdoptionApplication
@@ -300,19 +309,22 @@ namespace FMS.Data.Services
                             .Where(t => (
                                          t.Dog.Name.ToLower().Contains(query)
                                         ) &&
-                                        (range == AdoptionApplicationRange.VALID && t.Active ||
-                                         range == AdoptionApplicationRange.INVALID && !t.Active ||
+                                        (range == AdoptionApplicationRange.AWAITING && t.Active ||
+                                         range == AdoptionApplicationRange.APPROVED && !t.Active ||
                                          range == AdoptionApplicationRange.ALL
                                         ) 
                             ).ToList();
             return  results;  
         }
 
-         public AdoptionApplication CloseAdoptionApplication(int id, string resolution)
+         public AdoptionApplication ApproveAdoptionApplication(int id, string resolution)
         {
             var adoptionapplication = GetAdoptionApplication(id);
             // if ticket does not exist or is already closed return null
-            if (adoptionapplication == null || !adoptionapplication.Active) return null;
+            if (adoptionapplication == null || !adoptionapplication.Active)
+            {
+                return null;
+            } 
             
             // ticket exists and is active so close
             adoptionapplication.Active = false;

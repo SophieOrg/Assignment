@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace FMS.Data.Models
 {   
-    public enum AdoptionApplicationRange {VALID,INVALID,ALL}
+    public enum AdoptionApplicationRange {AWAITING,APPROVED,ALL}
     public class AdoptionApplication
     {
         public int Id { get; set; }

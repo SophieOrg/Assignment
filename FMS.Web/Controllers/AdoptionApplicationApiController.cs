@@ -53,12 +53,12 @@ namespace FMS.Web.Controllers
             return Ok(ConvertToCustomTicketObject(ticket));
         }
 
-        // POST /ticket/close/{id}
+        // POST /ticket/approve/{id}
         [HttpPost]       
-        public IActionResult Close([Bind("Id, Resolution")] AdoptionApplication t)
+        public IActionResult Approve([Bind("Id, Resolution")] AdoptionApplication t)
         {
             // close ticket via service
-            var ticket = svc.CloseAdoptionApplication(t.Id, t.Resolution);           
+            var ticket = svc.ApproveAdoptionApplication(t.Id, t.Resolution);           
 
             // return updated ticket
             return Ok(ticket);

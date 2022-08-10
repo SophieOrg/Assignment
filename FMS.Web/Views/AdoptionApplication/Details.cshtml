@@ -1,0 +1,52 @@
+@model AdoptionApplication
+
+<!-- Breadcrumbs using partial view -->
+<partial name="_Breadcrumbs" model=@(new [] { ("/", "Home"), ("/MedicalHistory", "MedicalHistory"), ("","Close") })>
+    
+<div class="col card rounded shadow-lg p-4">
+
+    <h3 class="mb-4">Adoption Application</h3>
+
+    <dl class="row">       
+        <dt class="col-6">Id: </dt>
+        <dd class="col-6">@Model.Id</dd>
+
+        <dt class="col-6">Name of Dog: </dt>
+        <dd class="col-6">@Model.Dog.Name</dd>
+
+        <dt class="col-6">Name: </dt>
+        <dd class="col-6">@Model.Name</dd>
+     
+        <dt class="col-6">Email: </dt>
+        <dd class="col-6">@Model.Email</dd>
+
+        <dt class="col-6">Phone Number: </dt>
+        <dd class="col-6">@Model.PhoneNumber</dd>
+
+         <div>
+            <dt class="col-4">Information: </dt>
+            <dd class="col-8">@Model.Information</dd>
+        </div>
+        <dt class="col-6">Status of Application: </dt>
+        <dd class="col-6">
+            <span asp-condition=@(Model.Active)> 
+                    Awaiting
+            </span>
+            <span asp-condition=@(!Model.Active)> 
+                    Approved
+            </span>
+        </dd>
+      
+    </dl>
+
+    <div class="mt-4">           
+        <button asp-condition=@(User.HasOneOfRoles("admin,manager")) disabled="@(!Model.Active)" 
+                data-bs-toggle="modal" data-bs-target="#approveApplicationModal" class="btn btn-sm btn-success">
+            <i class="bi bi-check mr-1"></i>Approve
+        </button>
+        <a class="btn btn-link" asp-action="Index">Cancel</a>
+    </div>
+
+</div> 
+
+<partial name="_ApproveModal"/>

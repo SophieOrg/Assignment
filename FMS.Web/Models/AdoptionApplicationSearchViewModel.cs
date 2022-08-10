@@ -9,6 +9,6 @@ namespace FMS.Web.Models
 
         // search options        
         public string Query { get; set; } = "";
-        public AdoptionApplicationRange AdoptionApplicationRange { get; set; } = AdoptionApplicationRange.VALID;
+        public AdoptionApplicationRange AdoptionApplicationRange { get; set; } = AdoptionApplicationRange.AWAITING;
     }
 }
