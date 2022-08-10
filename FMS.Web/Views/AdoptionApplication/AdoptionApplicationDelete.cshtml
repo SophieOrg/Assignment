@@ -1,0 +1,42 @@
+@model AdoptionApplication
+
+<partial name="_BreadCrumbs" model=@(new [] {
+    ("/","Home"),
+    ("/dog","Dogs"),
+    ($"/dog/details/{Model.Id}",$"{Model.Id}"),
+    ("","Delete AdoptionApplication")
+}) /> 
+
+<h3 class="mt-4 mb-4">Delete Adoption Application</h3>
+
+<h4 class="mb-4">Are you sure you want to delete this Adoption Application?</h4>
+
+<div>
+    <div class="col card rounded shadow p-3">
+        <dl class="row">       
+            <dt class="col-5">Name: </dt>
+            <dd class="col-7">@Model.Name</dd>
+
+            <dt class="col-5">Email: </dt>
+            <dd class="col-7">@Model.Email</dd>
+
+            <dt class="col-5">Phone Number: </dt>
+            <dd class="col-7">@Model.PhoneNumber</dd>
+
+            <dt class="col-5">Information: </dt>
+            <dd class="col-7">@Model.Information</dd>
+                     
+        </dl>
+    </div>
+
+    <div class="mt-4">
+        <form asp-action="AdoptionApplicationDeleteConfirm" type="post">
+            <input type="hidden" asp-for="Id"/>
+            <input type="hidden" asp-for="DogId"/>
+            
+            <input type="submit" value="Confirm" class="btn btn-danger" />
+            <a class="btn btn-secondary" asp-controller="AdoptionApplication" asp-action="Details" asp-route-id="@Model.Dog.Id" >Cancel</a>
+        </form>
+    </div>
+    
+</div>

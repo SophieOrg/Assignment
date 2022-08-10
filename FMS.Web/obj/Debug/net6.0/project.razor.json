@@ -16369,6 +16369,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\AdoptionApplication\\AdoptionApplicationDelete.cshtml",
+      "TargetPath": "Views\\AdoptionApplication\\AdoptionApplicationDelete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Web\\Views\\User\\Login.cshtml",
       "TargetPath": "Views\\User\\Login.cshtml",
       "FileKind": "mvc"

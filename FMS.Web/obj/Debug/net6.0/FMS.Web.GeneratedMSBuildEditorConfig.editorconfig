@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/AdoptionApplication/AdoptionApplicationDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvblxBZG9wdGlvbkFwcGxpY2F0aW9uRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sophie Black/Downloads/Assignment-FMS-template (1)/Assignment/FMS.Web/Views/AdoptionApplication/ApplicationDetails-form.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvblxBcHBsaWNhdGlvbkRldGFpbHMtZm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

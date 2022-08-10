@@ -279,31 +279,7 @@ namespace FMS.Web.Controllers
                 return View(a);
             }
 
-            //GET /dog/AdoptionApplicationDelete/ {id}
-
-            public IActionResult AdoptionApplicationDelete(int id)
-            {
-                var adoptionapplication = svc.GetAdoptionApplication(id);
-
-                if(adoptionapplication == null)
-                {
-                    Alert ($"Adoption application {id} not found.", AlertType.warning);
-                    return RedirectToAction(nameof(Index));
-                }
-
-                return View (adoptionapplication);
-            }
-
-            //POST /dog/adoptionapplicationdeleteconfirm/{id}
-            [HttpPost]
-            [ValidateAntiForgeryToken]
-            public IActionResult AdoptionApplicationDeleteConfirm(int id, int dogId)
-            {
-                svc.DeleteAdoptionApplication(id);
-                Alert($"Adoption application deleted successfully for dog {dogId}.", AlertType.info);
-                return RedirectToAction(nameof(Details), new{Id = dogId});
-            }
-
+           
 
         }
     }
