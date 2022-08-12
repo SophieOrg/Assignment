@@ -31,7 +31,7 @@ namespace FMS.Web.Controllers
                 
             }
 
-            //GET /Dog/ Search fucntion
+            //GET /Dog/ Search function
             public IActionResult Search(string searchBreed)
             {
                 var dog = svc.GetDogs()
@@ -242,13 +242,13 @@ namespace FMS.Web.Controllers
                 svc.DeleteMedicalHistoryNote(id);
                 Alert($"Medical history note deleted successfully for dog {dogId}.", AlertType.info);
                 
-                // redirect to the MOT ticket index view
+                // redirect to the Medical History Note index view
                 return RedirectToAction(nameof(Details), new { Id = dogId });
             }
 
             // ============== Dog Adoption Application Management ==============
+            
             //GET /dog /Create Adoption application/{id}
-
             public IActionResult AdoptionApplicationCreate(int id)
             {
                 var a = svc.GetDog(id);

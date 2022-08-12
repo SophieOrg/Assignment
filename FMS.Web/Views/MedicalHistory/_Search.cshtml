@@ -1,4 +1,4 @@
-@model TicketSearchViewModel
+@model MedNoteSearchViewModel
 
 <style>
                 body {font-family: "Times New Roman", Georgia, Serif;}
@@ -16,12 +16,12 @@
         <label class="form-check-label" for="Range">All</label>
     </div>
     <div class="form-check me-3">
-        <input class="form-check-input" type="radio" asp-for="Range" value="@TicketRange.CLOSED">
-        <label class="form-check-label" for="Range">Closed</label>
+        <input class="form-check-input" type="radio" asp-for="Range" value="@TicketRange.CURED">
+        <label class="form-check-label" for="Range">Cured</label>
     </div>
     <div class="form-check me-3">
-        <input class="form-check-input" type="radio" asp-for="Range" value="@TicketRange.OPEN" >
-        <label class="form-check-label" for="Range">Open</label>
+        <input class="form-check-input" type="radio" asp-for="Range" value="@TicketRange.ONGOING" >
+        <label class="form-check-label" for="Range">Ongoing</label>
     </div>
    
     <button class="btn standard" type="submit">Search</button>

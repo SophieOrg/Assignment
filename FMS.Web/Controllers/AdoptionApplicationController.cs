@@ -19,17 +19,17 @@ namespace FMS.Web.Controllers
             svc = ss;
         } 
 
-        // GET /ticket/index
+        // GET /adoption application/index
         public IActionResult Index(AdoptionApplicationSearchViewModel m)
         {           
-             // set the viewmodel Tickets property by calling service method 
+             // set the viewmodel AdoptionApplications property by calling service method 
             // using the range and query values from the viewmodel 
             m.AdoptionApplications = svc.SearchAdoptionApplications(m.AdoptionApplicationRange, m.Query);
 
             return View(m);
         }       
                
-        // GET/ticket/{id}
+        // GET/adoption application/{id}
         public IActionResult Details(int id)
         {
             var adoptionapplication = svc.GetAdoptionApplication(id);
@@ -42,12 +42,12 @@ namespace FMS.Web.Controllers
             return View(adoptionapplication);
         }
 
-        // POST /ticket/approve/{id}
+        // POST /adoption application/approve/{id}
         [HttpPost]
         [Authorize(Roles="admin,manager")]
         public IActionResult Approve([Bind("Id, Resolution")] AdoptionApplication t)
         {
-            // close ticket via service
+            // approve adoption application via service
             var adoptionapplication = svc.ApproveAdoptionApplication(t.Id, t.Resolution);
             if (adoptionapplication == null)
             {
@@ -63,13 +63,14 @@ namespace FMS.Web.Controllers
         }
 
        
-        // GET /ticket/create
+        // GET /adoption application/create
         [Authorize(Roles="guest")]
         public IActionResult CreateApplication()
         {
             var dogs = svc.GetDogs();
             // populate viewmodel select list property
-            var tvm = new AdoptionApplicationCreateViewModel {
+            var tvm = new AdoptionApplicationCreateViewModel
+            {
                 Dogs = new SelectList(dogs,"Id","Name") 
             };
             
@@ -77,7 +78,7 @@ namespace FMS.Web.Controllers
             return View( tvm );
         }
        
-        // POST /ticket/create
+        // POST /adoption application/create
         [HttpPost]
         [Authorize(Roles="guest")]
         public IActionResult CreateApplication(AdoptionApplicationCreateViewModel tvm)
@@ -104,6 +105,8 @@ namespace FMS.Web.Controllers
             if(adoptionapplication == null)
             {
                 Alert ($"Adoption application {id} not found.", AlertType.warning);
+                
+                //redirect to index view
                 return RedirectToAction(nameof(Index));
             }
 
@@ -117,6 +120,8 @@ namespace FMS.Web.Controllers
         {
             svc.DeleteAdoptionApplication(id);
             Alert($"Adoption application deleted successfully for dog {dogId}.", AlertType.info);
+            
+            //redirect to index view
             return RedirectToAction(nameof(Index));
         }
 

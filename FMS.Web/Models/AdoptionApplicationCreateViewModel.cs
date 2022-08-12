@@ -8,7 +8,7 @@ namespace FMS.Web.Models
         // selectlist of dogs (id, name)       
         public SelectList Dogs { set; get; }
 
-        // Collecting DogId and Issue in Form
+        // Collecting DogId and Information in Form
         [Required(ErrorMessage = "Please select a Dog")]
         [Display(Name = "Select Dog")]
         public int DogId { get; set;}
