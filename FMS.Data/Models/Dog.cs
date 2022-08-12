@@ -31,6 +31,8 @@ namespace FMS.Data.Models
         //Relationship 1-N Medical History note
         public IList<MedicalHistory> MedicalHistorys {get; set;} = new List<MedicalHistory>();
 
+         public IList<AdoptionApplication> AdoptionApplications {get; set;} = new List<AdoptionApplication>();
+        
     }
 
 }

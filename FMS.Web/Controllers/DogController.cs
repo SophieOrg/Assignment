@@ -246,5 +246,40 @@ namespace FMS.Web.Controllers
                 return RedirectToAction(nameof(Details), new { Id = dogId });
             }
 
+            // ============== Dog Adoption Application Management ==============
+            //GET /dog /Create Adoption application/{id}
+
+            public IActionResult AdoptionApplicationCreate(int id)
+            {
+                var a = svc.GetDog(id);
+
+                if(a == null)
+                {
+                    Alert($"Dog {id} not found.", AlertType.warning);
+                    return RedirectToAction(nameof(Index));
+                }
+
+                var adoptionapplication = new AdoptionApplication {DogId = id};
+                return View (adoptionapplication);
+            }
+
+            //POST /dog/adoptionapplicationcreate
+            [HttpPost]
+            [ValidateAntiForgeryToken]
+            public IActionResult AdoptionApplicationCreate(AdoptionApplication a)
+            {
+                if(ModelState.IsValid)
+                {
+                    var adoptionapplication = svc.CreateAdoptionApplication(a.DogId,a.Name, a.Email,a.PhoneNumber,a.Information);
+                    Alert($"Adoption application created successfully for dog {a.DogId}.", AlertType.info);
+
+                    return RedirectToAction(nameof(Details),new{Id = a.DogId});
+                }
+
+                return View(a);
+            }
+
+           
+
         }
     }

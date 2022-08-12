@@ -1,15 +1,23 @@
-﻿@model TicketSearchViewModel
+﻿@model MedNoteSearchViewModel
+
+<style>
+                body {font-family: "Times New Roman", Georgia, Serif;}
+                h1, h2, h3, h4, h5, h6 {
+                font-family: "Playfair Display";
+                letter-spacing: 5px;
+                }
+</style>
 
 <partial name="_Breadcrumbs" model=@(new [] { ("/", "Home"), ("/MedicalHistory", "MedicalHistory"), ("","Search") })>
 <h3>Search Medical History Notes</h3>
 
 <div class="my-4 d-flex flex-row justify-content-between align-items-center">  
    <a asp-action="Create" class="btn standard"><i class="bi bi-bag-plus"></i> Create a Medical History Note</a>   
-   <partial name="_Search" /> <!-- add form to search ticket issues -->
+   <partial name="_Search" /> <!-- add form to search medical history note reports -->
 </div>
 
-<table class="table">
-    <thead>
+<table class="table table-hover">
+    <thead class = "table-header">
       <tr>
          <th>Id</th>
          <th>Dog</th>        
@@ -21,7 +29,7 @@
       </tr>
     </thead>
     <tbody>
-      @foreach(var t in Model.Tickets) {
+      @foreach(var t in Model.MedicalNotes) {
           <tr>
             <td>@t.Id</td>
             <td>@t.Dog.Name</td>

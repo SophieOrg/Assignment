@@ -16,6 +16,8 @@ namespace FMS.Data.Services
 
         Dog GetDog(int id);
 
+        public Dog GetDogAndApplications(int id);
+
         Dog GetDogByChipNumber(string chipNumber);
 
         Dog AddDog(string breed,string name,string chipNumber,int age,string Information, string photoUrl);
@@ -42,6 +44,19 @@ namespace FMS.Data.Services
         IList<MedicalHistory> GetAllMedicalHistoryNotes();
         IList<MedicalHistory> GetOpenMedicalHistoryNotes();        
         IList<MedicalHistory> SearchMedicalHistoryNotes(TicketRange range, string query);
+
+        // ------------- Adoption Application Management -------------------
+
+        AdoptionApplication CreateAdoptionApplication(int dogId,string name, string email, string phoneNumber, string information);
+        AdoptionApplication GetAdoptionApplication(int id);
+        bool DeleteAdoptionApplication(int id);
+
+        IList<AdoptionApplication> GetAllAdoptionApplications();
+        IList<AdoptionApplication> SearchAdoptionApplications(AdoptionApplicationRange range, string query);
+
+        IList<AdoptionApplication> GetValidAdoptionApplications();
+
+        AdoptionApplication ApproveAdoptionApplication(int id, string resolution);
 
     }
     

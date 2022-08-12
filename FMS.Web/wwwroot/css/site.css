@@ -274,6 +274,10 @@ pricing.plan__actions{
   padding: 10px;
 }
 
+.table-header{
+  background: #e4f9f6;
+}
+
 /*----------Contact Us-------------*/
 #contact{
   background: #efefef;

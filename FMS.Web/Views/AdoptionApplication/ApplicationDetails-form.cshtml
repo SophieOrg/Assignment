@@ -1,0 +1,51 @@
+@model AdoptionApplication
+
+<style>
+                body {font-family: "Times New Roman", Georgia, Serif;}
+                h1, h2, h3, h4, h5, h6 {
+                font-family: "Playfair Display";
+                letter-spacing: 5px;
+                }
+</style>
+
+<!-- Breadcrumbs using partial view -->
+<partial name="_Breadcrumbs" model=@(new [] { ("/", "Home"), ("/ticket", "Tickets"), ("","Close") })>
+    
+<div class="col card rounded shadow-lg p-4">
+
+    <h3 class="mb-4">Adoption Application</h3>
+
+    <div class="mt-3">
+        <label asp-for="Id" class="form-label"></label>      
+        <input readonly asp-for="Id" class="form-control" >
+    </div>
+
+    <div class="mt-3">
+        <label asp-for="Name" class="form-label"></label>            
+    </div>
+
+    <div class="mt-3">
+        <label asp-for="Email" class="form-label"></label>        
+    </div>
+
+    <div class="mt-3">
+        <label asp-for="PhoneNumber" class="form-label"></label>                  
+    </div>
+     
+    <div class="mt-3">
+        <label asp-for="Information" class="form-label"></label>      
+        <textarea readonly rows="5" asp-for="Information" class="form-control"></textarea>
+        <span asp-validation-for="Information" class="text-danger"></span>
+    </div>
+
+    <div class="mt-4">           
+        <button asp-condition=@(User.HasOneOfRoles("admin,manager")) disabled="@(!Model.Active)" 
+                data-bs-toggle="modal" data-bs-target="#approveApplicationModal" class="btn btn-sm btn-danger">
+            <i class="bi bi-trash mr-1"></i>Approve
+        </button>
+        <a class="btn btn-link" asp-action="Index">Cancel</a>
+    </div>
+
+</div> 
+
+<partial name="_ApproveModal"/>
