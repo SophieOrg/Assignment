@@ -23,8 +23,6 @@ namespace FMS.Data.Services
             db.Initialise(); // recreate database
         }
 
-        // ==================== Rehoming Centre Management ==================
-       
         // Implementing IRehomingService methods here
         
         // ==================== Dog Related Operations ==================
@@ -148,10 +146,12 @@ namespace FMS.Data.Services
             {
                 //Id created by database
                 DogId = dogId,
-                CreatedOn = DateTime.Now,
-                Active = true,
                 Medication = medication,
                 Report = report,
+
+                //set by default in model but we can override here if required
+                CreatedOn = DateTime.Now,
+                Active = true,
 
             };
             db.MedicalHistorys.Add(medicalHistory);
@@ -184,7 +184,7 @@ namespace FMS.Data.Services
 
         }
 
-         // Retrieve all tickets and the student associated with the ticket
+         // Retrieve all medical history notes and the dog associated with the medical history note
         public IList<MedicalHistory> GetAllMedicalHistoryNotes()
         {
             return db.MedicalHistorys
@@ -192,31 +192,31 @@ namespace FMS.Data.Services
                      .ToList();
         }
 
-        // Retrieve all open tickets (Active)
-        public IList<MedicalHistory> GetOpenMedicalHistoryNotes()
+        // Retrieve all "ongoing" medical history notes (Active)
+        public IList<MedicalHistory> GetOngoingMedicalHistoryNotes()
         {
-            // return open tickets with associated students
+            // return ongoing medical history notes with associated dogs
             return db.MedicalHistorys
                      .Include(t => t.Dog) 
                      .Where(t => t.Active)
                      .ToList();
         } 
 
-        // perform a search of the tickets based on a query and
-        // an active range 'ALL', 'OPEN', 'CLOSED'
+        // perform a search of the medical history notes based on a query and
+        // an active range 'ALL', 'ONGOING', 'CURED'
         public IList<MedicalHistory> SearchMedicalHistoryNotes(TicketRange range, string query) 
         {
             // ensure query is not null    
             query = query == null ? "" : query.ToLower();
 
-            // search ticket issue, active status and student name
+            // search medical history note report, active status and dog name
             var results = db.MedicalHistorys
                             .Include(t => t.Dog)
                             .Where(t => (t.Report.ToLower().Contains(query) || 
                                          t.Dog.Name.ToLower().Contains(query)
                                         ) &&
-                                        (range == TicketRange.OPEN && t.Active ||
-                                         range == TicketRange.CLOSED && !t.Active ||
+                                        (range == TicketRange.ONGOING && t.Active ||
+                                         range == TicketRange.CURED && !t.Active ||
                                          range == TicketRange.ALL
                                         ) 
                             ).ToList();
@@ -225,17 +225,17 @@ namespace FMS.Data.Services
 
          public MedicalHistory CloseMedicalHistoryNote(int id, string resolution)
         {
-            var ticket = GetMedicalHistory(id);
-            // if ticket does not exist or is already closed return null
-            if (ticket == null || !ticket.Active) return null;
+            var medNote = GetMedicalHistory(id);
+            // if medical history note does not exist or is already marked as "Cured" return null
+            if ((medNote) == null || !medNote.Active) return null;
             
-            // ticket exists and is active so close
-            ticket.Active = false;
-            ticket.Resolution = resolution;
-            ticket.ResolvedOn = DateTime.Now;
+            // medical hsitory note exists and is active so mark as "Cured"
+            medNote.Active = false;
+            medNote.Resolution = resolution;
+            medNote.ResolvedOn = DateTime.Now;
            
             db.SaveChanges(); // write to database
-            return ticket;
+            return medNote;
         }
 
         // ===============Adoption application management ========================
@@ -255,29 +255,33 @@ namespace FMS.Data.Services
             };
 
             db.AdoptionApplications.Add(adoptionApplication);
-            db.SaveChanges();
+            db.SaveChanges();      //write to database
             return adoptionApplication;
 
         }
 
         public AdoptionApplication GetAdoptionApplication(int id)
-        {
+        {   
+            //return adoption application and related Dog or null if not found
             return db.AdoptionApplications
                      .Include(v => v.Dog)
                      .FirstOrDefault(v => v.Id == id);
         }
 
         public bool DeleteAdoptionApplication(int id)
-        {
+        {   
+            //find adoption application
             var adoptionApplication = GetAdoptionApplication(id);
             if(DeleteAdoptionApplication == null) return false;
 
+            //remove adoption application
             var result = db.AdoptionApplications.Remove(adoptionApplication);
 
             db.SaveChanges();
             return true;
         }
 
+        //Retrieve all adoption applications and the dog associated with the adoption application
         public IList <AdoptionApplication> GetAllAdoptionApplications()
         {
             return db.AdoptionApplications
@@ -286,24 +290,24 @@ namespace FMS.Data.Services
         }
         
                 
-        // Retrieve all open tickets (Active)
+        // Retrieve all awaiting adoption applications (Active)
         public IList<AdoptionApplication> GetValidAdoptionApplications()
         {
-            // return valid applications with associated dogs
+            // return awaiting adoption applications with associated dogs
             return db.AdoptionApplications
                      .Include(t => t.Dog) 
                      .Where(t => t.Active)
                      .ToList();
         } 
 
-        // perform a search of the tickets based on a query and
-        // an active range 'ALL', 'VALID', 'INVALID'
+        // perform a search of the adoption applications based on a query and
+        // an active range 'ALL', 'AWAITING', 'APPROVED'
         public IList<AdoptionApplication> SearchAdoptionApplications(AdoptionApplicationRange range, string query) 
         {
             // ensure query is not null    
             query = query == null ? "" : query.ToLower();
 
-            // search active status and student name
+            // search active status and Dog name
             var results = db.AdoptionApplications
                             .Include(t => t.Dog)
                             .Where(t => (
@@ -320,13 +324,14 @@ namespace FMS.Data.Services
          public AdoptionApplication ApproveAdoptionApplication(int id, string resolution)
         {
             var adoptionapplication = GetAdoptionApplication(id);
-            // if ticket does not exist or is already closed return null
+            
+            // if adoption application does not exist or is already approved return null
             if (adoptionapplication == null || !adoptionapplication.Active)
             {
                 return null;
             } 
             
-            // ticket exists and is active so close
+            // adoption application exists and is active so approve
             adoptionapplication.Active = false;
             adoptionapplication.Resolution = resolution;
            

@@ -1,6 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using FMS.Data.Validators; //allows access to URL resource
+using FMS.Data.Validators; //allows access to UrlResource validator
 
 namespace FMS.Data.Models
 {
@@ -31,6 +31,7 @@ namespace FMS.Data.Models
         //Relationship 1-N Medical History note
         public IList<MedicalHistory> MedicalHistorys {get; set;} = new List<MedicalHistory>();
 
+        //Relationship 1-N Adoption Application
          public IList<AdoptionApplication> AdoptionApplications {get; set;} = new List<AdoptionApplication>();
         
     }

@@ -19,13 +19,13 @@ namespace FMS.Web.Controllers
             svc = ss; // initialise via dependency injection
         } 
 
-        // GET /ticket/index
+        // GET /adoption application/index
         [HttpGet]
         public IActionResult Index()
         {
-            // return open tickets
-            var tickets = svc.GetValidAdoptionApplications();
-            var response = tickets.Select(t => t.ToDto() ).ToList(); 
+            // return awaiting adoption applications
+            var adoptionApplications = svc.GetValidAdoptionApplications();
+            var response = adoptionApplications.Select(t => t.ToDto() ).ToList(); 
 
             return Ok(response); 
         }
@@ -33,48 +33,47 @@ namespace FMS.Web.Controllers
         [HttpGet("search")]
         public IActionResult Search(string query = "", AdoptionApplicationRange AdoptionApplicationRange = AdoptionApplicationRange.ALL)
         {                             
-            var tickets = svc.SearchAdoptionApplications(AdoptionApplicationRange, query);
-            var results = tickets.Select( t => t.ToDto() ).ToList();
+            var adoptionApplications = svc.SearchAdoptionApplications(AdoptionApplicationRange, query);
+            var results = adoptionApplications.Select( t => t.ToDto() ).ToList();
             
             // return custom results list
             return Ok(results);
         }        
              
-        // GET/ticket/{id}
+        // GET/adoption application/{id}
         [HttpGet("{id}")]
         public IActionResult Details(int id)
         {
-            var ticket = svc.GetAdoptionApplication(id);
-            if (ticket == null)
+            var adoptionApplication = svc.GetAdoptionApplication(id);
+            if (adoptionApplication == null)
             {
                 return NotFound();             
             }
-            // return custom ticket object
-            return Ok(ConvertToCustomTicketObject(ticket));
+            // return custom adoption application object
+            return Ok(ConvertToCustomTicketObject(adoptionApplication));
         }
 
-        // POST /ticket/approve/{id}
+        // POST /adoption application/approve/{id}
         [HttpPost]       
         public IActionResult Approve([Bind("Id, Resolution")] AdoptionApplication t)
         {
-            // close ticket via service
-            var ticket = svc.ApproveAdoptionApplication(t.Id, t.Resolution);           
+            // approve adoption application via service
+            var adoptionApplication = svc.ApproveAdoptionApplication(t.Id, t.Resolution);           
 
-            // return updated ticket
-            return Ok(ticket);
+            // return updated adoption application
+            return Ok(adoptionApplication);
         }
        
-        // POST /ticket/create
+        // POST /adoption application/create
         [HttpPost]
         public IActionResult Create(AdoptionApplicationCreateViewModel tvm)
         {
             if (ModelState.IsValid)
             {
-                var ticket = svc.CreateAdoptionApplication(tvm.DogId,tvm.Name,tvm.Email,tvm.PhoneNumber,tvm.Information);
-                return Ok(ticket);
+                var adoptionApplication = svc.CreateAdoptionApplication(tvm.DogId,tvm.Name,tvm.Email,tvm.PhoneNumber,tvm.Information);
+                return Ok(adoptionApplication);
             }
             
-            // 
             return NotFound();
         }
 

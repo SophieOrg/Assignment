@@ -19,13 +19,13 @@ namespace FMS.Web.Controllers
             svc = ss; // initialise via dependency injection
         } 
 
-        // GET /ticket/index
+        // GET /medical history note/index
         [HttpGet]
         public IActionResult Index()
         {
             // return open tickets
-            var tickets = svc.GetOpenMedicalHistoryNotes();
-            var response = tickets.Select(t => t.ToDto() ).ToList(); 
+            var medNotes = svc.GetOngoingMedicalHistoryNotes();
+            var response = medNotes.Select(t => t.ToDto() ).ToList(); 
 
             return Ok(response); 
         }
@@ -33,45 +33,45 @@ namespace FMS.Web.Controllers
         [HttpGet("search")]
         public IActionResult Search(string query = "", TicketRange range = TicketRange.ALL)
         {                             
-            var tickets = svc.SearchMedicalHistoryNotes(range, query);
-            var results = tickets.Select( t => t.ToDto() ).ToList();
+            var medNotes = svc.SearchMedicalHistoryNotes(range, query);
+            var results = medNotes.Select( t => t.ToDto() ).ToList();
             
             // return custom results list
             return Ok(results);
         }        
              
-        // GET/ticket/{id}
+        // GET/medical history note/{id}
         [HttpGet("{id}")]
         public IActionResult Details(int id)
         {
-            var ticket = svc.GetMedicalHistory(id);
-            if (ticket == null)
+            var medNote = svc.GetMedicalHistory(id);
+            if (medNote == null)
             {
                 return NotFound();             
             }
-            // return custom ticket object
-            return Ok(ConvertToCustomTicketObject(ticket));
+            // return custom medNote object
+            return Ok(ConvertToCustomTicketObject(medNote));
         }
 
-        // POST /ticket/close/{id}
+        // POST /medical history note/close/{id}
         [HttpPost]       
         public IActionResult Close([Bind("Id, Resolution")] MedicalHistory t)
         {
-            // close ticket via service
-            var ticket = svc.CloseMedicalHistoryNote(t.Id, t.Resolution);           
+            // close medical history note via service
+            var medNote = svc.CloseMedicalHistoryNote(t.Id, t.Resolution);           
 
-            // return updated ticket
-            return Ok(ticket);
+            // return updated medical history note
+            return Ok(medNote);
         }
        
-        // POST /ticket/create
+        // POST /medical history note/create
         [HttpPost]
-        public IActionResult Create(TicketCreateViewModel tvm)
+        public IActionResult Create(MedNoteCreateViewModel tvm)
         {
             if (ModelState.IsValid)
             {
-                var ticket = svc.CreateMedicalHistory(tvm.DogId,tvm.Medication,tvm.Report);
-                return Ok(ticket);
+                var medNote = svc.CreateMedicalHistory(tvm.DogId,tvm.Medication,tvm.Report);
+                return Ok(medNote);
             }
             
             // 

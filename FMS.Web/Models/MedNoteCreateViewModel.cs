@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FMS.Web.Models
 {
-    public class TicketCreateViewModel
+    public class MedNoteCreateViewModel
     {
         // selectlist of dogs (id, name)       
         public SelectList Dogs { set; get; }

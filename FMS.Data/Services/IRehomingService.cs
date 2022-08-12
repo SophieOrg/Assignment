@@ -5,7 +5,7 @@ using FMS.Data.Models;
 	
 namespace FMS.Data.Services
 {
-    // This interface describes the operations that a FleetService class should implement
+    // This interface describes the operations that a RehomingService class should implement
     public interface IRehomingService
     {
         //Initialise the repository (database)
@@ -16,7 +16,7 @@ namespace FMS.Data.Services
 
         Dog GetDog(int id);
 
-        public Dog GetDogAndApplications(int id);
+        Dog GetDogAndApplications(int id);
 
         Dog GetDogByChipNumber(string chipNumber);
 
@@ -42,7 +42,7 @@ namespace FMS.Data.Services
         MedicalHistory CloseMedicalHistoryNote(int id, string resolution);
 
         IList<MedicalHistory> GetAllMedicalHistoryNotes();
-        IList<MedicalHistory> GetOpenMedicalHistoryNotes();        
+        IList<MedicalHistory> GetOngoingMedicalHistoryNotes();        
         IList<MedicalHistory> SearchMedicalHistoryNotes(TicketRange range, string query);
 
         // ------------- Adoption Application Management -------------------

@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace FMS.Data.Models
 {   
+    //used in adoption application search feature
     public enum AdoptionApplicationRange {AWAITING,APPROVED,ALL}
     public class AdoptionApplication
     {

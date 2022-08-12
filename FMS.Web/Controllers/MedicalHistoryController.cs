@@ -19,37 +19,37 @@ namespace FMS.Web.Controllers
             svc = ss;
         } 
 
-        // GET /ticket/index
-        public IActionResult Index(TicketSearchViewModel m)
+        // GET /medical history/index
+        public IActionResult Index(MedNoteSearchViewModel m)
         {                  
-            // set the viewmodel Tickets property by calling service method 
+            // set the viewmodel MedicalNotes property by calling service method 
             // using the range and query values from the viewmodel 
-            m.Tickets = svc.SearchMedicalHistoryNotes(m.Range, m.Query);
+            m.MedicalNotes = svc.SearchMedicalHistoryNotes(m.Range, m.Query);
 
             return View(m);
         }       
                
-        // GET/ticket/{id}
+        // GET/medcial history note/{id}
         public IActionResult Details(int id)
         {
-            var ticket = svc.GetMedicalHistory(id);
-            if (ticket == null)
+            var medNote = svc.GetMedicalHistory(id);
+            if (medNote == null)
             {
                 Alert("Medical history note not found.", AlertType.warning);  
                 return RedirectToAction(nameof(Index));             
             }
 
-            return View(ticket);
+            return View(medNote);
         }
 
-        // POST /ticket/close/{id}
+        // POST /medical history note/close/{id}
         [HttpPost]
         [Authorize(Roles="admin,manager")]
         public IActionResult Close([Bind("Id, Resolution")] MedicalHistory t)
         {
-            // close ticket via service
-            var ticket = svc.CloseMedicalHistoryNote(t.Id, t.Resolution);
-            if (ticket == null)
+            // close medical history note via service
+            var medNote = svc.CloseMedicalHistoryNote(t.Id, t.Resolution);
+            if (medNote == null)
             {
                 Alert("Medical history note not found.", AlertType.warning);                               
             }
@@ -62,13 +62,13 @@ namespace FMS.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
        
-        // GET /ticket/create
+        // GET /medical history note/create
         [Authorize(Roles="admin,manager")]
         public IActionResult Create()
         {
             var dogs = svc.GetDogs();
             // populate viewmodel select list property
-            var tvm = new TicketCreateViewModel {
+            var tvm = new MedNoteCreateViewModel {
                 Dogs = new SelectList(dogs,"Id","Name") 
             };
             
@@ -76,10 +76,10 @@ namespace FMS.Web.Controllers
             return View( tvm );
         }
        
-        // POST /ticket/create
+        // POST /medical history note/create
         [HttpPost]
         [Authorize(Roles="admin,manager")]
-        public IActionResult Create(TicketCreateViewModel tvm)
+        public IActionResult Create(MedNoteCreateViewModel tvm)
         {
             if (ModelState.IsValid)
             {
