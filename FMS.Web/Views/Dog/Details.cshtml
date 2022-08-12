@@ -49,7 +49,7 @@
                  asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary"><i
                  class="bi bi-pen"></i> Edit</a>
 
-                <!-- navigation link to CreateTicket action, passing correct route parameter -->
+                <!-- navigation link to AdoptionApplicationCreate action, passing correct route parameter -->
                 <a asp-condition=@(User.IsInRole("guest")) asp-action="AdoptionApplicationCreate"
                  asp-route-id="@Model.Id" class="btn standard btn-sm"><i class="bi bi-clipboard-data"></i> Adoption Application</a>   
 
