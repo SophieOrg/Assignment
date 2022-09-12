@@ -75,6 +75,34 @@ namespace FMS.Web.Controllers
             return RedirectToAction(nameof(Login));
         }
 
+        public IActionResult CreateNewUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CreateNewUser(UserRegisterViewModel m)
+        {
+            // check if email address is already in use - replaced by use of remote validator in UserRegisterViewModel
+            if (_svc.GetUserByEmail(m.Email) != null) {
+                ModelState.AddModelError(nameof(m.Email),"This email address is already in use. Choose another");
+            }
+
+            // check validation
+            if (!ModelState.IsValid)
+            {
+                return View(m);
+            }
+
+            // register user
+            var user = _svc.Register(m.Name, m.Email, m.Password, m.Role);               
+           
+            // registration successful now redirect to login page
+            Alert("New user Created Successfully!", AlertType.info); 
+            return RedirectToAction("SendGridEmail","Home");
+        }
+
         [HttpPost]
         public async Task<IActionResult> Logout()
         {

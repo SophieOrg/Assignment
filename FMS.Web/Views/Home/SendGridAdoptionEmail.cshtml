@@ -1,0 +1,37 @@
+@model Emailmodel  
+@{  
+    ViewData["Title"] = "SendgridAdoptionEmail";  
+}  
+  
+<h2>Adoption Approval Email:</h2>  
+<form asp-action="SendgridAdoptionEmailSubmit" asp-controller="Home" method="post">  
+
+        <div class="mt-2">
+            <label asp-for="From" class="form-label"></label>
+            <input asp-for="From" class="form-control" />
+            <span asp-validation-for="From" class="text-danger"></span>
+        </div>
+
+        <div class="mt-2">
+            <label asp-for="To" class="form-label"></label>
+            <input asp-for="To" class="form-control" />
+            <span asp-validation-for="To" class="text-danger"></span>
+        </div>
+
+        <div class="mt-2">
+            <label asp-for="Subject" class="form-label"></label>
+            <input asp-for="Subject" class="form-control" />
+            <span asp-validation-for="Subject" class="text-danger"></span>
+        </div>
+
+        <div class="mt-2">
+            <label asp-for="Body" class="form-label"></label>
+            <input asp-for="Body" class="form-control" />
+            <span asp-validation-for="Body" class="text-danger"></span>
+        </div>
+    
+        <div class="mt-2">
+            <input type="submit" value="Send Email"/>
+        </div>
+     
+</form> 

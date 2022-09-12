@@ -10,3 +10,15 @@ C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Data\
 C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Data\obj\Debug\net6.0\ref\FMS.Data.dll
 C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Data\obj\Debug\net6.0\FMS.Data.pdb
 C:\Users\Sophie Black\Downloads\Assignment-FMS-template (1)\Assignment\FMS.Data\obj\Debug\net6.0\refint\FMS.Data.dll
+C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Data\bin\Debug\net6.0\FMS.Data.deps.json
+C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Data\bin\Debug\net6.0\FMS.Data.dll
+C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Data\bin\Debug\net6.0\FMS.Data.pdb
+C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Data\obj\Debug\net6.0\FMS.Data.csproj.AssemblyReference.cache
+C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Data\obj\Debug\net6.0\FMS.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Data\obj\Debug\net6.0\FMS.Data.AssemblyInfoInputs.cache
+C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Data\obj\Debug\net6.0\FMS.Data.AssemblyInfo.cs
+C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Data\obj\Debug\net6.0\FMS.Data.csproj.CoreCompileInputs.cache
+C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Data\obj\Debug\net6.0\FMS.Data.dll
+C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Data\obj\Debug\net6.0\refint\FMS.Data.dll
+C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Data\obj\Debug\net6.0\FMS.Data.pdb
+C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Data\obj\Debug\net6.0\ref\FMS.Data.dll

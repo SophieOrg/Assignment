@@ -17,6 +17,19 @@
     ("","Create Adoption Application")
 }) />
 
+<h5>Adoption Application process:</h5>
+<ol>
+    <li>Search for the dog you would like to Adoption</li> 
+    <li>Fill out adoption application form</li>
+    <li>If you do not receive an email within 14 days that your adoption application has been approved,
+        then you have unfortunately been unsuccessful this time round.
+        Do not worry, there is plenty of other dogs looking for their forever home, they may be a better match for you.
+        View them here - <a asp-controller="Dog" asp-action="Index" class="btn btn-sm btn-link"><i class="bi bi-list"></i>
+                Dogs</a></li>
+    <li>If you do receive an email that your adoption application has been approved, then follow the instructions in the email to arrange a time to collect your dog.</li>
+</ol>
+
+
 <form asp-action="AdoptionApplicationCreate">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
    

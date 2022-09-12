@@ -35,7 +35,7 @@ namespace FMS.Web.Controllers
             public IActionResult Search(string searchBreed)
             {
                 var dog = svc.GetDogs()
-                             .Where(v => v.Breed == searchBreed)
+                             .Where(v => v.Breed.ToUpper() == searchBreed.ToUpper())
                              .ToList();
                 
                 if (dog.Count == 0)

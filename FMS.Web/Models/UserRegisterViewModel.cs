@@ -20,7 +20,7 @@ namespace FMS.Web.Models
         public string PasswordConfirm  { get; set; }
 
         [Required]
-        public Role Role { get; set; }
+        public Role Role { get; set; } = Role.guest;
 
         [Required]
         public string Name { get; set; }

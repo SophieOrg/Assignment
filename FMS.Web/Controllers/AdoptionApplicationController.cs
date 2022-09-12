@@ -6,6 +6,7 @@ using FMS.Data.Models;
 using FMS.Data.Services;
 using FMS.Web.Models;
 
+
 namespace FMS.Web.Controllers
 {
     [Authorize]
@@ -59,7 +60,7 @@ namespace FMS.Web.Controllers
             }
 
             // redirect to the index view
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("SendGridAdoptionEmail", "Home");
         }
 
        
@@ -124,7 +125,6 @@ namespace FMS.Web.Controllers
             //redirect to index view
             return RedirectToAction(nameof(Index));
         }
-
 
     }
 }

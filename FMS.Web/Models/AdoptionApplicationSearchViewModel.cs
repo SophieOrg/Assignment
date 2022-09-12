@@ -4,6 +4,7 @@ namespace FMS.Web.Models
 {   
     public class AdoptionApplicationSearchViewModel
     {
+
         // result set
         public IList<AdoptionApplication> AdoptionApplications { get; set;} = new List<AdoptionApplication>();
 
@@ -12,3 +13,7 @@ namespace FMS.Web.Models
         public AdoptionApplicationRange AdoptionApplicationRange { get; set; } = AdoptionApplicationRange.AWAITING;
     }
 }
+
+
+
+

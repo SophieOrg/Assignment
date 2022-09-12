@@ -42,6 +42,10 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-controller="AdoptionApplication" asp-action="Index"><button class = "btn default">Adoption Applications</button></a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-condition=@(User.IsInRole("manager")) asp-controller="User" asp-action="CreateNewUser"><button class = "btn default">Create New Users</button></a>
+                        </li>
                     
 
                         <!-- company dropdown -->

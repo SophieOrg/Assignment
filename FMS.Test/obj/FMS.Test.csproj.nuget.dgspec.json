@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Test\\FMS.Test.csproj": {}
+    "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Test\\FMS.Test.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj": {
+    "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Data\\FMS.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj",
+        "projectUniqueName": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Data\\FMS.Data.csproj",
         "projectName": "FMS.Data",
-        "projectPath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj",
+        "projectPath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Data\\FMS.Data.csproj",
         "packagesPath": "C:\\Users\\Sophie Black\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\obj\\",
+        "outputPath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Sophie Black\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -66,18 +66,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Test\\FMS.Test.csproj": {
+    "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Test\\FMS.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Test\\FMS.Test.csproj",
+        "projectUniqueName": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Test\\FMS.Test.csproj",
         "projectName": "FMS.Test",
-        "projectPath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Test\\FMS.Test.csproj",
+        "projectPath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Test\\FMS.Test.csproj",
         "packagesPath": "C:\\Users\\Sophie Black\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Test\\obj\\",
+        "outputPath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Sophie Black\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -92,8 +92,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj": {
-                "projectPath": "c:\\Users\\Sophie Black\\Downloads\\Assignment-FMS-template (1)\\Assignment\\FMS.Data\\FMS.Data.csproj"
+              "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Data\\FMS.Data.csproj": {
+                "projectPath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Data\\FMS.Data.csproj"
               }
             }
           }
@@ -144,7 +144,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.103\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }
