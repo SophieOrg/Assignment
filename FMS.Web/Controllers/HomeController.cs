@@ -70,12 +70,6 @@ public class HomeController : Controller
         return View();
     }
 
-     public IActionResult Quote()
-    {
-        return View();
-    }
-    
-
     public IActionResult About()
     {
         return View();

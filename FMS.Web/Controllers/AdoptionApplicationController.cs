@@ -15,6 +15,7 @@ namespace FMS.Web.Controllers
         private readonly IRehomingService svc;
 
         // use constructor dependency injection to initialise service
+        // reduces coupling between controllers and the service implementation
         public AdoptionApplicationController(IRehomingService ss)
         {
             svc = ss;
@@ -47,10 +48,10 @@ namespace FMS.Web.Controllers
         // POST /adoption application/approve/{id}
         [HttpPost]
         [Authorize(Roles="admin,manager")]
-        public IActionResult Approve([Bind("Id, Resolution")] AdoptionApplication t)
+        public IActionResult Approve([Bind("Id")] AdoptionApplication t)
         {
             // approve adoption application via service
-            var adoptionapplication = svc.ApproveAdoptionApplication(t.Id, t.Resolution);
+            var adoptionapplication = svc.ApproveAdoptionApplication(t.Id);
             if (adoptionapplication == null)
             {
                 Alert("Adoption Application not found.", AlertType.warning);                               

@@ -184,8 +184,8 @@ namespace FMS.Web.Controllers
 
             // ============== Dog Medical History Management ==============
 
-            // GET /dog/Create Medcial History Note/{id}
-            public IActionResult TicketCreate(int id)
+            // GET /dog/Create Medical History Note/{id}
+            public IActionResult MedNoteCreate(int id)
             {     
                 var v = svc.GetDog(id);
                 // check the returned dog is not null and if so alert
@@ -204,7 +204,7 @@ namespace FMS.Web.Controllers
             // POST /dog/medicalhistorynotecreate
             [HttpPost]
             [ValidateAntiForgeryToken]
-            public IActionResult TicketCreate(MedicalHistory m)
+            public IActionResult MedNoteCreate(MedicalHistory m)
             {
                 if (ModelState.IsValid)
                 {                
@@ -217,7 +217,7 @@ namespace FMS.Web.Controllers
             }
 
             // GET /dog/MedicalHistoryNoteDelete/{id}
-            public IActionResult TicketDelete(int id)
+            public IActionResult MedNoteDelete(int id)
             {
                 // load the Medical History Note using the service
                 var medhistorynote = svc.GetMedicalHistory(id);
@@ -235,7 +235,7 @@ namespace FMS.Web.Controllers
             // POST /dog/ticketdeleteconfirm/{id}
             [HttpPost]
             [ValidateAntiForgeryToken]
-            public IActionResult TicketDeleteConfirm(int id, int dogId)
+            public IActionResult MedNoteDeleteConfirm(int id, int dogId)
             {
                 // delete Medical History note via service
                 svc.DeleteMedicalHistoryNote(id);

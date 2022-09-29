@@ -414,7 +414,7 @@ namespace FMS.Test
             var a = svc.CreateAdoptionApplication(d.Id,"Ellen Barlow","ellen31@gmail.com","07557228216","Living in an apartment with one cat.  There is a fenced off shared garden for the apartment block.");
 
             // act
-            var r = svc.ApproveAdoptionApplication(a.Id, "Resolved");
+            var r = svc.ApproveAdoptionApplication(a.Id);
 
             // assert
             Assert.NotNull(r);              //verify approved adoption application is returned          
@@ -430,8 +430,8 @@ namespace FMS.Test
             var m = svc.CreateAdoptionApplication(d.Id,"Ellen Barlow","ellen31@gmail.com","07557228216","Living in an apartment with one cat.  There is a fenced off shared garden for the apartment block.");
 
             // act
-            var approved = svc.ApproveAdoptionApplication(m.Id, "approved");     // approve "awaiting" adoption application   
-            approved = svc.ApproveAdoptionApplication(m.Id,"approved");         // close "approved" adoption application
+            var approved = svc.ApproveAdoptionApplication(m.Id);     // approve "awaiting" adoption application   
+            approved = svc.ApproveAdoptionApplication(m.Id);         // close "approved" adoption application
 
             // assert
             Assert.Null(approved);                    // no adoption application returned as already marked as "Approved"

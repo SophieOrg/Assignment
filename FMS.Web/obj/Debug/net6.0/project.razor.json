@@ -16334,13 +16334,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\Views\\Dog\\TicketCreate.cshtml",
-      "TargetPath": "Views\\Dog\\TicketCreate.cshtml",
+      "FilePath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\Views\\Dog\\MedNoteDelete.cshtml",
+      "TargetPath": "Views\\Dog\\MedNoteDelete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16351,6 +16351,11 @@
     {
       "FilePath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\Views\\Home\\SendGridEmail.cshtml",
       "TargetPath": "Views\\Home\\SendGridEmail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\Views\\Dog\\MedNoteCreate.cshtml",
+      "TargetPath": "Views\\Dog\\MedNoteCreate.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16479,18 +16484,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\Views\\Dog\\_Tickets.cshtml",
-      "TargetPath": "Views\\Dog\\_Tickets.cshtml",
+      "FilePath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\Views\\Dog\\_MedNotes.cshtml",
+      "TargetPath": "Views\\Dog\\_MedNotes.cshtml",
       "FileKind": "mvc"
     },
     {
       "FilePath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\Views\\MedicalHistory\\_Search.cshtml",
       "TargetPath": "Views\\MedicalHistory\\_Search.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\Views\\Dog\\TicketDelete.cshtml",
-      "TargetPath": "Views\\Dog\\TicketDelete.cshtml",
       "FileKind": "mvc"
     },
     {

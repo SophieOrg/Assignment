@@ -50,7 +50,7 @@
 
     <div class="mt-4">           
         <button asp-condition=@(User.HasOneOfRoles("volunteer,manager")) disabled="@(!Model.Active)" 
-                data-bs-toggle="modal" data-bs-target="#closeTicketModal" class="btn btn-sm btn-danger">
+                data-bs-toggle="modal" data-bs-target="#closeMedNoteModal" class="btn btn-sm btn-danger">
             <i class="bi bi-trash mr-1"></i>Close
         </button>
         <a class="btn btn-link" asp-action="Index">Cancel</a>

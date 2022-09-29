@@ -43,7 +43,7 @@ namespace FMS.Data.Services
 
         IList<MedicalHistory> GetAllMedicalHistoryNotes();
         IList<MedicalHistory> GetOngoingMedicalHistoryNotes();        
-        IList<MedicalHistory> SearchMedicalHistoryNotes(TicketRange range, string query);
+        IList<MedicalHistory> SearchMedicalHistoryNotes(MedNoteRange range, string query);
 
         // ------------- Adoption Application Management -------------------
 
@@ -56,7 +56,7 @@ namespace FMS.Data.Services
 
         IList<AdoptionApplication> GetValidAdoptionApplications();
 
-        AdoptionApplication ApproveAdoptionApplication(int id, string resolution);
+        AdoptionApplication ApproveAdoptionApplication(int id);
 
 
     }

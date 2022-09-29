@@ -24,7 +24,7 @@ namespace FMS.Web.Controllers
         {                  
             // set the viewmodel MedicalNotes property by calling service method 
             // using the range and query values from the viewmodel 
-            m.MedicalNotes = svc.SearchMedicalHistoryNotes(m.Range, m.Query);
+            m.MedicalNotes = svc.SearchMedicalHistoryNotes(m.MedNoteRange, m.Query);
 
             return View(m);
         }       

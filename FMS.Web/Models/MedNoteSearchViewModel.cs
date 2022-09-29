@@ -9,6 +9,6 @@ namespace FMS.Web.Models
 
         // search options        
         public string Query { get; set; } = "";
-        public TicketRange Range { get; set; } = TicketRange.ONGOING;
+        public MedNoteRange MedNoteRange { get; set; } = MedNoteRange.ONGOING;
     }
 }

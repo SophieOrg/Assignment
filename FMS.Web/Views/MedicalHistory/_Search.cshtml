@@ -12,15 +12,15 @@
 <!-- search form -->
 <form asp-controller="MedicalHistory" asp-action="Index" class="d-flex flex-row align-items-center">
     <div class="form-check me-3">
-        <input class="form-check-input" type="radio" asp-for="Range" value="@TicketRange.ALL">
+        <input class="form-check-input" type="radio" asp-for="MedNoteRange" value="@MedNoteRange.ALL">
         <label class="form-check-label" for="Range">All</label>
     </div>
     <div class="form-check me-3">
-        <input class="form-check-input" type="radio" asp-for="Range" value="@TicketRange.CURED">
+        <input class="form-check-input" type="radio" asp-for="MedNoteRange" value="@MedNoteRange.CURED">
         <label class="form-check-label" for="Range">Cured</label>
     </div>
     <div class="form-check me-3">
-        <input class="form-check-input" type="radio" asp-for="Range" value="@TicketRange.ONGOING" >
+        <input class="form-check-input" type="radio" asp-for="MedNoteRange" value="@MedNoteRange.ONGOING" >
         <label class="form-check-label" for="Range">Ongoing</label>
     </div>
    

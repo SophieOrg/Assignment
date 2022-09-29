@@ -2,9 +2,7 @@ using System;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System.Security.Cryptography;
 
-// https://www.devtrends.co.uk/blog/hashing-encryption-and-random-in-asp.net-core
 // Simple class to generate and verify a Hash
-
 namespace FMS.Data.Security
 {
     static class Hasher

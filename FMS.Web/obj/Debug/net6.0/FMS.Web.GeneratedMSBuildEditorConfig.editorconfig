@@ -59,24 +59,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/MedNoteCreate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXE1lZE5vdGVDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/MedNoteDelete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXE1lZE5vdGVEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXFNlYXJjaC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/TicketCreate.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXFRpY2tldENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/TicketDelete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXFRpY2tldERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/_DeleteModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXF9EZWxldGVNb2RhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/_Tickets.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXF9UaWNrZXRzLmNzaHRtbA==
+[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/_MedNotes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXF9NZWROb3Rlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/About.cshtml]

@@ -55,7 +55,7 @@ namespace FMS.Data.Services
             var adoptionApplication2 = svc.CreateAdoptionApplication(d3.Id,"Sophie Black","sophieblackk161@gmail.com","07557253516","Family of 3, both parents retired so can provide a loving home for Poppie");
             
             //Approve dog 1's adoption application
-            svc.ApproveAdoptionApplication(adoptionApplication1.Id, "Not suitable to rehome the dog, another dog is required in the house.");
+            svc.ApproveAdoptionApplication(adoptionApplication1.Id);
 
              //Close dog 1's first medical history note 
             svc.CloseMedicalHistoryNote(medicalHistory1.Id, "Broken leg healed after 6 weeks in a cast.");

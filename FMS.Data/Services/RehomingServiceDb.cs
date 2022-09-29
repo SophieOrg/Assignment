@@ -205,7 +205,7 @@ namespace FMS.Data.Services
 
         // perform a search of the medical history notes based on a query and
         // an active range 'ALL', 'ONGOING', 'CURED'
-        public IList<MedicalHistory> SearchMedicalHistoryNotes(TicketRange range, string query) 
+        public IList<MedicalHistory> SearchMedicalHistoryNotes(MedNoteRange range, string query) 
         {
             // ensure query is not null    
             query = query == null ? "" : query.ToLower();
@@ -216,9 +216,9 @@ namespace FMS.Data.Services
                             .Where(t => (t.Report.ToLower().Contains(query) || 
                                          t.Dog.Name.ToLower().Contains(query)
                                         ) &&
-                                        (range == TicketRange.ONGOING && t.Active ||
-                                         range == TicketRange.CURED && !t.Active ||
-                                         range == TicketRange.ALL
+                                        (range == MedNoteRange.ONGOING && t.Active ||
+                                         range == MedNoteRange.CURED && !t.Active ||
+                                         range == MedNoteRange.ALL
                                         ) 
                             ).ToList();
             return  results;  
@@ -322,7 +322,7 @@ namespace FMS.Data.Services
             return  results;  
         }
 
-         public AdoptionApplication ApproveAdoptionApplication(int id, string resolution)
+         public AdoptionApplication ApproveAdoptionApplication(int id)
         {
             var adoptionapplication = GetAdoptionApplication(id);
             
@@ -334,7 +334,6 @@ namespace FMS.Data.Services
             
             // adoption application exists and is active so approve
             adoptionapplication.Active = false;
-            adoptionapplication.Resolution = resolution;
            
             db.SaveChanges(); // write to database
             

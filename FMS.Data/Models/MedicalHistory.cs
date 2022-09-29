@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace FMS.Data.Models
 {   
     //used in medical history search feature
-    public enum TicketRange {ONGOING,CURED,ALL}
+    public enum MedNoteRange {ONGOING,CURED,ALL}
     public class MedicalHistory
     {
         public int Id { get; set; }

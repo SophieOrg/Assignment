@@ -15,7 +15,7 @@
 else
 {
     <div>
-        <table style="width:75%" class="table table-sm table-bordered">
+        <table style="width:50%;margin-left:150px;margin-right:1500px;" class="table table-sm">
             <thead>
                 <tr>           
                     <th>Created On</th>    
@@ -43,7 +43,7 @@ else
                         <td>@m.Report</td>
                         <td>@m.Medication</td>
                         <td>
-                            <a asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) asp-action="TicketDelete" asp-route-id="@m.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
+                            <a asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) asp-action="MedNoteDelete" asp-route-id="@m.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
                         </td>             
                     </tr>   
                 }

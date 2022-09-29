@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-// AMC - a simple tag helper to display content based on condition
+// a simple tag helper to display content based on condition
 namespace FMS.Web.TagHelpers
 {
     [HtmlTargetElement(Attributes = "asp-condition")] //nameof(Condition))]
