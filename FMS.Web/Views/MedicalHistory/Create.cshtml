@@ -20,7 +20,7 @@
         <label asp-for="DogId" class="form-label"></label>      
         <select asp-for="DogId" class="form-control" 
                 asp-items="@Model.Dogs"))">
-            <option>Select Dog</option>
+            <option disable selected>Select Dog</option>
         </select>
         <span asp-validation-for="DogId" class="text-danger"></span>
     </div>

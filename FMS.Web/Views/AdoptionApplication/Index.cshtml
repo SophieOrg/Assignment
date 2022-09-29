@@ -39,12 +39,12 @@
             <td>@t.PhoneNumber</td>
             <td>@t.Information.Substring(0, t.Information.Length < 20 ? t.Information.Length : 20) ...</td>
             <td>
-               <i asp-condition="@t.Active"    class="bi bi-clock-history"></i>
-               <i asp-condition="@(!t.Active)" class="bi bi-check"></i>  
+               <i asp-condition="@t.Active"    class="bi bi-clock-history" title="Awaiting"></i>
+               <i asp-condition="@(!t.Active)" class="bi bi-check" title="Approved"></i>  
             </td>
             <td>
-               <a asp-action="Details" asp-route-id="@t.Id"><i class="bi bi-lightbulb ion-icon-style"></i></a>   
-               <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-action="AdoptionApplicationDelete" asp-route-id="@t.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>                                      
+               <a asp-action="Details" asp-route-id="@t.Id"><i class="bi bi-lightbulb ion-icon-style" title="Details"></i></a>   
+               <a asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) asp-action="AdoptionApplicationDelete" asp-route-id="@t.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>                                      
             </td>
          </tr>
       }

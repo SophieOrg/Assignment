@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jYZ27IS0rpYbrifFafx96NQUwTXXYGOArI1FlHmZuvk=",
+  "Hash": "Kq2Yox2FYzwnmwyzPvXiWm3BSPvi3Q1lToJ4F5Ueark=",
   "Source": "FMS.Web",
   "BasePath": "_content/FMS.Web",
   "Mode": "Default",
@@ -49,23 +49,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\FMS.Web.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\wwwroot\\css\\pricing-table.css",
-      "SourceId": "FMS.Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\wwwroot\\",
-      "BasePath": "_content/FMS.Web",
-      "RelativePath": "css/pricing-table.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\pricing-table.css"
     },
     {
       "Identity": "C:\\Users\\Sophie Black\\src\\dissertation project\\Assignment\\FMS.Web\\wwwroot\\css\\site.css",

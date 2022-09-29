@@ -137,7 +137,7 @@ namespace FMS.Data.Services
 
          
         // ==================== Medical History Note Management ==================
-        public MedicalHistory CreateMedicalHistory(int dogId,string medication, string report)
+        public MedicalHistory CreateMedicalHistory(int dogId,DateTime createdon,string medication, string report)
         {   
             var dog = GetDog(dogId);
             if(dog == null) return null;
@@ -148,9 +148,10 @@ namespace FMS.Data.Services
                 DogId = dogId,
                 Medication = medication,
                 Report = report,
-
+                
                 //set by default in model but we can override here if required
-                CreatedOn = DateTime.Now,
+                /*CreatedOn = DateTime.Now,*/
+                CreatedOn = createdon,
                 Active = true,
 
             };
@@ -195,7 +196,7 @@ namespace FMS.Data.Services
         // Retrieve all "ongoing" medical history notes (Active)
         public IList<MedicalHistory> GetOngoingMedicalHistoryNotes()
         {
-            // return ongoing medical history notes with associated dogs
+            // return ongoing medical history notes with associated dogs (since active is set to true in the model it means all "ongoing" med notes here)
             return db.MedicalHistorys
                      .Include(t => t.Dog) 
                      .Where(t => t.Active)

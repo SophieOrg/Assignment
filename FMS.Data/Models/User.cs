@@ -1,9 +1,10 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace FMS.Data.Models
 {
     
-    public enum Role { admin, manager, guest }
+    public enum Role { volunteer, manager, guest }
 
     public class User
     {

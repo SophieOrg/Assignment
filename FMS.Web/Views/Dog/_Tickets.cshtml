@@ -43,7 +43,7 @@ else
                         <td>@m.Report</td>
                         <td>@m.Medication</td>
                         <td>
-                            <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-action="TicketDelete" asp-route-id="@m.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
+                            <a asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) asp-action="TicketDelete" asp-route-id="@m.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
                         </td>             
                     </tr>   
                 }

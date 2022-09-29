@@ -37,11 +37,11 @@
             <td>@t.Report.Substring(0, t.Report.Length < 20 ? t.Report.Length : 20) ...</td>
             <td>@t.Medication.Substring(0, t.Medication.Length < 20 ? t.Medication.Length : 20) ...</td>
             <td>
-               <i asp-condition="@t.Active"    class="bi bi-toggle-on"></i>
-               <i asp-condition="@(!t.Active)" class="bi bi-toggle-off"></i>  
+               <i asp-condition="@t.Active"    class="bi bi-toggle-on" title="Ongoing"></i>
+               <i asp-condition="@(!t.Active)" class="bi bi-toggle-off" title="Cured"></i>  
             </td>
             <td>
-               <a asp-action="Details" asp-route-id="@t.Id"><i class="bi bi-lightbulb"></i> Details</a>                                          
+               <a asp-action="Details" asp-route-id="@t.Id"><i class="bi bi-lightbulb" title="Details"></i> Details</a>                                          
             </td>
          </tr>
       }

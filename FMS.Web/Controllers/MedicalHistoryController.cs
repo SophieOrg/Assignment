@@ -29,7 +29,7 @@ namespace FMS.Web.Controllers
             return View(m);
         }       
                
-        // GET/medcial history note/{id}
+        // GET/medical history note/{id}
         public IActionResult Details(int id)
         {
             var medNote = svc.GetMedicalHistory(id);
@@ -44,7 +44,7 @@ namespace FMS.Web.Controllers
 
         // POST /medical history note/close/{id}
         [HttpPost]
-        [Authorize(Roles="admin,manager")]
+        [Authorize(Roles="volunteer,manager")]
         public IActionResult Close([Bind("Id, Resolution")] MedicalHistory t)
         {
             // close medical history note via service
@@ -63,7 +63,7 @@ namespace FMS.Web.Controllers
         }
        
         // GET /medical history note/create
-        [Authorize(Roles="admin,manager")]
+        [Authorize(Roles="volunteer,manager")]
         public IActionResult Create()
         {
             var dogs = svc.GetDogs();
@@ -78,14 +78,21 @@ namespace FMS.Web.Controllers
        
         // POST /medical history note/create
         [HttpPost]
-        [Authorize(Roles="admin,manager")]
+        [Authorize(Roles="volunteer,manager")]
         public IActionResult Create(MedNoteCreateViewModel tvm)
         {
             if (ModelState.IsValid)
             {
-                svc.CreateMedicalHistory(tvm.DogId,tvm.Medication,tvm.Report);
-     
-                Alert($"Medical history note created.", AlertType.info);  
+                var medNote = svc.CreateMedicalHistory(tvm.DogId,tvm.CreatedOn,tvm.Medication,tvm.Report);
+                if (medNote != null)
+                {
+                    Alert($"Medical history note created.", AlertType.info);  
+                }
+                else
+                {
+                    Alert($"Problem creating medical note", AlertType.warning);
+                }
+                
                 return RedirectToAction(nameof(Index));
             }
             

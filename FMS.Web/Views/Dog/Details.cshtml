@@ -41,11 +41,11 @@
             <div>
 
                 <!-- navigation link to CreateTicket action, passing correct route parameter -->
-                <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-action="TicketCreate"
+                <a asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) asp-action="TicketCreate"
                  asp-route-id="@Model.Id" class="btn standard btn-sm"><i class="bi bi-bag-plus"></i> Add Medical History Note</a>          
 
                 <!-- navigation link to Details action, passing the correct route id parameter -->
-                <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-controller="Dog"
+                <a asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) asp-controller="Dog"
                  asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-secondary"><i
                  class="bi bi-pen"></i> Edit</a>
 
@@ -61,9 +61,9 @@
 
             <div>
                 <!-- toggle display of Delete Modal -->
-                <button asp-condition=@(User.IsInRole("admin")) || User.IsInRole("manager")) type="button" class="btn btn-sm btn-danger" 
-                        data-bs-toggle="modal" data-bs-target="#deleteStudentModal">
-                    <i class="bi bi-trash"></i> Delete
+                <button asp-condition=@(User.IsInRole("volunteer")) || User.IsInRole("manager")) type="button" class="btn btn-sm btn-danger" 
+                        data-bs-toggle="modal" data-bs-target="#deleteDogModal">
+                    <i class="bi bi-trash"></i>Delete
                 </button>
             </div>
         </div>
@@ -76,7 +76,7 @@
     
 </div>
 
-<!-- Tickets -->
+<!-- Medical History notes -->
 <div class="row pt-3">
     <partial name="_Tickets" />
 </div>

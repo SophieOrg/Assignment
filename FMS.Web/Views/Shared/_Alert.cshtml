@@ -3,6 +3,7 @@
     string type    = (string)TempData["Alert.Type"];
 }
 
+<!-- Only display if the alert and message are available. Use the message and type to style the alert-->
 @if (message != null && type != null)
 {
     <div class="alert alert-@type alert-dismissible fade show" role="alert" aria-label="@type">            

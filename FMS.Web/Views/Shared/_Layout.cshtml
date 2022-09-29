@@ -36,11 +36,11 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-controller="MedicalHistory" asp-action="Index"><button class = "btn default">Medical History</button></a>
+                            <a class="nav-link text-dark" asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) asp-controller="MedicalHistory" asp-action="Index"><button class = "btn default">Medical History</button></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-controller="AdoptionApplication" asp-action="Index"><button class = "btn default">Adoption Applications</button></a>
+                            <a class="nav-link text-dark" asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) asp-controller="AdoptionApplication" asp-action="Index"><button class = "btn default">Adoption Applications</button></a>
                         </li>
 
                         <li class="nav-item">

@@ -5,7 +5,6 @@ using FMS.Data.Services;
 using Microsoft.AspNetCore.Authorization;
 using FMS.Web.Models;
 
-
 namespace FMS.Web.Controllers
 {
     [Authorize]
@@ -53,7 +52,7 @@ namespace FMS.Web.Controllers
             // GET /dog/details/{id}
             public IActionResult Details(int id)
             {  
-                // retrieve the dog with specifed id from the service
+                // retrieve the dog with specified id from the service
                 var v = svc.GetDog(id);
 
                 // if dog not found(i.e. GetDog() returns null), display an alert & redirect to index
@@ -70,7 +69,7 @@ namespace FMS.Web.Controllers
             }
 
             // GET: /dog/create
-            [Authorize(Roles="admin,manager")]
+            [Authorize(Roles="volunteer,manager")]
             public IActionResult Create()
             {   
                 // display blank form to create a new dog
@@ -80,8 +79,8 @@ namespace FMS.Web.Controllers
             // POST /dog/create
             [HttpPost]
             [ValidateAntiForgeryToken]
-            [Authorize(Roles="admin,manager")]
-            public IActionResult Create([Bind("Breed,Name,ChipNumber,Age,PhotoUrl")]
+            [Authorize(Roles="volunteer,manager")]
+            public IActionResult Create([Bind("Breed,Name,ChipNumber,Age,Information,PhotoUrl")]
                                          Dog v)
             {
                 // check chip number is unique for this dog
@@ -106,7 +105,7 @@ namespace FMS.Web.Controllers
             }
 
             // GET /dog/edit/{id}
-            [Authorize(Roles="admin,manager")]
+            [Authorize(Roles="volunteer,manager")]
             public IActionResult Edit(int id)
             {        
                 // load the dog using the service
@@ -126,7 +125,7 @@ namespace FMS.Web.Controllers
             // POST /dog/edit/{id}
             [HttpPost]
             [ValidateAntiForgeryToken]
-            [Authorize(Roles="admin,manager")]
+            [Authorize(Roles="volunteer,manager")]
             public IActionResult Edit(int id, Dog v)
             {
                 // check chip number is unique for this dog
@@ -151,7 +150,7 @@ namespace FMS.Web.Controllers
             }
 
             // GET / dog /delete/{id}
-            [Authorize(Roles="admin,manager")]      
+            [Authorize(Roles="volunteer,manager")]      
             public IActionResult Delete(int id)
             {       
                 // load the dog using the service
@@ -170,7 +169,7 @@ namespace FMS.Web.Controllers
 
             // POST /dog/delete/{id}
             [HttpPost]
-            [Authorize(Roles="admin,manager")]
+            [Authorize(Roles="volunteer,manager")]
             [ValidateAntiForgeryToken]              
             public IActionResult DeleteConfirm(int id)
             {
@@ -209,7 +208,7 @@ namespace FMS.Web.Controllers
             {
                 if (ModelState.IsValid)
                 {                
-                    var mot = svc.CreateMedicalHistory(m.DogId,m.Medication,m.Report);
+                    var mot = svc.CreateMedicalHistory(m.DogId,m.CreatedOn,m.Medication,m.Report);
                     Alert($"Medical history note created successfully for dog {m.DogId}.", AlertType.info);
                     return RedirectToAction(nameof(Details), new { Id = m.DogId });
                 }

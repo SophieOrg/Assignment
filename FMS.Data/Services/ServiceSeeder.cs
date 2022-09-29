@@ -38,18 +38,21 @@ namespace FMS.Data.Services
                                     "https://images.thestar.com/zmNaIUH4viBNAAfaInyOcD1cumw=/1280x1024/smart/filters:cb(1609510078418)/https://www.thestar.com/content/dam/thestar/life/together/pets/2020/12/27/dean-a-toronto-basset-hound-is-a-laziness-guru-what-can-he-teach-us/online27.jpg");                                                                                                
            
             //add medical history for dog 1
-            var medicalHistory1 = svc.CreateMedicalHistory(d1.Id,"Painkillers given","Broken leg");
-            var medicalHistory2 = svc.CreateMedicalHistory(d1.Id,"Anti-inflammation tablets to take once a week","Arthritis");
-            var medicalHistory3 = svc.CreateMedicalHistory(d1.Id,"Blood thinners given, to take once daily","Surgery on heart"); 
+            var medicalHistory1 = svc.CreateMedicalHistory(d1.Id,DateTime.Parse("12-09-21"),"Painkillers given","Broken leg");
+            var medicalHistory2 = svc.CreateMedicalHistory(d1.Id,DateTime.Parse("01-08-21"),"Anti-inflammation tablets to take once a week","Arthritis");
+            var medicalHistory3 = svc.CreateMedicalHistory(d1.Id,DateTime.Parse("16-03-20"),"Blood thinners given, to take once daily","Surgery on heart"); 
 
             //add medical history for dog 2
-            var medicalHistory4 = svc.CreateMedicalHistory(d2.Id,"N/A", "Got neutered and required stitches");
+            var medicalHistory4 = svc.CreateMedicalHistory(d2.Id,DateTime.Parse("12-09-21"),"N/A", "Got neutered and required stitches");
 
             //add medical history for dog 3
-            var medicalHistory5 = svc.CreateMedicalHistory(d3.Id,"Painkillers given","Broken leg");
+            var medicalHistory5 = svc.CreateMedicalHistory(d3.Id,DateTime.Parse("12-09-21"),"Painkillers given","Broken leg");
 
             //add adoption application for dog 1
             var adoptionApplication1 = svc.CreateAdoptionApplication(d1.Id,"Sue Wilson","suewilson@gmail.com","07557228216","Family of 5, both parents retired so can provide a loving home for Freddie");
+            
+            //add adoption application for dog 3
+            var adoptionApplication2 = svc.CreateAdoptionApplication(d3.Id,"Sophie Black","sophieblackk161@gmail.com","07557253516","Family of 3, both parents retired so can provide a loving home for Poppie");
             
             //Approve dog 1's adoption application
             svc.ApproveAdoptionApplication(adoptionApplication1.Id, "Not suitable to rehome the dog, another dog is required in the house.");
@@ -62,8 +65,8 @@ namespace FMS.Data.Services
 
             //add users
             var u1 = svc.Register("Guest", "guest@sms.com", "guest", Role.guest);
-            var u2 = svc.Register("Administrator", "admin@sms.com", "admin", Role.admin);
-            var u3 = svc.Register("Manager", "manager@sms.com", "manager", Role.manager);
+            var u2 = svc.Register("Volunteer", "volunteer@sms.com", "volunteer@PawfectHomes22!", Role.volunteer);
+            var u3 = svc.Register("Manager", "manager@sms.com", "manager@22!", Role.manager);
 
 
         }

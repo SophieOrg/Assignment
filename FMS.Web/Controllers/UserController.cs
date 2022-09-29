@@ -27,7 +27,7 @@ namespace FMS.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login([Bind("Email,Password")]UserLoginViewModel m)
+        public async Task<IActionResult> Login(UserLoginViewModel m)
         {        
             // call service to Authenticate User
             var user = _svc.Authenticate(m.Email, m.Password);
@@ -54,7 +54,7 @@ namespace FMS.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Register([Bind("Name,Email,Password,PasswordConfirm,Role")]UserRegisterViewModel m)
+        public IActionResult Register([Bind("Name,Email,Password,Role")]UserRegisterViewModel m)
         {
             // check if email address is already in use - replaced by use of remote validator in UserRegisterViewModel
             if (_svc.GetUserByEmail(m.Email) != null) {

@@ -36,7 +36,7 @@ namespace FMS.Data.Services
 
         // ------------- Medical History Management -------------------
 
-        MedicalHistory CreateMedicalHistory(int dogId,string medication, string report);
+        MedicalHistory CreateMedicalHistory(int dogId,DateTime createdOn,string medication, string report);
         MedicalHistory GetMedicalHistory(int id);
         bool DeleteMedicalHistoryNote(int id);
         MedicalHistory CloseMedicalHistoryNote(int id, string resolution);

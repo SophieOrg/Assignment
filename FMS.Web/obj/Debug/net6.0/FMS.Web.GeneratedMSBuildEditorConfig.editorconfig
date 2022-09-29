@@ -19,14 +19,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvblxBZG9wdGlvbkFwcGxpY2F0aW9uRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/ApplicationDetails-form.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvblxBcHBsaWNhdGlvbkRldGFpbHMtZm9ybS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvblxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvblxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -103,14 +95,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/Quote copy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdW90ZSBjb3B5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/Quote.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdW90ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/SendGridAdoptionEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZW5kR3JpZEFkb3B0aW9uRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -121,10 +105,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/Details-form.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcRGV0YWlscy1mb3JtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/Details.cshtml]

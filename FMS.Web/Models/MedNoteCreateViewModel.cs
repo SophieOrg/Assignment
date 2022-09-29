@@ -8,10 +8,12 @@ namespace FMS.Web.Models
         // selectlist of dogs (id, name)       
         public SelectList Dogs { set; get; }
 
-        // Collecting DogId and Issue in Form
+        // Collecting DogId, date created on, report and medication in Form
         [Required(ErrorMessage = "Please select a Dog")]
         [Display(Name = "Select Dog")]
         public int DogId { get; set;}
+
+        public DateTime CreatedOn {get;set;}
 
         [Required]
         [StringLength(100, MinimumLength = 5)]

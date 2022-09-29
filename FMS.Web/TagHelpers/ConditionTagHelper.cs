@@ -14,7 +14,7 @@ namespace FMS.Web.TagHelpers
         {
             if (!Condition)
             {
-                output.SuppressOutput();
+                output.SuppressOutput(); //suppress element content if the condition is true
             }
         }
     }

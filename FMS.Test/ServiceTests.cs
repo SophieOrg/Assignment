@@ -235,8 +235,8 @@ namespace FMS.Test
         {
             // arrange 
             var d = svc.AddDog("Pug", "Lulu", "537", 2, "", "");
-            svc.CreateMedicalHistory(d.Id, "","Ticket 1");
-            svc.CreateMedicalHistory(d.Id, "", "Ticket 2");
+            svc.CreateMedicalHistory(d.Id,DateTime.Parse("12-09-21"), "","Ticket 1");
+            svc.CreateMedicalHistory(d.Id,DateTime.Parse("12-09-21"), "", "Ticket 2");
             
             // act
             var dog = svc.GetDog(d.Id);
@@ -256,7 +256,7 @@ namespace FMS.Test
                                     "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
          
             // act
-            var t = svc.CreateMedicalHistory(v1.Id,"Ellen Barlow","Broken leg");
+            var t = svc.CreateMedicalHistory(v1.Id,DateTime.Parse("12-09-21"),"Ellen Barlow","Broken leg");
            
             // assert
             Assert.NotNull(t); //t should return "not null" because an Medical History Note has been successfully created
@@ -270,7 +270,7 @@ namespace FMS.Test
             // arrange
             var v1 = svc.AddDog("Shih Tzu","Poppie","MQ12 YIS",6,"Poppie is a beautiful Shih Tzu looking for a calm and patient home to settle her paws. She is a very foodie girl who loves a tasty treat and loves using her nose and learning new things. She is an active girl who likes being on the go, exploring and sniffing in quieter areas and enjoys sitting by her human companions and having gentle fusses once she has gotten to know you.",
                                     "https://patterjack.com/wp-content/uploads/2021/11/shih_tzu_article_c.jpg");
-            var t = svc.CreateMedicalHistory(v1.Id,"Ellen Barlow","Broken leg");
+            var t = svc.CreateMedicalHistory(v1.Id,DateTime.Parse("12-09-21"),"Ellen Barlow","Broken leg");
 
             // act
             var deleted = svc.DeleteMedicalHistoryNote(t.Id);     // delete medical history note   
@@ -285,7 +285,7 @@ namespace FMS.Test
         {
             // arrange
             var d = svc.AddDog("Pug", "Lulu", "537", 3, "", "");
-            var t = svc.CreateMedicalHistory(d.Id, "medication goes here","Dummy Medical history report");
+            var t = svc.CreateMedicalHistory(d.Id,DateTime.Parse("12-09-21"), "medication goes here","Dummy Medical history report");
 
             // act
             var medNote = svc.GetMedicalHistory(t.Id);
@@ -301,8 +301,8 @@ namespace FMS.Test
         {
             // arrange
             var d = svc.AddDog("Pug", "Lulu", "537", 3, "", "");
-            var m1 = svc.CreateMedicalHistory(d.Id,"", "Dummy Medical history note 1");
-            var m2 = svc.CreateMedicalHistory(d.Id,"", "Dummy Medical history note 2");
+            var m1 = svc.CreateMedicalHistory(d.Id,DateTime.Parse("12-09-21"),"", "Dummy Medical history note 1");
+            var m2 = svc.CreateMedicalHistory(d.Id,DateTime.Parse("12-09-21"),"", "Dummy Medical history note 2");
 
             // act
             var ongoing = svc.GetOngoingMedicalHistoryNotes();
@@ -316,7 +316,7 @@ namespace FMS.Test
         {
             // arrange
             var d = svc.AddDog("Pug", "Lulu", "537", 3, "", "");
-            var m = svc.CreateMedicalHistory(d.Id, "","Dummy medical history note");
+            var m = svc.CreateMedicalHistory(d.Id,DateTime.Parse("12-09-21"), "","Dummy medical history note");
 
             // act
             var r = svc.CloseMedicalHistoryNote(m.Id, "Resolved");
@@ -332,7 +332,7 @@ namespace FMS.Test
         {
             // arrange
             var d = svc.AddDog("Pug", "Lulu", "537", 3, "", "");
-            var m = svc.CreateMedicalHistory(d.Id,"", "Dummy Ticket");
+            var m = svc.CreateMedicalHistory(d.Id,DateTime.Parse("12-09-21"),"", "Dummy Ticket");
 
             // act
             var closed = svc.CloseMedicalHistoryNote(m.Id, "Solved");     // close "Ongoing" medical history note    
@@ -444,7 +444,7 @@ namespace FMS.Test
         public void User_Register_WhenValid_ShouldReturnUser()
         {
             // arrange 
-            var reg = svc.Register("XXX", "xxx@email.com", "admin", Role.admin);
+            var reg = svc.Register("XXX", "xxx@email.com", "admin", Role.volunteer);
             
             // act
             var user = svc.GetUserByEmail(reg.Email);
@@ -458,10 +458,10 @@ namespace FMS.Test
         public void User_Register_WhenDuplicateEmail_ShouldReturnNull()
         {
             // arrange 
-            var s1 = svc.Register("XXX", "xxx@email.com", "admin", Role.admin);
+            var s1 = svc.Register("XXX", "xxx@email.com", "admin", Role.volunteer);
             
             // act
-            var s2 = svc.Register("XXX", "xxx@email.com", "admin", Role.admin);
+            var s2 = svc.Register("XXX", "xxx@email.com", "admin", Role.volunteer);
 
             // assert
             Assert.NotNull(s1);
@@ -472,7 +472,7 @@ namespace FMS.Test
         public void User_Authenticate_WhenInValidCredentials_ShouldReturnNull()
         {
             // arrange 
-            var s1 = svc.Register("XXX", "xxx@email.com", "admin", Role.admin);
+            var s1 = svc.Register("XXX", "xxx@email.com", "admin", Role.volunteer);
         
             // act
             var user = svc.Authenticate("xxx@email.com", "guest");
@@ -485,7 +485,7 @@ namespace FMS.Test
         public void User_Authenticate_WhenValidCredentials_ShouldReturnUser()
         {
             // arrange 
-            var s1 = svc.Register("XXX", "xxx@email.com", "admin", Role.admin);
+            var s1 = svc.Register("XXX", "xxx@email.com", "admin", Role.volunteer);
         
             // act
             var user = svc.Authenticate("xxx@email.com", "admin");

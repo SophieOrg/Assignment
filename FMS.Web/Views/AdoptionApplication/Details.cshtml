@@ -48,7 +48,7 @@
     </dl>
 
     <div class="mt-4">           
-        <button asp-condition=@(User.HasOneOfRoles("admin,manager")) disabled="@(!Model.Active)" 
+        <button asp-condition=@(User.HasOneOfRoles("volunteer,manager")) disabled="@(!Model.Active)" 
                 data-bs-toggle="modal" data-bs-target="#approveApplicationModal" class="btn btn-sm btn-success">
             <i class="bi bi-check mr-1"></i>Approve
         </button>

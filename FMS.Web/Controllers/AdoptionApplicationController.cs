@@ -28,7 +28,8 @@ namespace FMS.Web.Controllers
             m.AdoptionApplications = svc.SearchAdoptionApplications(m.AdoptionApplicationRange, m.Query);
 
             return View(m);
-        }       
+        } 
+
                
         // GET/adoption application/{id}
         public IActionResult Details(int id)
@@ -56,13 +57,13 @@ namespace FMS.Web.Controllers
             }
             else
             {
-                Alert($"Adoption Application {t.Id } approved.", AlertType.info);  
+                Alert($"Adoption Application {t.Id } approved.", AlertType.info);
+                /*svc.DeleteDog(t.Id+1); */
             }
 
             // redirect to the index view
             return RedirectToAction("SendGridAdoptionEmail", "Home");
         }
-
        
         // GET /adoption application/create
         [Authorize(Roles="guest")]

@@ -13,7 +13,7 @@
     ("","Dogs")
 }) />
 
-<a asp-condition=@User.HasOneOfRoles("manager,admin") class="btn btn-sm standard my-3" asp-action="Create" >
+<a asp-condition=@User.HasOneOfRoles("manager,volunteer") class="btn btn-sm standard my-3" asp-action="Create" >
     <i class="bi bi-plus"></i> Add New Dog
 </a>
 
@@ -43,10 +43,10 @@
                     <a data-bs-toggle="tooltip" data-bs-placement="top" title="view dog details" asp-controller="Dog"
                      asp-action="Details" asp-route-id=@v.Id><i class="bi bi-display"></i></a>  
                     <!-- Add edit link  -->
-                    <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) 
+                    <a asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) 
                      asp-action="Edit" asp-route-id=@v.Id><i class="bi bi-pen"></i></a>
                     <!-- Add delete link -->
-                    <a asp-condition=@(User.IsInRole("admin") || User.IsInRole("manager")) asp-action="Delete" 
+                    <a asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) asp-action="Delete" 
                      asp-route-id=@v.Id><i class="bi bi-trash"></i></a>
 
                 </div>
