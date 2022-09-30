@@ -59,7 +59,7 @@ namespace FMS.Web.Controllers
             else
             {
                 Alert($"Adoption Application {t.Id } approved.", AlertType.info);
-                /*svc.DeleteDog(t.Id+1); */
+                /*svc.DeleteDog(t.Id+1); this line of code automatically deletes the dog from the system when an adoption application is approved*/
             }
 
             // redirect to the index view

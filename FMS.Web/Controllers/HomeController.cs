@@ -22,43 +22,6 @@ public class HomeController : Controller
         ViewBag.Message = "Time Now";
         return View();
     }
-    
-    public IActionResult SendgridEmail()
-    {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-    }
-
-    public IActionResult SendgridAdoptionEmail()
-    {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-    }
-
-        
-    [HttpPost]
-    public async Task<IActionResult> SendgridEmailSubmit(Emailmodel emailmodel)
-    {
-        ViewData["Message"] = "Email Sent!!!...";
-        Example emailexample = new Example();
-        await emailexample.Execute(emailmodel.From, emailmodel.To, emailmodel.Subject, emailmodel.Body
-            , emailmodel.Body);
-
-        return View("Index","Home");
-    }
-
-    [HttpPost]
-    public async Task<IActionResult> SendgridAdoptionEmailSubmit(Emailmodel emailmodel)
-    {
-        ViewData["Message"] = "Email Sent!!!...";
-        Example emailexample = new Example();
-        await emailexample.Execute(emailmodel.From, emailmodel.To, emailmodel.Subject, emailmodel.Body
-            , emailmodel.Body);
-
-        return View("Index","AdoptionApplication");
-    }
 
     public IActionResult Privacy()
     {
@@ -79,6 +42,48 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+    
+
+     public IActionResult SendgridEmail()
+    {
+            ViewData["Message"] = "Your application description page.";
+            //displaying the email form for account details
+            return View();
+    }
+
+    public IActionResult SendgridAdoptionEmail()
+    {
+            ViewData["Message"] = "Your application description page.";
+            //displaying the email form for adoption application approval
+            return View();
+    }
+
+        
+    [HttpPost]
+    public async Task<IActionResult> SendgridEmailSubmit(Emailmodel emailmodel)
+    {
+        ViewData["Message"] = "Email Sent!!!...";
+
+        //creating a new instance of the class Example
+        //then calling the Execute method
+        Example emailexample = new Example(); 
+        await emailexample.Execute(emailmodel.From, emailmodel.To, emailmodel.Subject, emailmodel.Body
+            , emailmodel.Body);
+        
+        //return to the Home (Index.cshtml) page
+        return View("Index","Home");
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> SendgridAdoptionEmailSubmit(Emailmodel emailmodel)
+    {
+        ViewData["Message"] = "Email Sent!!!...";
+        Example emailexample = new Example();
+        await emailexample.Execute(emailmodel.From, emailmodel.To, emailmodel.Subject, emailmodel.Body
+            , emailmodel.Body);
+
+        return View("Index","AdoptionApplication");
     }
 
     internal class Example

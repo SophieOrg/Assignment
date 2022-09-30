@@ -419,7 +419,6 @@ namespace FMS.Test
             // assert
             Assert.NotNull(r);              //verify approved adoption application is returned          
             Assert.False(r.Active);
-            Assert.Equal("Resolved",r.Resolution);
         }
 
         [Fact] 

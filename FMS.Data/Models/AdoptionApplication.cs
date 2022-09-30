@@ -25,9 +25,6 @@ namespace FMS.Data.Models
         [StringLength(300,MinimumLength = 5)]
         public string Information {get; set;}
 
-        [StringLength(500)]
-        public string Resolution {get; set;}
-
         public bool Active {get; set;} = true; 
 
         //Adoption application owned by a dog

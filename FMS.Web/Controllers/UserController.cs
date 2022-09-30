@@ -134,13 +134,11 @@ namespace FMS.Web.Controllers
         }
 
         // ==================================== Build Claims Principle =================================
-        // https://docs.microsoft.com/en-us/aspnet/core/security/authorization/roles?view=aspnetcore-5.0
-        // https://andrewlock.net/introduction-to-authentication-with-asp-net-core/
-        
+
         // return claims principal based on authenticated user
         private  ClaimsPrincipal BuildClaimsPrincipal(User user)
         { 
-            // define user claims - you can add as many as required
+            // define user claims - add as many as required
             var claims = new ClaimsIdentity(new[]
             {
                 new Claim(ClaimTypes.Email, user.Email),

@@ -25,13 +25,13 @@
             
                 </div>
                 <div class="mt-2">
-                    <!-- Add View link -->
+                    <!-- View link -->
                     <a data-bs-toggle="tooltip" data-bs-placement="top" title="view dog details" asp-controller="Dog"
                      asp-action="Details" asp-route-id=@v.Id><i class="bi bi-display"></i></a>  
-                    <!-- Add edit link  -->
+                    <!-- Edit link  -->
                     <a asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) 
                      asp-action="Edit" asp-route-id=@v.Id><i class="bi bi-pen"></i></a>
-                    <!-- Add delete link -->
+                    <!-- Delete link -->
                     <a asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) asp-action="Delete" 
                      asp-route-id=@v.Id><i class="bi bi-trash"></i></a>
 

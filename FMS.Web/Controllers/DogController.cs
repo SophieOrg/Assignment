@@ -9,7 +9,7 @@ namespace FMS.Web.Controllers
 {
     [Authorize]
     public class DogController : BaseController
-    {
+    {   
             // provide suitable controller actions
             private IRehomingService svc;
             
