@@ -230,7 +230,7 @@ namespace FMS.Data.Services
             // if medical history note does not exist or is already marked as "Cured" return null
             if ((medNote) == null || !medNote.Active) return null;
             
-            // medical hsitory note exists and is active so mark as "Cured"
+            // medical history note exists and is active so mark as "Cured"
             medNote.Active = false;
             medNote.Resolution = resolution;
             medNote.ResolvedOn = DateTime.Now;

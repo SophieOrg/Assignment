@@ -40,8 +40,9 @@
         <div class="mt-4 d-flex flex-row justify-content-between">
             <div>
 
-                <!-- navigation link to CreateTicket action, passing correct route parameter -->
-                <a asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) asp-action="TicketCreate"
+                <!-- navigation link to MedNoteCreate action action, passing correct route parameter -->
+                <!-- asp-route-id passes teh Id of the dog the medical note is being created for -->
+                <a asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) asp-action="MedNoteCreate"
                  asp-route-id="@Model.Id" class="btn standard btn-sm"><i class="bi bi-bag-plus"></i> Add Medical History Note</a>          
 
                 <!-- navigation link to Details action, passing the correct route id parameter -->
@@ -61,7 +62,7 @@
 
             <div>
                 <!-- toggle display of Delete Modal -->
-                <button asp-condition=@(User.IsInRole("volunteer")) || User.IsInRole("manager")) type="button" class="btn btn-sm btn-danger" 
+                <button asp-condition=@(User.IsInRole("volunteer") || User.IsInRole("manager")) type="button" class="btn btn-sm btn-danger" 
                         data-bs-toggle="modal" data-bs-target="#deleteDogModal">
                     <i class="bi bi-trash"></i>Delete
                 </button>

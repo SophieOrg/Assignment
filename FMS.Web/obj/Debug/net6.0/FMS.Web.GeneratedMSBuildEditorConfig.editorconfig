@@ -8,169 +8,169 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FMS.Web
 build_property.RootNamespace = FMS.Web
-build_property.ProjectDir = C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Web\
+build_property.ProjectDir = c:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Web\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Web
+build_property.MSBuildProjectDirectory = c:\Users\Sophie Black\src\dissertation project\Assignment\FMS.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/AdoptionApplicationDelete.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/AdoptionApplicationDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvblxBZG9wdGlvbkFwcGxpY2F0aW9uRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/Details.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvblxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/Index.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/_ApproveModal.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/_ApproveModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvblxfQXBwcm92ZU1vZGFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/_SearchApplications.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/AdoptionApplication/_SearchApplications.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRvcHRpb25BcHBsaWNhdGlvblxfU2VhcmNoQXBwbGljYXRpb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/AdoptionApplicationCreate.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/AdoptionApplicationCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXEFkb3B0aW9uQXBwbGljYXRpb25DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Create.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Delete.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Details.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Edit.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Index.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/MedNoteCreate.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/MedNoteCreate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXE1lZE5vdGVDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/MedNoteDelete.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/MedNoteDelete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXE1lZE5vdGVEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Search.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXFNlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/_DeleteModal.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/_DeleteModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXF9EZWxldGVNb2RhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/_MedNotes.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Dog/_MedNotes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9nXF9NZWROb3Rlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/About.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/Contact.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/Index.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/Privacy.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/SendGridAdoptionEmail.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/SendGridAdoptionEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZW5kR3JpZEFkb3B0aW9uRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/SendGridEmail.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Home/SendGridEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZW5kR3JpZEVtYWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/Create.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/Details.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/Index.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/_CloseModal.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/_CloseModal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcX0Nsb3NlTW9kYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/_Search.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/MedicalHistory/_Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVkaWNhbEhpc3RvcnlcX1NlYXJjaC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/Error.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/_Alert.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/_Alert.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BbGVydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/_AlertIcons.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/_AlertIcons.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BbGVydEljb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/_BreadCrumbs.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/_BreadCrumbs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CcmVhZENydW1icy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/_Login.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/_Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Sponsorships/Index.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Sponsorships/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BvbnNvcnNoaXBzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/User/CreateNewUser.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/User/CreateNewUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGVOZXdVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/User/Login.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/User/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/User/Register.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/User/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/_ViewImports.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/_ViewStart.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/_Layout.cshtml]
+[c:/Users/Sophie Black/src/dissertation project/Assignment/FMS.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-3uvmor61l3

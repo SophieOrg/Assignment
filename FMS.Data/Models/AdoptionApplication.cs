@@ -31,7 +31,7 @@ namespace FMS.Data.Models
         public int DogId {get; set;}  //foreign key
 
         [JsonIgnore]
-        public Dog Dog {get; set;}  //navigation property
+        public Dog Dog {get; set;}  //navigation property (allows us to access the dog properties if I use @model Adoption application in a view)
     
 
     }

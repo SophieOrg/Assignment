@@ -8,10 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 //Add Authentfication service using cookie scheme
 builder.Services.AddCookieAuthentication();
        
-// Add services to the container.
+//Add services to the container.
+//enables MVC
 builder.Services.AddControllersWithViews();
 
-//configure DI system
+//configure DI system (container provides a specific instance of a service defined by the specified interface)
+//when an instance of IRehomingService is requested, provide the RehomingServiceDb instance
+//created here by the DI system
+//if we want to change the instance our controllers use we just change it in once place
+//reduces coupling between controllers and the service implementation
 builder.Services.AddScoped<IRehomingService,RehomingServiceDb>();
 
 var app = builder.Build();
@@ -28,6 +33,7 @@ else {
 }
 
 //app.UseHttpsRedirection();
+//allows static resources to be served by the web application (HTML pages, css)
 app.UseStaticFiles();
 
 app.UseRouting();

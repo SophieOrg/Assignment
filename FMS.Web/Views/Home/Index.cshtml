@@ -55,16 +55,20 @@
     </div>
     
     <script>
+        //the first image on the home screen before the sliding images
         var slideImg = document.getElementById("slideImg");
+
+        //images stored in an array
         var images = new Array(
             "https://dogtime.com/assets/uploads/2019/06/dog-games-1-1.jpg",
             "https://www.petbasics.com/sites/g/files/adhwdz411/files/2020-11/golden-retriever-playing-with-ball-in-grass.jpg",
             "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/happy-and-cheerful-dog-playing-fetch-with-toy-bone-royalty-free-image-1590068781.jpg?crop=1.00xw:0.748xh;0,0.115xh&resize=1200:*"
         );
-
+        
+        //length of array stored in variable len, here len = 3
         var len = images.length;
         var i = 0;
-
+        //starts with i=0, goes through and checks that 0 > 2 = false, then skips to increasing i by 1 and displaying the image in array position [0] for three seconds
         function slider(){
             if(i > len-1){
                 i = 0;

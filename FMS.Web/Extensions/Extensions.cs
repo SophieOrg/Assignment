@@ -19,6 +19,8 @@ namespace FMS.Web
         }
 
         // AddCookieAuthentication extension method - to be called in Startup service configuration
+        // means there's only one line of code in the program.cs file
+        // goes to user controller - errornotauthorised method (and same for errornotauthenticated method)
         public static void AddCookieAuthentication(
             this IServiceCollection services, 
             string notAuthorised = "/User/ErrorNotAuthorised", 

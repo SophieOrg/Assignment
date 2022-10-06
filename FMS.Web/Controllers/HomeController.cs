@@ -17,9 +17,10 @@ public class HomeController : Controller
     }
 
     public IActionResult Index()
-    {
+    {   
+        /*
         ViewBag.LongTime = DateTime.Now.ToLongTimeString();
-        ViewBag.Message = "Time Now";
+        ViewBag.Message = "Time Now"; */
         return View();
     }
 
@@ -90,7 +91,7 @@ public class HomeController : Controller
     {      
         public async Task Execute(string From,string To,string subject,string plainTextContent,string htmlContent)
         {
-            var apiKey = "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";
+            var apiKey = "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";
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress(From);            
             var to = new EmailAddress(To);           

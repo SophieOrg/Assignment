@@ -25,7 +25,8 @@ namespace FMS.Data.Services
         Dog UpdateDog(Dog updated);
 
         bool DeleteDog(int id);
-
+        
+        //helper method
         bool IsDuplicateDogChipped(string chipNumber, int dogId);        
     
 

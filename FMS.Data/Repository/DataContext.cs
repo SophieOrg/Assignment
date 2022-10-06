@@ -22,6 +22,7 @@ namespace FMS.Data.Repository
         }
 
         // custom method used in development to keep database in sync with models
+        //must make sure the database exists
         public void Initialise() 
         {
             Database.EnsureDeleted();

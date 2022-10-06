@@ -12,8 +12,10 @@ namespace FMS.Web.Models
         [Required(ErrorMessage = "Please select a Dog")]
         [Display(Name = "Select Dog")]
         public int DogId { get; set;}
-
-        public DateTime CreatedOn {get;set;}
+        
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime CreatedOn {get;set;} = DateTime.Now;
 
         [Required]
         [StringLength(100, MinimumLength = 5)]

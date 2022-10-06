@@ -40,6 +40,11 @@ namespace FMS.Web.Controllers
             }
            
             // authenticated so sign user in using cookie authentication to store principal
+            // client sends login request to server, once verified the server response includes
+            // the Set-cookie header (cookie name, value and expiry time)
+            // the client needs to send this cookie in the cookie header in all subsequent requests to the server
+            // on logging out the server sends back the Set-cookie header that causes the cookie to expire
+            // creating a cookie with set of claims based on user data
             await HttpContext.SignInAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme,
                 BuildClaimsPrincipal(user)
@@ -54,7 +59,7 @@ namespace FMS.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Register([Bind("Name,Email,Password,Role")]UserRegisterViewModel m)
+        public IActionResult Register([Bind("Name,Email,Password,PasswordConfirm,Role")]UserRegisterViewModel m)
         {
             // check if email address is already in use - replaced by use of remote validator in UserRegisterViewModel
             if (_svc.GetUserByEmail(m.Email) != null) {
@@ -134,7 +139,7 @@ namespace FMS.Web.Controllers
         }
 
         // ==================================== Build Claims Principle =================================
-
+        // create a user claims principal containing the claims we want to store in the cookie
         // return claims principal based on authenticated user
         private  ClaimsPrincipal BuildClaimsPrincipal(User user)
         { 

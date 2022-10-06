@@ -10,7 +10,7 @@ namespace FMS.Test
     {
         private readonly IRehomingService svc;
 
-
+        //this constructor is executed before each test method, prevents you having to write the code each time
         public ServiceTests()
         {
             // general arrangement
